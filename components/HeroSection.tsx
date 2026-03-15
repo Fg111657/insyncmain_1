@@ -154,12 +154,12 @@ export default function HeroSection() {
           {/* H1 */}
           <Typography
             component="h1"
+            style={{ color: '#FFFFFF' }}
             sx={{
               fontWeight:    800,
               fontSize:      { xs: '2.375rem', sm: '3rem', md: '3.625rem', lg: '4rem' },
               lineHeight:    1.07,
               letterSpacing: '-0.03em',
-              color:         BRAND.white,
               mb:            { xs: 2, md: 2.5 },
             }}
           >

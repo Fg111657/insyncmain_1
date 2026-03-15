@@ -57,34 +57,28 @@ let theme = createTheme({
       fontWeight:    800,
       lineHeight:    1.1,
       letterSpacing: '-0.025em',
-      color:         BRAND.spaceNavy,
     },
     h2: {
       fontWeight:    700,
       lineHeight:    1.15,
       letterSpacing: '-0.02em',
-      color:         BRAND.spaceNavy,
     },
     h3: {
       fontWeight:    700,
       lineHeight:    1.2,
       letterSpacing: '-0.01em',
-      color:         BRAND.spaceNavy,
     },
     h4: {
       fontWeight:    600,
       lineHeight:    1.25,
-      color:         BRAND.spaceNavy,
     },
     h5: {
       fontWeight:    600,
       lineHeight:    1.3,
-      color:         BRAND.spaceNavy,
     },
     h6: {
       fontWeight:    600,
       lineHeight:    1.4,
-      color:         BRAND.spaceNavy,
     },
     body1: {
       lineHeight:  1.7,
