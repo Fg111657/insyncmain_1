@@ -1,35 +1,38 @@
 import React from 'react';
-import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import TouchAppIcon from '@mui/icons-material/TouchApp';
+import AirIcon from '@mui/icons-material/Air';
 import { BRAND } from '@/lib/theme';
 
 const TECH_ITEMS = [
   {
-    logo:        '/assets/logo-badges/VALDForcePlates_standard_logo.png',
+    icon:        <MonitorHeartIcon sx={{ fontSize: '1.5rem' }} />,
     name:        'VALD ForceDecks',
     description:
       'Dual force plate system that measures strength, power output, and limb symmetry to guide rehab decisions and confirm when you are ready to return to full activity.',
     category:    'Strength & Power Assessment',
   },
   {
-    logo:        '/assets/logo-badges/Normatec_standard_logo.png',
+    icon:        <AirIcon sx={{ fontSize: '1.5rem' }} />,
     name:        'Normatec',
     description:
       'Dynamic compression therapy that accelerates muscle recovery, reduces soreness, and improves circulation — supporting faster return to training.',
     category:    'Recovery Technology',
   },
   {
-    logo:        '/assets/logo-badges/Oxefit_standard_logo.png',
+    icon:        <FitnessCenterIcon sx={{ fontSize: '1.5rem' }} />,
     name:        'Oxefit',
     description:
       'Intelligent resistance training system that enables safe, measurable strength progressions during rehabilitation and performance transition.',
     category:    'Adaptive Strength Training',
   },
   {
-    logo:        '/assets/logo-badges/Graston_standard_logo.png',
+    icon:        <TouchAppIcon sx={{ fontSize: '1.5rem' }} />,
     name:        'Graston Technique',
     description:
       'Instrument-assisted soft tissue mobilization that identifies and treats scar tissue, fascial restrictions, and chronic soft tissue dysfunction.',
@@ -44,11 +47,11 @@ export default function TechnologySection() {
       aria-label="Technology and diagnostics"
       sx={{
         py:              { xs: 10, md: 14 },
-        backgroundColor: BRAND.offWhite ?? '#F7F9FB',
+        backgroundColor: '#F7F9FB',
       }}
     >
-      <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
-        <Grid container spacing={{ xs: 5, md: 10 }} alignItems="center">
+      <Container maxWidth="lg">
+        <Grid container spacing={{ xs: 5, md: 10 }} alignItems="flex-start">
 
           {/* Left: Copy */}
           <Grid item xs={12} md={5}>
@@ -62,14 +65,17 @@ export default function TechnologySection() {
 
             <Typography
               variant="h2"
-              sx={{ mb: 2.5, fontSize: { xs: '2rem', md: '2.625rem' } }}
+              sx={{ mb: 2.5, fontSize: { xs: '2rem', md: '2.5rem' } }}
             >
-              Objective Data. Smarter Rehab.
+              Objective Data.{' '}
+              <Box component="span" sx={{ display: 'block' }}>
+                Smarter Rehab.
+              </Box>
             </Typography>
 
             <Typography
               variant="body1"
-              sx={{ color: BRAND.gray500, lineHeight: 1.7, mb: 3 }}
+              sx={{ color: BRAND.gray500, lineHeight: 1.75, mb: 2.5 }}
             >
               We use clinical-grade technology to measure your strength,
               movement quality, and recovery progress — not just how you feel.
@@ -79,7 +85,7 @@ export default function TechnologySection() {
 
             <Typography
               variant="body1"
-              sx={{ color: BRAND.gray500, lineHeight: 1.7 }}
+              sx={{ color: BRAND.gray500, lineHeight: 1.75, mb: 4 }}
             >
               VALD ForceDecks, HumanTrak motion capture, Normatec compression
               therapy, Oxefit adaptive training, and Graston Technique are all
@@ -87,24 +93,51 @@ export default function TechnologySection() {
               evaluation through return to performance.
             </Typography>
 
-            {/* Subtle image */}
+            {/* Stat callouts */}
             <Box
               sx={{
-                mt:           4,
-                borderRadius: 3,
-                overflow:     'hidden',
-                position:     'relative',
-                height:       { xs: 220, md: 260 },
-                display:      { xs: 'none', md: 'block' },
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: 2,
               }}
             >
-              <Image
-                src="/assets/hassan-pt/photos/provider-hassan/dr-hassan-prone-upper-back-manual-therapy-female-patient-04.jpg"
-                alt="Manual therapy treatment at InSync Physical Therapy"
-                fill
-                sizes="(max-width: 1200px) 50vw, 400px"
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
-              />
+              {[
+                { value: '9+',    label: 'Years clinical experience' },
+                { value: '1-on-1', label: 'Every single session' },
+              ].map(({ value, label }) => (
+                <Box
+                  key={label}
+                  sx={{
+                    p:               2.5,
+                    borderRadius:    2,
+                    border:          `1px solid ${BRAND.gray200}`,
+                    backgroundColor: BRAND.white,
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontWeight:    800,
+                      fontSize:      '1.75rem',
+                      color:         BRAND.spaceNavy,
+                      lineHeight:    1,
+                      letterSpacing: '-0.03em',
+                      mb:            0.5,
+                    }}
+                  >
+                    {value}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize:  '0.8rem',
+                      fontWeight: 500,
+                      color:     BRAND.gray500,
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {label}
+                  </Typography>
+                </Box>
+              ))}
             </Box>
           </Grid>
 
@@ -117,7 +150,7 @@ export default function TechnologySection() {
                 gap:                 2.5,
               }}
             >
-              {TECH_ITEMS.map(({ logo, name, description, category }) => (
+              {TECH_ITEMS.map(({ icon, name, description, category }) => (
                 <Box
                   key={name}
                   component="article"
@@ -125,10 +158,10 @@ export default function TechnologySection() {
                     backgroundColor: BRAND.white,
                     border:          `1px solid ${BRAND.gray200}`,
                     borderRadius:    3,
-                    p:               { xs: 2.5, md: 3 },
+                    p:               { xs: 3, md: 3.5 },
                     display:         'flex',
                     flexDirection:   'column',
-                    gap:             1.5,
+                    gap:             1.25,
                     transition:      'all 0.25s ease',
                     '&:hover': {
                       borderColor: BRAND.neoBlue,
@@ -137,30 +170,27 @@ export default function TechnologySection() {
                     },
                   }}
                 >
-                  {/* Logo */}
+                  {/* Icon badge */}
                   <Box
                     sx={{
-                      height:   40,
-                      position: 'relative',
-                      width:    '100%',
+                      width:           44,
+                      height:          44,
+                      borderRadius:    2,
+                      backgroundColor: 'rgba(14,197,230,0.1)',
+                      display:         'flex',
+                      alignItems:      'center',
+                      justifyContent:  'center',
+                      color:           BRAND.neoBlue,
+                      flexShrink:      0,
                     }}
                   >
-                    <Image
-                      src={logo}
-                      alt={`${name} logo`}
-                      fill
-                      sizes="200px"
-                      style={{
-                        objectFit:      'contain',
-                        objectPosition: 'left center',
-                      }}
-                    />
+                    {icon}
                   </Box>
 
                   {/* Category */}
                   <Typography
                     sx={{
-                      fontSize:      '0.7rem',
+                      fontSize:      '0.68rem',
                       fontWeight:    700,
                       letterSpacing: '0.1em',
                       textTransform: 'uppercase',
@@ -175,7 +205,7 @@ export default function TechnologySection() {
                     component="h3"
                     sx={{
                       fontWeight: 700,
-                      fontSize:   '1rem',
+                      fontSize:   '1.0625rem',
                       color:      BRAND.spaceNavy,
                       lineHeight: 1.2,
                     }}
@@ -188,8 +218,8 @@ export default function TechnologySection() {
                     variant="body2"
                     sx={{
                       color:      BRAND.gray500,
-                      lineHeight: 1.6,
-                      fontSize:   '0.85rem',
+                      lineHeight: 1.65,
+                      fontSize:   '0.875rem',
                     }}
                   >
                     {description}

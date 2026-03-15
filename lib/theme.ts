@@ -288,6 +288,37 @@ let theme = createTheme({
         },
       },
     },
+
+    MuiContainer: {
+      defaultProps: {
+        maxWidth: 'lg',
+      },
+      styleOverrides: {
+        root: {
+          paddingLeft:  '24px',
+          paddingRight: '24px',
+          '@media (min-width: 600px)': {
+            paddingLeft:  '32px',
+            paddingRight: '32px',
+          },
+        },
+      },
+    },
+
+    MuiAppBar: {
+      defaultProps: {
+        elevation: 0,
+      },
+    },
+
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          paddingLeft:  '0 !important',
+          paddingRight: '0 !important',
+        },
+      },
+    },
   },
 });
 
