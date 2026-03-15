@@ -128,7 +128,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#003D59" />
       </head>
       <body>
-        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+        <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <Navigation />

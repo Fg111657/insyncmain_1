@@ -107,6 +107,21 @@ a {
   text-decoration: none;
 }
 
+/* ─── MUI Container Padding Safety Net ──────────────────────────────────── */
+/* Ensures content never touches the browser edge regardless of CSS layer     */
+/* ordering. MUI theme paddingLeft/Right values (24px mobile, 32px desktop)  */
+/* are mirrored here so the reset above never strips them.                   */
+.MuiContainer-root {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+@media (min-width: 600px) {
+  .MuiContainer-root {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
+
 /* ─── Section Utilities ──────────────────────────────────────────────────── */
 .section-light {
   background-color: #ffffff;
