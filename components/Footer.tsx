@@ -85,6 +85,7 @@ export default function Footer() {
               <Box>
                 <Typography
                   component="span"
+                  style={{ color: '#FFFFFF' }}
                   sx={{
                     display:       'block',
                     fontWeight:    800,
@@ -177,7 +178,7 @@ export default function Footer() {
 
           {/* ── Services Column ────────────────────────────── */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography component="span" sx={colHeadingSx}>
+            <Typography component="span" style={{ color: '#0EC5E6' }} sx={colHeadingSx}>
               Services
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -191,7 +192,7 @@ export default function Footer() {
 
           {/* ── Quick Links + Locations Column ────────────── */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography component="span" sx={colHeadingSx}>
+            <Typography component="span" style={{ color: '#0EC5E6' }} sx={colHeadingSx}>
               Quick Links
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', mb: 4 }}>
@@ -202,7 +203,7 @@ export default function Footer() {
               ))}
             </Box>
 
-            <Typography component="span" sx={colHeadingSx}>
+            <Typography component="span" style={{ color: '#0EC5E6' }} sx={colHeadingSx}>
               Locations
             </Typography>
             <Typography

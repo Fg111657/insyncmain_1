@@ -27,7 +27,7 @@ const REVIEWS = [
     rating:   5,
     context:  'Rotator Cuff Recovery',
     text:
-      'Super efficient, clinical, and no fluff. I appreciated that they measured my progress objectively — the force plate testing showed exactly where I was at and when I was cleared to start lifting heavy again. Insurance was handled easily too.',
+      'Super efficient, clinical, and no fluff. I appreciated that they measured my progress objectively. The force plate testing showed exactly where I was at and when I was cleared to start lifting heavy again. Insurance was handled easily too.',
   },
   {
     author:   'Sofia M.',

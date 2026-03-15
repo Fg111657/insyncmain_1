@@ -147,6 +147,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                     </Box>
                     <Typography
                       component="h3"
+                      style={{ color: '#FFFFFF' }}
                       sx={{
                         fontWeight: 700,
                         fontSize:   '1.25rem',
@@ -160,6 +161,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                   {/* Address */}
                   <Box sx={{ mb: 3 }}>
                     <Typography
+                      style={{ color: '#FFFFFF' }}
                       sx={{
                         fontWeight:  600,
                         fontSize:    '1rem',
