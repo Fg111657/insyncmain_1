@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -9,6 +10,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { BRAND } from '@/lib/theme';
+import { SECTION_IMAGES } from '@/lib/images';
 
 const TRUST_ITEMS = [
   'Real One-on-One Treatment Every Visit',
@@ -34,7 +36,7 @@ export default function HeroSection() {
         pt:         { xs: 8, md: 9 },
       }}
     >
-      {/* ── Geometric background layer ─────────────────────────────────── */}
+      {/* ── Gradient background ──────────────────────────────────────────── */}
       <Box
         aria-hidden="true"
         sx={{
@@ -43,67 +45,82 @@ export default function HeroSection() {
           zIndex:   0,
           background: {
             xs: `linear-gradient(160deg, #001d22 0%, #003D59 55%, #002f45 100%)`,
-            md: `linear-gradient(120deg, #001a1f 0%, #00262A 30%, #003D59 65%, #00334f 100%)`,
+            md: `linear-gradient(100deg, #001a1f 0%, #00262A 40%, #003D59 70%, transparent 100%)`,
           },
         }}
       />
 
-      {/* ── Decorative geometry ─────────────────────────────────────────── */}
+      {/* ── Right-panel photo (desktop only) ────────────────────────────── */}
       <Box
         aria-hidden="true"
         sx={{
-          position:         'absolute',
-          inset:            0,
-          zIndex:           0,
-          overflow:         'hidden',
-          pointerEvents:    'none',
+          display:  { xs: 'none', md: 'block' },
+          position: 'absolute',
+          right:    0,
+          top:      0,
+          width:    '46%',
+          height:   '100%',
+          zIndex:   0,
         }}
       >
-        {/* Large NeoBlue circle — top right */}
+        <Image
+          src={SECTION_IMAGES.hero}
+          alt="Dr. Hassan performing physical therapy assessment in NYC clinic"
+          fill
+          priority
+          sizes="46vw"
+          style={{ objectFit: 'cover', objectPosition: 'center top' }}
+        />
+        {/* Gradient fade — left edge blends into dark background */}
+        <Box
+          sx={{
+            position:   'absolute',
+            inset:      0,
+            background: 'linear-gradient(to right, #00262A 0%, rgba(0,38,42,0.55) 30%, rgba(0,38,42,0.1) 70%, transparent 100%)',
+          }}
+        />
+        {/* Top + bottom fade */}
+        <Box
+          sx={{
+            position:   'absolute',
+            inset:      0,
+            background: 'linear-gradient(to bottom, #00262A 0%, transparent 12%, transparent 88%, #00262A 100%)',
+          }}
+        />
+      </Box>
+
+      {/* ── Decorative rings (subtle on desktop, visible on mobile) ─────── */}
+      <Box
+        aria-hidden="true"
+        sx={{
+          display:       { xs: 'block', md: 'none' },
+          position:      'absolute',
+          inset:         0,
+          zIndex:        0,
+          overflow:      'hidden',
+          pointerEvents: 'none',
+        }}
+      >
         <Box
           sx={{
             position:        'absolute',
             top:             '-20%',
             right:           '-10%',
-            width:           { xs: 420, md: 640 },
-            height:          { xs: 420, md: 640 },
+            width:           420,
+            height:          420,
             borderRadius:    '50%',
             backgroundColor: 'rgba(14,197,230,0.06)',
           }}
         />
-        {/* Medium NeoBlue ring — mid right */}
         <Box
           sx={{
             position:     'absolute',
             top:          '15%',
             right:        '5%',
-            width:        { xs: 200, md: 320 },
-            height:       { xs: 200, md: 320 },
+            width:        200,
+            height:       200,
             borderRadius: '50%',
             border:       '1px solid rgba(14,197,230,0.12)',
-          }}
-        />
-        {/* Small NeoBlue ring — lower right */}
-        <Box
-          sx={{
-            position:     'absolute',
-            bottom:       '18%',
-            right:        '22%',
-            width:        { xs: 100, md: 160 },
-            height:       { xs: 100, md: 160 },
-            borderRadius: '50%',
-            border:       '1px solid rgba(14,197,230,0.08)',
-          }}
-        />
-        {/* Horizontal accent line — left */}
-        <Box
-          sx={{
-            position:        'absolute',
-            bottom:          '35%',
-            left:            0,
-            width:           { xs: 180, md: 280 },
-            height:          1,
-            backgroundColor: 'rgba(14,197,230,0.15)',
           }}
         />
       </Box>
@@ -117,7 +134,8 @@ export default function HeroSection() {
           py:       { xs: 8, md: 12 },
         }}
       >
-        <Box sx={{ maxWidth: { xs: '100%', md: '620px', lg: '660px' } }}>
+        {/* Text constrained to left ~55% on desktop so photo shows */}
+        <Box sx={{ maxWidth: { xs: '100%', md: '56%', lg: '54%' } }}>
 
           {/* Overline */}
           <Typography
@@ -155,7 +173,7 @@ export default function HeroSection() {
             style={{ color: '#FFFFFF' }}
             sx={{
               fontWeight:    800,
-              fontSize:      { xs: '2.25rem', sm: '2.875rem', md: '3.5rem', lg: '3.875rem' },
+              fontSize:      { xs: '2.25rem', sm: '2.875rem', md: '3.25rem', lg: '3.75rem' },
               lineHeight:    1.07,
               letterSpacing: '-0.03em',
               mb:            { xs: 2, md: 2.5 },
@@ -169,7 +187,7 @@ export default function HeroSection() {
                 color:      BRAND.neoBlue,
                 fontStyle:  'italic',
                 fontFamily: 'var(--font-secondary), "Playfair Display", serif',
-                fontSize:   { xs: '1.875rem', sm: '2.375rem', md: '2.875rem', lg: '3.25rem' },
+                fontSize:   { xs: '1.875rem', sm: '2.375rem', md: '2.625rem', lg: '3rem' },
                 mt:         0.5,
                 lineHeight: 1.12,
               }}
@@ -181,11 +199,11 @@ export default function HeroSection() {
           {/* Subheadline */}
           <Typography
             sx={{
-              color:     'rgba(255,255,255,0.78)',
-              fontSize:  { xs: '1.0625rem', md: '1.125rem' },
+              color:      'rgba(255,255,255,0.78)',
+              fontSize:   { xs: '1.0625rem', md: '1.0625rem' },
               lineHeight: 1.65,
-              mb:        4,
-              maxWidth:   520,
+              mb:         4,
+              maxWidth:   500,
             }}
           >
             Recover from injuries. Fix chronic pain. Get back to training.
@@ -218,14 +236,14 @@ export default function HeroSection() {
                   alignItems: 'center',
                   gap:        0.875,
                   color:      'rgba(255,255,255,0.85)',
-                  fontSize:   '0.9rem',
+                  fontSize:   '0.875rem',
                   fontWeight: 500,
                 }}
               >
                 <CheckCircleOutlineIcon
                   sx={{
-                    color:     BRAND.neoBlue,
-                    fontSize:  '1.05rem',
+                    color:      BRAND.neoBlue,
+                    fontSize:   '1.05rem',
                     flexShrink: 0,
                   }}
                 />
@@ -274,14 +292,14 @@ export default function HeroSection() {
               size="large"
               startIcon={<PhoneIcon />}
               sx={{
-                borderColor:  'rgba(255,255,255,0.3)',
-                borderWidth:  1.5,
-                color:        BRAND.white,
-                fontWeight:   600,
-                px:           { xs: 3, md: 3.5 },
-                py:           1.75,
-                fontSize:     '0.9375rem',
-                borderRadius: 1,
+                borderColor:   'rgba(255,255,255,0.3)',
+                borderWidth:   1.5,
+                color:         BRAND.white,
+                fontWeight:    600,
+                px:            { xs: 3, md: 3.5 },
+                py:            1.75,
+                fontSize:      '0.9375rem',
+                borderRadius:  1,
                 textTransform: 'none',
                 '&:hover': {
                   borderColor:     BRAND.neoBlue,

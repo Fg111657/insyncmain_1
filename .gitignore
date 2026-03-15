@@ -11,13 +11,14 @@ out/
 .env*.local
 # .env.local.example is committed intentionally (no secrets)
 
-# ─── Large Binary Assets — Deploy via rsync (see scripts/sync-assets.sh) ────
+# ─── Large Binary Assets — stored in DO Spaces, not in git ──────────────────
 # Videos: 4GB — never in git
 assets/hassan-pt/videos/
-# Full-res clinic photos: 1.1GB — rsync to server after deploy
-assets/hassan-pt/
-# Logo-badges (~284KB) and public/logo are committed — they stay
-# Headshot files at project root are committed (small, needed for site)
+public/assets/hassan-pt/videos/
+# Full-res clinic photos: 1.1GB — upload to DO Spaces (see scripts/upload-to-spaces.sh)
+assets/hassan-pt/photos/
+public/assets/hassan-pt/photos/
+# Logo-badges (~284KB) and headshots at project root are committed — they stay
 
 # ─── Reference/Docs (not part of website deployment) ─────────────────────────
 *.ini

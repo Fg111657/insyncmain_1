@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -13,10 +14,12 @@ import TouchAppIcon from '@mui/icons-material/TouchApp';
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import { BRAND } from '@/lib/theme';
+import { SECTION_IMAGES } from '@/lib/images';
 
 const SERVICES = [
   {
     id:       'orthopedic',
+    photo:    SECTION_IMAGES.services.orthopedic,
     icon:     <HealingIcon sx={{ fontSize: '1.75rem' }} />,
     title:    'Orthopedic Rehabilitation',
     outcome:  'Restore function and eliminate pain from musculoskeletal injuries.',
@@ -31,6 +34,7 @@ const SERVICES = [
   },
   {
     id:       'sports',
+    photo:    SECTION_IMAGES.services.sports,
     icon:     <DirectionsRunIcon sx={{ fontSize: '1.75rem' }} />,
     title:    'Sports Injury Rehabilitation',
     outcome:  'Return to your sport with strength, confidence, and proper mechanics.',
@@ -45,6 +49,7 @@ const SERVICES = [
   },
   {
     id:       'chronic-pain',
+    photo:    SECTION_IMAGES.services.chronicPain,
     icon:     <SelfImprovementIcon sx={{ fontSize: '1.75rem' }} />,
     title:    'Chronic Pain Treatment',
     outcome:  'Reduce persistent pain and build lasting resilience through targeted therapy.',
@@ -59,6 +64,7 @@ const SERVICES = [
   },
   {
     id:       'post-surgical',
+    photo:    SECTION_IMAGES.services.postSurgical,
     icon:     <MedicalServicesIcon sx={{ fontSize: '1.75rem' }} />,
     title:    'Post-Surgical Rehabilitation',
     outcome:  'Recover safely after surgery with structured progressions and measurable milestones.',
@@ -73,6 +79,7 @@ const SERVICES = [
   },
   {
     id:       'manual',
+    photo:    SECTION_IMAGES.services.manual,
     icon:     <TouchAppIcon sx={{ fontSize: '1.75rem' }} />,
     title:    'Manual Therapy',
     outcome:  'Hands-on treatment to restore mobility, reduce pain, and improve tissue quality.',
@@ -87,6 +94,7 @@ const SERVICES = [
   },
   {
     id:       'movement',
+    photo:    SECTION_IMAGES.services.movement,
     icon:     <TrackChangesIcon sx={{ fontSize: '1.75rem' }} />,
     title:    'Movement Analysis',
     outcome:  'Identify the root cause of pain or inefficiency with objective assessment tools.',
@@ -177,17 +185,17 @@ export default function ServicesGrid({
             gap: { xs: 2.5, md: 3 },
           }}
         >
-          {displayed.map(({ id, icon, title, outcome, bullets, forWho, anchor }) => (
+          {displayed.map(({ id, photo, icon, title, outcome, bullets, forWho, anchor }) => (
             <Box
               key={id}
               component="article"
               sx={{
-                border:       `1px solid ${BRAND.gray200}`,
-                borderRadius: 3,
-                p:            { xs: 3, md: 3.5 },
-                display:      'flex',
-                flexDirection: 'column',
-                transition:   'all 0.25s ease',
+                border:          `1px solid ${BRAND.gray200}`,
+                borderRadius:    3,
+                overflow:        'hidden',
+                display:         'flex',
+                flexDirection:   'column',
+                transition:      'all 0.25s ease',
                 backgroundColor: BRAND.white,
                 '&:hover': {
                   boxShadow:   `0 8px 32px rgba(0,61,89,0.08)`,
@@ -196,7 +204,37 @@ export default function ServicesGrid({
                 },
               }}
             >
-              {/* Icon */}
+              {/* Photo header (when available and not compact) */}
+              {photo && !compact && (
+                <Box
+                  sx={{
+                    position: 'relative',
+                    height:   180,
+                    flexShrink: 0,
+                  }}
+                >
+                  <Image
+                    src={photo}
+                    alt={`${title} at InSync Physical Therapy NYC`}
+                    fill
+                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'cover', objectPosition: 'center 25%' }}
+                  />
+                  <Box
+                    sx={{
+                      position:   'absolute',
+                      inset:      0,
+                      background: 'linear-gradient(to bottom, transparent 50%, rgba(0,38,42,0.3) 100%)',
+                    }}
+                  />
+                </Box>
+              )}
+
+              {/* Card content */}
+              <Box sx={{ p: { xs: 3, md: 3.5 }, display: 'flex', flexDirection: 'column', flex: 1 }}>
+
+              {/* Icon (shown when no photo) */}
+              {(!photo || compact) && (
               <Box
                 sx={{
                   width:           48,
@@ -212,6 +250,7 @@ export default function ServicesGrid({
               >
                 {icon}
               </Box>
+              )} {/* end icon conditional */}
 
               {/* Title */}
               <Typography
@@ -328,6 +367,8 @@ export default function ServicesGrid({
               >
                 Learn more
               </Button>
+
+              </Box> {/* close card content Box */}
             </Box>
           ))}
         </Box>

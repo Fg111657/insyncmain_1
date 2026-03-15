@@ -1,9 +1,11 @@
 import React from 'react';
+import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { BRAND } from '@/lib/theme';
+import { SECTION_IMAGES } from '@/lib/images';
 
 const INJURIES = [
   'ACL and meniscus tears',
@@ -117,7 +119,35 @@ export default function CombatSportsSection() {
             </Box>
           </Box>
 
-          {/* Right: Injury list card */}
+          {/* Right: Injury list card + clinic photo */}
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
+
+            {/* Clinic photo */}
+            <Box
+              sx={{
+                position:     'relative',
+                height:       { xs: 220, md: 260 },
+                borderRadius: 4,
+                overflow:     'hidden',
+                flexShrink:   0,
+              }}
+            >
+              <Image
+                src={SECTION_IMAGES.combat}
+                alt="Dr. Hassan performing shoulder mobility assessment for sports rehab patient in NYC"
+                fill
+                sizes="(max-width: 900px) 100vw, 50vw"
+                style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
+              />
+              <Box
+                sx={{
+                  position:   'absolute',
+                  inset:      0,
+                  background: 'linear-gradient(to bottom, transparent 60%, rgba(0,38,42,0.5) 100%)',
+                }}
+              />
+            </Box>
+
           <Box
             sx={{
               backgroundColor: BRAND.white,
@@ -192,6 +222,8 @@ export default function CombatSportsSection() {
               </Typography>
             </Box>
           </Box>
+
+          </Box> {/* close outer flex column wrapper */}
         </Box>
       </Container>
     </Box>

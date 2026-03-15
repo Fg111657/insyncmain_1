@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "setup": "node scripts/setup-assets.js"
+    "setup": "node scripts/setup-assets.js",
+    "compress-images": "node scripts/compress-images.mjs",
+    "upload-images": "bash scripts/upload-to-spaces.sh"
   },
   "dependencies": {
     "next": "^15.1.0",
@@ -27,6 +29,7 @@
     "@types/react-dom": "^19.0.0",
     "typescript": "^5.7.0",
     "eslint": "^9.0.0",
-    "eslint-config-next": "^15.1.0"
+    "eslint-config-next": "^15.1.0",
+    "sharp": "^0.33.5"
   }
 }

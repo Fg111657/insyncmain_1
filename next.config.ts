@@ -11,7 +11,19 @@ const nextConfig: NextConfig = {
     formats:     ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes:  [16, 32, 48, 64, 96, 128, 256, 384],
-    remotePatterns: [],
+    // DigitalOcean Spaces CDN — covers any region bucket (nyc3, sfo2, etc.)
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.digitaloceanspaces.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.cdn.digitaloceanspaces.com',
+        pathname: '/**',
+      },
+    ],
   },
 
   compress:         true,
