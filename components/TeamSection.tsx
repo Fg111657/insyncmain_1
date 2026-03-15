@@ -94,7 +94,7 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
               sx={{ color: BRAND.gray500, lineHeight: 1.7 }}
             >
               One-on-one care from clinicians who understand the demands of
-              active life — from injury through full return to performance.
+              active life, from injury through full return to performance.
             </Typography>
           </Box>
         )}

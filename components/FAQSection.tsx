@@ -37,7 +37,7 @@ const FAQS = [
   },
   {
     q: 'Do you work with athletes and combat sports practitioners?',
-    a: 'Yes. We work with recreational athletes, runners, BJJ practitioners, martial artists, and competitive athletes of all levels. Our approach focuses on intelligent progression — keeping you moving safely during recovery rather than simply telling you to stop. We also partner with Piero Alessi for structured return-to-performance strength coaching after rehabilitation.',
+    a: 'Yes. We work with recreational athletes, runners, BJJ practitioners, martial artists, and competitive athletes of all levels. Our approach focuses on intelligent progression. We keep you moving safely during recovery rather than simply telling you to stop. We also partner with Piero Alessi for structured return-to-performance strength coaching after rehabilitation.',
   },
   {
     q: 'Can I keep training while in physical therapy?',
