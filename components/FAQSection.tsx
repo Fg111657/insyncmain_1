@@ -29,7 +29,7 @@ const FAQS = [
   },
   {
     q: 'How long is a session?',
-    a: 'Initial evaluations are typically 60 minutes. Follow-up treatment sessions are generally 45 to 60 minutes. Every session is one-on-one with your physical therapist — you will not be handed off to an aide or left with equipment while your therapist sees another patient.',
+    a: 'Initial evaluations are typically 60 minutes. Follow-up treatment sessions are generally 45 to 60 minutes. Every session is one-on-one with your physical therapist. You will not be handed off to an aide or left with equipment while your therapist sees another patient.',
   },
   {
     q: 'Where are your NYC locations?',

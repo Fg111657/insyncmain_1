@@ -11,11 +11,12 @@ const TEAM = [
   {
     id:          'hassan',
     photo:       '/assets/Hassan .jpeg',
+    photoPos:    'center top',
     name:        'Dr. Hassan',
     title:       'Doctor of Physical Therapy',
     credentials: ['DPT', 'Touro University', '9+ Years Experience'],
     bio:
-      'Dr. Hassan is a Doctor of Physical Therapy with over nine years of clinical experience treating orthopedic injuries, sports-related conditions, and chronic pain in New York City. His approach combines evidence-based manual therapy, movement diagnostics, and individualized rehabilitation programs designed to get patients back to the activities they love — with lasting results.',
+      'Dr. Hassan is a Doctor of Physical Therapy with over nine years of clinical experience treating orthopedic injuries, sports-related conditions, and chronic pain in New York City. His approach combines evidence-based manual therapy, movement diagnostics, and individualized rehabilitation programs designed to get patients back to the activities they love, with lasting results.',
     specialties: [
       'Orthopedic Rehabilitation',
       'Sports Injury Recovery',
@@ -27,6 +28,7 @@ const TEAM = [
   {
     id:          'piero',
     photo:       '/assets/Piero Alessi.JPG',
+    photoPos:    'center 20%',
     name:        'Piero Alessi',
     title:       'Strength & Conditioning Coach',
     credentials: ['NASM Certified', 'World-Class Martial Arts Background'],
@@ -43,6 +45,7 @@ const TEAM = [
   {
     id:          'tj',
     photo:       '/assets/TJ.jpg',
+    photoPos:    'center top',
     name:        'TJ',
     title:       'Physical Therapist',
     credentials: ['Physical Therapist'],
@@ -97,7 +100,7 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
         )}
 
         <Grid container spacing={{ xs: 3, md: 4 }}>
-          {displayedTeam.map(({ id, photo, name, title, credentials, bio, specialties, placeholder }) => (
+          {displayedTeam.map(({ id, photo, photoPos, name, title, credentials, bio, specialties, placeholder }) => (
             <Grid key={id} item xs={12} md={compact ? 6 : 4}>
               <Box
                 component="article"
@@ -129,12 +132,12 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
                 >
                   <Image
                     src={photo}
-                    alt={`${name} — ${title} at InSync Physical Therapy`}
+                    alt={`${name}, ${title} at InSync Physical Therapy`}
                     fill
                     sizes="(max-width: 900px) 100vw, 400px"
                     style={{
                       objectFit:      'cover',
-                      objectPosition: 'center top',
+                      objectPosition: photoPos ?? 'center top',
                     }}
                   />
                   {placeholder && (

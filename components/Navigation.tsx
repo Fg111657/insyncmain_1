@@ -414,10 +414,10 @@ export default function Navigation() {
             Our Locations
           </Typography>
           <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>
-            Brooklyn — 1081 Gates Ave, NY 11221
+            Brooklyn: 1081 Gates Ave, NY 11221
           </Typography>
           <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, mt: 0.5 }}>
-            Bryant Park — 55 W 39th St, Suite 303, NY 10018
+            Bryant Park: 55 W 39th St, Suite 303, NY 10018
           </Typography>
         </Box>
       </Drawer>

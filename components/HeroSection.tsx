@@ -11,17 +11,18 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { BRAND } from '@/lib/theme';
 
 const TRUST_ITEMS = [
-  'Doctor of Physical Therapy',
-  '9+ Years of Experience',
-  'One-on-One Care',
-  'Insurance Accepted',
+  'Licensed Doctor of Physical Therapy',
+  'Nearly a Decade of Experience',
+  'Personalized Sessions, Every Visit',
+  'Most Major Insurance Plans',
 ];
 
 export default function HeroSection() {
   return (
     <Box
       component="section"
-      aria-label="InSync Physical Therapy — Hero"
+      aria-label="InSync Physical Therapy hero"
+      className="section-dark"
       sx={{
         position:   'relative',
         minHeight:  { xs: '92vh', md: '88vh' },
@@ -31,8 +32,6 @@ export default function HeroSection() {
         // Pull hero up under the transparent nav (nav spacer is 64/72px)
         mt:         { xs: -8, md: -9 },
         pt:         { xs: 8, md: 9 },
-        // Deep navy base
-        backgroundColor: BRAND.luxBlue,
       }}
     >
       {/* ── Geometric background layer ─────────────────────────────────── */}
@@ -42,7 +41,6 @@ export default function HeroSection() {
           position: 'absolute',
           inset:    0,
           zIndex:   0,
-          // Multi-stop gradient: deep navy → space navy with subtle directional light
           background: {
             xs: `linear-gradient(160deg, #001d22 0%, #003D59 55%, #002f45 100%)`,
             md: `linear-gradient(120deg, #001a1f 0%, #00262A 30%, #003D59 65%, #00334f 100%)`,
@@ -50,7 +48,7 @@ export default function HeroSection() {
         }}
       />
 
-      {/* ── Decorative geometry — subtle accent shapes ─────────────────── */}
+      {/* ── Decorative geometry ─────────────────────────────────────────── */}
       <Box
         aria-hidden="true"
         sx={{
@@ -157,13 +155,13 @@ export default function HeroSection() {
             style={{ color: '#FFFFFF' }}
             sx={{
               fontWeight:    800,
-              fontSize:      { xs: '2.375rem', sm: '3rem', md: '3.625rem', lg: '4rem' },
+              fontSize:      { xs: '2.25rem', sm: '2.875rem', md: '3.5rem', lg: '3.875rem' },
               lineHeight:    1.07,
               letterSpacing: '-0.03em',
               mb:            { xs: 2, md: 2.5 },
             }}
           >
-            Physical Therapy in NYC
+            Expert Rehab in NYC.
             <Box
               component="span"
               sx={{
@@ -171,12 +169,12 @@ export default function HeroSection() {
                 color:      BRAND.neoBlue,
                 fontStyle:  'italic',
                 fontFamily: 'var(--font-secondary), "Playfair Display", serif',
-                fontSize:   { xs: '2rem', sm: '2.625rem', md: '3.125rem', lg: '3.5rem' },
+                fontSize:   { xs: '1.875rem', sm: '2.375rem', md: '2.875rem', lg: '3.25rem' },
                 mt:         0.5,
                 lineHeight: 1.12,
               }}
             >
-              That Gets You Moving Again
+              Care That Gets You Moving Again
             </Box>
           </Typography>
 
@@ -190,9 +188,9 @@ export default function HeroSection() {
               maxWidth:   520,
             }}
           >
-            Orthopedic rehabilitation, sports injury recovery, chronic pain
-            treatment, and post-surgical care — with one-on-one attention from
-            a Doctor of Physical Therapy.
+            Orthopedic injuries, sports recovery, chronic pain, and post-surgical rehab.
+            Guided by a licensed Doctor of Physical Therapy with nearly a decade of NYC
+            clinical experience.
           </Typography>
 
           {/* Trust Checklist */}

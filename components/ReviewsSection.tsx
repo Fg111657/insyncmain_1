@@ -13,7 +13,7 @@ const REVIEWS = [
     rating:   5,
     context:  'ACL Rehab',
     text:
-      'Dr. Hassan got me back on the mat after my ACL surgery faster than I expected. He didn\'t just have me do the standard exercises — he actually understood my training background and built a plan around returning to grappling. One-on-one every session, no rushing.',
+      'Dr. Hassan got me back on the mat after my ACL surgery faster than I expected. He didn\'t just run through standard exercises. He understood my training background and built a plan around returning to grappling. Personalized every session, no rushing.',
   },
   {
     author:   'Priya S.',

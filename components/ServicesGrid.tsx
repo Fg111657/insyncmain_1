@@ -160,7 +160,7 @@ export default function ServicesGrid({
               sx={{ color: BRAND.gray500, maxWidth: 580, lineHeight: 1.7 }}
             >
               Every treatment plan at InSync is built around your specific
-              injury, goals, and activity level — not a generic protocol.
+              injury, goals, and activity level. Not a generic protocol.
             </Typography>
           </Box>
         )}

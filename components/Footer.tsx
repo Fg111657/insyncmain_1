@@ -212,7 +212,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               sx={{ ...linkSx, fontWeight: 500 }}
             >
-              Brooklyn — 1081 Gates Ave
+              Brooklyn: 1081 Gates Ave
             </Typography>
             <Typography
               component="a"
@@ -221,7 +221,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               sx={{ ...linkSx, fontWeight: 500 }}
             >
-              Bryant Park — 55 W 39th St
+              Bryant Park: 55 W 39th St
             </Typography>
           </Grid>
         </Grid>

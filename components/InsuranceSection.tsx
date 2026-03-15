@@ -1,19 +1,19 @@
 import React from 'react';
-import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import LogoCarousel from '@/components/LogoCarousel';
 import { BRAND } from '@/lib/theme';
 
 const INSURERS = [
-  { name: 'Aetna',                    logo: '/assets/logo-badges/Aetna_standard_logo.png'                },
-  { name: 'Blue Cross Blue Shield',   logo: '/assets/logo-badges/BlueCrossBlueShield_standard_logo.png' },
-  { name: 'Cigna',                    logo: '/assets/logo-badges/Cigna_standard_logo.png'               },
-  { name: 'United Healthcare',        logo: '/assets/logo-badges/UnitedHealthcare_standard_logo.png'    },
-  { name: 'Medicare',                 logo: '/assets/logo-badges/Medicare_standard_logo.png'            },
-  { name: 'Fidelis Care',             logo: '/assets/logo-badges/Fidelis_standard_logo.png'            },
-  { name: 'HIP',                      logo: '/assets/logo-badges/HIP_standard_logo.png'                },
-  { name: 'NYC Employee Benefits',    logo: '/assets/logo-badges/NYCEPP_standard_logo.png'              },
+  { name: 'Aetna',                 logo: '/assets/logo-badges/Aetna_standard_logo.png'                },
+  { name: 'Blue Cross Blue Shield',logo: '/assets/logo-badges/BlueCrossBlueShield_standard_logo.png' },
+  { name: 'Cigna',                 logo: '/assets/logo-badges/Cigna_standard_logo.png'               },
+  { name: 'United Healthcare',     logo: '/assets/logo-badges/UnitedHealthcare_standard_logo.png'    },
+  { name: 'Medicare',              logo: '/assets/logo-badges/Medicare_standard_logo.png'            },
+  { name: 'Fidelis Care',          logo: '/assets/logo-badges/Fidelis_standard_logo.png'             },
+  { name: 'HIP',                   logo: '/assets/logo-badges/HIP_standard_logo.png'                },
+  { name: 'NYC Employee Benefits', logo: '/assets/logo-badges/NYCEPP_standard_logo.png'              },
 ];
 
 interface InsuranceSectionProps {
@@ -52,9 +52,8 @@ export default function InsuranceSection({ compact = false }: InsuranceSectionPr
                 lineHeight: 1.7,
               }}
             >
-              InSync Physical Therapy is in-network with most major insurance
-              plans. We verify your benefits before your first appointment so
-              there are no surprises.
+              InSync is in-network with most major insurance plans. We verify
+              your benefits before your first appointment. No surprises.
             </Typography>
           </Box>
         )}
@@ -72,52 +71,13 @@ export default function InsuranceSection({ compact = false }: InsuranceSectionPr
           </Typography>
         )}
 
-        {/* Logo Grid */}
-        <Box
-          sx={{
-            display:             'grid',
-            gridTemplateColumns: {
-              xs: 'repeat(2, 1fr)',
-              sm: 'repeat(4, 1fr)',
-              md: 'repeat(4, 1fr)',
-            },
-            gap: { xs: 2, md: 3 },
-          }}
-        >
-          {INSURERS.map(({ name, logo }) => (
-            <Box
-              key={name}
-              sx={{
-                border:          `1px solid ${BRAND.gray200}`,
-                borderRadius:    3,
-                backgroundColor: BRAND.white,
-                height:          80,
-                display:         'flex',
-                alignItems:      'center',
-                justifyContent:  'center',
-                p:               2.5,
-                position:        'relative',
-                transition:      'all 0.2s ease',
-                '&:hover': {
-                  borderColor: BRAND.neoBlue,
-                  boxShadow:   '0 4px 16px rgba(0,61,89,0.06)',
-                },
-              }}
-            >
-              <Image
-                src={logo}
-                alt={`${name} — accepted insurance at InSync Physical Therapy`}
-                fill
-                sizes="(max-width: 600px) 45vw, 200px"
-                style={{
-                  objectFit:    'contain',
-                  objectPosition: 'center',
-                  padding:      '12px 16px',
-                }}
-              />
-            </Box>
-          ))}
-        </Box>
+        {/* Scrolling logo carousel */}
+        <LogoCarousel
+          items={INSURERS}
+          tileHeight={76}
+          duration={32}
+          tileBg="#FFFFFF"
+        />
 
         {/* Disclaimer */}
         <Box
@@ -138,8 +98,8 @@ export default function InsuranceSection({ compact = false }: InsuranceSectionPr
             <strong style={{ color: BRAND.spaceNavy, fontWeight: 600 }}>
               Don&apos;t see your plan?
             </strong>{' '}
-            Contact us — we accept additional plans and can verify your out-of-network
-            benefits. We verify all insurance coverage before your first visit.
+            Contact us. We accept additional plans and can verify your
+            out-of-network benefits before your first visit.
           </Typography>
         </Box>
       </Container>

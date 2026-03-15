@@ -7,6 +7,7 @@ import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import TouchAppIcon from '@mui/icons-material/TouchApp';
 import AirIcon from '@mui/icons-material/Air';
+import VideocamIcon from '@mui/icons-material/Videocam';
 import { BRAND } from '@/lib/theme';
 
 const TECH_ITEMS = [
@@ -18,10 +19,17 @@ const TECH_ITEMS = [
     category:    'Strength & Power Assessment',
   },
   {
+    icon:        <VideocamIcon sx={{ fontSize: '1.5rem' }} />,
+    name:        'HumanTrak',
+    description:
+      'Motion capture analysis that quantifies movement quality, joint angles, and compensations. Objective data on how you move, not just how you feel.',
+    category:    'Motion Capture Analysis',
+  },
+  {
     icon:        <AirIcon sx={{ fontSize: '1.5rem' }} />,
     name:        'Normatec',
     description:
-      'Dynamic compression therapy that accelerates muscle recovery, reduces soreness, and improves circulation — supporting faster return to training.',
+      'Dynamic compression therapy that accelerates muscle recovery, reduces soreness, and improves circulation. Supports faster return to training.',
     category:    'Recovery Technology',
   },
   {
@@ -78,7 +86,7 @@ export default function TechnologySection() {
               sx={{ color: BRAND.gray500, lineHeight: 1.75, mb: 2.5 }}
             >
               We use clinical-grade technology to measure your strength,
-              movement quality, and recovery progress — not just how you feel.
+              movement quality, and recovery progress. Not just how you feel.
               That data guides every decision and tells us exactly when you are
               ready to return to full activity.
             </Typography>
@@ -102,8 +110,8 @@ export default function TechnologySection() {
               }}
             >
               {[
-                { value: '9+',    label: 'Years clinical experience' },
-                { value: '1-on-1', label: 'Every single session' },
+                { value: '5',      label: 'Diagnostic and recovery tools' },
+                { value: '100%',   label: 'Data-guided progression' },
               ].map(({ value, label }) => (
                 <Box
                   key={label}
@@ -146,7 +154,7 @@ export default function TechnologySection() {
             <Box
               sx={{
                 display:             'grid',
-                gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' },
+                gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' },
                 gap:                 2.5,
               }}
             >
