@@ -36,7 +36,8 @@ export default function TrustBar() {
     <Box
       component="section"
       aria-label="Trust indicators"
-      sx={{ backgroundColor: BRAND.spaceNavy, py: { xs: 4, md: 5 } }}
+      className="section-navy"
+      sx={{ py: { xs: 4, md: 5 } }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         <Box

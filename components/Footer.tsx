@@ -62,7 +62,7 @@ export default function Footer() {
   return (
     <Box
       component="footer"
-      sx={{ backgroundColor: BRAND.luxBlue, color: BRAND.white }}
+      className="section-dark"
     >
       {/* ── Main Footer Content ────────────────────────────────────────── */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>

@@ -21,13 +21,14 @@ export default function CTABand({
   variant   = 'navy',
   showPhone = true,
 }: CTABandProps) {
-  const bg = variant === 'dark' ? BRAND.luxBlue : BRAND.spaceNavy;
+  const bgClass = variant === 'dark' ? 'section-dark' : 'section-navy';
 
   return (
     <Box
       component="section"
       aria-label="Request appointment"
-      sx={{ backgroundColor: bg, py: { xs: 8, md: 10 } }}
+      className={bgClass}
+      sx={{ py: { xs: 8, md: 10 } }}
     >
       <Container maxWidth="md" sx={{ px: { xs: 3, md: 4 }, textAlign: 'center' }}>
         {/* Serif accent */}
