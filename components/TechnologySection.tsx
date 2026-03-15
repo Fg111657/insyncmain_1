@@ -75,9 +75,9 @@ export default function TechnologySection() {
               variant="h2"
               sx={{ mb: 2.5, fontSize: { xs: '2rem', md: '2.5rem' } }}
             >
-              Objective Data.{' '}
+              Objective Testing.{' '}
               <Box component="span" sx={{ display: 'block' }}>
-                Smarter Rehab.
+                Real Progress.
               </Box>
             </Typography>
 
@@ -85,20 +85,17 @@ export default function TechnologySection() {
               variant="body1"
               sx={{ color: BRAND.gray500, lineHeight: 1.75, mb: 2.5 }}
             >
-              We use clinical-grade technology to measure your strength,
-              movement quality, and recovery progress. Not just how you feel.
-              That data guides every decision and tells us exactly when you are
-              ready to return to full activity.
+              Most clinics guess when you are ready to return to activity.
+              We measure it.
             </Typography>
 
             <Typography
               variant="body1"
               sx={{ color: BRAND.gray500, lineHeight: 1.75, mb: 4 }}
             >
-              VALD ForceDecks, HumanTrak motion capture, Normatec compression
-              therapy, Oxefit adaptive training, and Graston Technique are all
-              available at InSync to support the full arc from initial
-              evaluation through return to performance.
+              Force plates, motion capture, and strength testing show exactly
+              where you are in recovery and when you are ready to train again.
+              No guessing. No arbitrary timelines. Just data.
             </Typography>
 
             {/* Stat callouts */}

@@ -41,7 +41,7 @@ export default function InsuranceSection({ compact = false }: InsuranceSectionPr
               variant="h2"
               sx={{ mb: 2, fontSize: { xs: '2rem', md: '2.625rem' } }}
             >
-              We Accept Your Insurance
+              Insurance Made Simple.
             </Typography>
             <Typography
               variant="body1"
@@ -52,8 +52,9 @@ export default function InsuranceSection({ compact = false }: InsuranceSectionPr
                 lineHeight: 1.7,
               }}
             >
-              InSync is in-network with most major insurance plans. We verify
-              your benefits before your first appointment. No surprises.
+              Most major insurance plans accepted. We verify your coverage
+              before your first visit so you know exactly what to expect.
+              No surprise bills.
             </Typography>
           </Box>
         )}

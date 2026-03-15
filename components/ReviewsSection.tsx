@@ -80,6 +80,12 @@ export default function ReviewsSection() {
             >
               What Our Patients Say
             </Typography>
+            <Typography
+              variant="body1"
+              sx={{ color: BRAND.gray500, mt: 1.5, fontSize: '0.9375rem', lineHeight: 1.6 }}
+            >
+              Trusted by runners, lifters, fighters, and active New Yorkers.
+            </Typography>
           </Box>
 
           {/* Google Rating Summary */}

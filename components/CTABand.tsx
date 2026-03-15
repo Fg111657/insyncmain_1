@@ -43,7 +43,7 @@ export default function CTABand({
             letterSpacing: '0.01em',
           }}
         >
-          InSync Physical Therapy — NYC
+          InSync Physical Therapy, NYC
         </Typography>
 
         <Typography

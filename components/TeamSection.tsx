@@ -16,7 +16,7 @@ const TEAM = [
     title:       'Doctor of Physical Therapy',
     credentials: ['DPT', 'Touro University', '9+ Years Experience'],
     bio:
-      'Dr. Hassan is a Doctor of Physical Therapy with over nine years of clinical experience treating orthopedic injuries, sports-related conditions, and chronic pain in New York City. His approach combines evidence-based manual therapy, movement diagnostics, and individualized rehabilitation programs designed to get patients back to the activities they love, with lasting results.',
+      'Dr. Hassan has spent the last nine years helping New Yorkers recover from injuries and get back to the activities they care about. His approach combines hands-on treatment, strength testing, and movement analysis to solve the root cause of pain. Not just manage the symptoms.',
     specialties: [
       'Orthopedic Rehabilitation',
       'Sports Injury Recovery',

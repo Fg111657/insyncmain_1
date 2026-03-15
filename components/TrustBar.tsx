@@ -2,32 +2,32 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import SchoolIcon from '@mui/icons-material/School';
+import GroupsIcon from '@mui/icons-material/Groups';
+import BlockIcon from '@mui/icons-material/Block';
+import SportsIcon from '@mui/icons-material/Sports';
 import VerifiedIcon from '@mui/icons-material/Verified';
-import PersonIcon from '@mui/icons-material/Person';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { BRAND } from '@/lib/theme';
 
 const TRUST_ITEMS = [
   {
-    icon:    <SchoolIcon sx={{ fontSize: '1.5rem', color: BRAND.neoBlue }} />,
+    icon:    <GroupsIcon sx={{ fontSize: '1.5rem', color: BRAND.neoBlue }} />,
+    value:   '1-on-1',
+    label:   'Real one-on-one treatment, every session',
+  },
+  {
+    icon:    <BlockIcon sx={{ fontSize: '1.5rem', color: BRAND.neoBlue }} />,
+    value:   'No PT Mills',
+    label:   'No aides. No handoffs. Your therapist runs every visit.',
+  },
+  {
+    icon:    <SportsIcon sx={{ fontSize: '1.5rem', color: BRAND.neoBlue }} />,
     value:   '9+ Years',
-    label:   'Clinical Experience',
+    label:   'Treating ortho injuries and sports athletes in NYC',
   },
   {
     icon:    <VerifiedIcon sx={{ fontSize: '1.5rem', color: BRAND.neoBlue }} />,
-    value:   'DPT',
-    label:   'Doctor of Physical Therapy',
-  },
-  {
-    icon:    <PersonIcon sx={{ fontSize: '1.5rem', color: BRAND.neoBlue }} />,
-    value:   '1-on-1',
-    label:   'Personalized Care',
-  },
-  {
-    icon:    <LocationOnIcon sx={{ fontSize: '1.5rem', color: BRAND.neoBlue }} />,
-    value:   '2 Locations',
-    label:   'Brooklyn & Bryant Park',
+    value:   'Verified',
+    label:   'Insurance confirmed before your first visit',
   },
 ];
 

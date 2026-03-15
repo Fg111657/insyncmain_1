@@ -11,10 +11,10 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { BRAND } from '@/lib/theme';
 
 const TRUST_ITEMS = [
-  'Licensed Doctor of Physical Therapy',
-  'Nearly a Decade of Experience',
-  'Personalized Sessions, Every Visit',
-  'Most Major Insurance Plans',
+  'Real One-on-One Treatment Every Visit',
+  'Not a PT Mill',
+  'Sports and Orthopedic Rehab Specialists',
+  'Insurance Verified Before You Arrive',
 ];
 
 export default function HeroSection() {
@@ -146,7 +146,7 @@ export default function HeroSection() {
                 flexShrink:      0,
               }}
             />
-            Physical Therapy in Brooklyn &amp; Bryant Park, NYC
+            Brooklyn &amp; Bryant Park, NYC
           </Typography>
 
           {/* H1 */}
@@ -161,7 +161,7 @@ export default function HeroSection() {
               mb:            { xs: 2, md: 2.5 },
             }}
           >
-            Expert Rehab in NYC.
+            Physical Therapy for
             <Box
               component="span"
               sx={{
@@ -174,7 +174,7 @@ export default function HeroSection() {
                 lineHeight: 1.12,
               }}
             >
-              Care That Gets You Moving Again
+              Active New Yorkers.
             </Box>
           </Typography>
 
@@ -188,9 +188,11 @@ export default function HeroSection() {
               maxWidth:   520,
             }}
           >
-            Orthopedic injuries, sports recovery, chronic pain, and post-surgical rehab.
-            Guided by a licensed Doctor of Physical Therapy with nearly a decade of NYC
-            clinical experience.
+            Recover from injuries. Fix chronic pain. Get back to training.
+            <Box component="span" sx={{ display: 'block', mt: 1 }}>
+              Orthopedic rehab, sports injuries, and post-surgical recovery
+              in Brooklyn and Bryant Park. Built for people who want to move again.
+            </Box>
           </Typography>
 
           {/* Trust Checklist */}
@@ -262,7 +264,7 @@ export default function HeroSection() {
                 },
               }}
             >
-              Request Appointment
+              Book Your First Visit
             </Button>
 
             <Button
