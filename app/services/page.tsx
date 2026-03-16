@@ -158,7 +158,7 @@ export default function ServicesPage() {
                       borderRadius:    2,
                       px:              2,
                       py:              1.25,
-                      backgroundColor: '#F7F9FB',
+                      backgroundColor: BRAND.offWhite,
                       display:         'flex',
                       alignItems:      'center',
                       gap:             1,

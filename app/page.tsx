@@ -16,7 +16,7 @@ import NeighborhoodSEOBlock from '@/components/NeighborhoodSEOBlock';
 import CTABand from '@/components/CTABand';
 
 export const metadata: Metadata = {
-  title: 'Physical Therapy Brooklyn & Bryant Park | Sports Injury Rehab NYC',
+  title: 'Physical Therapy Brooklyn & Manhattan NYC | Sports Injury Rehab',
   description:
     'One-on-one physical therapy in Brooklyn and Bryant Park. Sports injury rehab, ACL recovery, BJJ rehab, and post-surgical care for active New Yorkers. Not a PT mill.',
   alternates: { canonical: 'https://insync-pt.com' },

@@ -184,7 +184,7 @@ export const LOCATION_BROOKLYN_SCHEMA = {
 export const LOCATION_BRYANT_PARK_SCHEMA = {
   '@context':      'https://schema.org',
   '@type':         ['MedicalBusiness', 'LocalBusiness'],
-  name:            'InSync Physical Therapy — Bryant Park',
+  name:            'InSync Physical Therapy — Manhattan',
   url:             'https://insync-pt.com/locations',
   telephone:       '+19294194643',
   medicalSpecialty: 'PhysicalTherapy',

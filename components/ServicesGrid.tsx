@@ -372,7 +372,7 @@ export default function ServicesGrid({
                   alignSelf:      'flex-start',
                   '&:hover': {
                     backgroundColor: 'transparent',
-                    color:           '#0AAFCC',
+                    color:           BRAND.neoBlueHover,
                     gap:             0.75,
                   },
                 }}

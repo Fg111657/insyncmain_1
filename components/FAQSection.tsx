@@ -65,7 +65,7 @@ export default function FAQSection({ compact = false, maxItems }: FAQSectionProp
       aria-label="Frequently asked questions"
       sx={{
         py:              { xs: compact ? 6 : 10, md: compact ? 8 : 14 },
-        backgroundColor: '#F7F9FB',
+        backgroundColor: BRAND.offWhite,
       }}
     >
       <Container maxWidth="md" sx={{ px: { xs: 3, md: 4 } }}>

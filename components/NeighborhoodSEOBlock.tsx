@@ -17,7 +17,7 @@ export default function NeighborhoodSEOBlock() {
       aria-label="Neighborhoods served"
       sx={{
         py:              { xs: 6, md: 8 },
-        backgroundColor: '#F7F9FB',
+        backgroundColor: BRAND.offWhite,
         borderTop:       `1px solid ${BRAND.gray200}`,
       }}
     >

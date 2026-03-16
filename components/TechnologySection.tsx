@@ -55,7 +55,7 @@ export default function TechnologySection() {
       aria-label="Technology and diagnostics"
       sx={{
         py:              { xs: 10, md: 14 },
-        backgroundColor: '#F7F9FB',
+        backgroundColor: BRAND.offWhite,
       }}
     >
       <Container maxWidth="lg">

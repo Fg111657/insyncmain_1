@@ -31,7 +31,7 @@ export default function PTMillSection() {
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         {/* Header */}
         <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
-          <Typography component="p" style={{ color: '#0EC5E6' }} sx={{
+          <Typography component="p" style={{ color: BRAND.neoBlue }} sx={{
             display:       'inline-flex',
             alignItems:    'center',
             gap:           0.75,
@@ -148,7 +148,7 @@ export default function PTMillSection() {
             }}
           >
             <Typography
-              style={{ color: '#0EC5E6' }}
+              style={{ color: BRAND.neoBlue }}
               sx={{
                 fontWeight:    700,
                 fontSize:      '0.75rem',

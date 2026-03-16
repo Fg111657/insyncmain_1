@@ -114,7 +114,7 @@ export default function WhoWeWorkWithSection() {
                 key={title}
                 component="article"
                 sx={{
-                  backgroundColor: '#F7F9FB',
+                  backgroundColor: BRAND.offWhite,
                   border:          `1px solid ${BRAND.gray200}`,
                   borderRadius:    3,
                   p:               { xs: 3, md: 3.5 },

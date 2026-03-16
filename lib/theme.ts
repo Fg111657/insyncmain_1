@@ -5,15 +5,22 @@ import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 // ─── Brand Palette ───────────────────────────────────────────────────────────
 // Source: InSync brand deck New Logo V2 + business card authority
 export const BRAND = {
-  spaceNavy: '#003D59',   // primary dark — headings, nav, dark sections
-  luxBlue:   '#00262A',   // deeper support / footer / overlay backgrounds
-  neoBlue:   '#0EC5E6',   // accent — CTAs, highlights, active states
-  white:     '#FFFFFF',   // dominant canvas
-  offWhite:  '#F7F9FB',   // subtle section alternator
-  gray100:   '#F3F4F6',
-  gray200:   '#E5E7EB',
-  gray500:   '#6B7280',
-  gray700:   '#374151',
+  // ── Core palette (source of truth — never hardcode these hex values inline)
+  spaceNavy:     '#003D59',   // primary dark — headings, nav, dark sections
+  luxBlue:       '#00262A',   // deeper support / footer / overlay backgrounds
+  obsidian:      '#001820',   // deepest dark — gradient endpoints, dark overlays
+  neoBlue:       '#0EC5E6',   // accent — CTAs, highlights, active states
+  neoBlueHover:  '#0AAFCC',   // neoBlue hover / pressed state
+  white:         '#FFFFFF',   // dominant canvas
+  offWhite:      '#F7F9FB',   // subtle section alternator
+  // ── Grays
+  gray100:       '#F3F4F6',
+  gray200:       '#E5E7EB',
+  gray500:       '#6B7280',
+  gray700:       '#374151',
+  // ── Semantic (use sparingly, only where listed)
+  starGold:      '#F59E0B',   // review star color only — do not use elsewhere
+  disabledBg:    '#B0BEC5',   // disabled button background only
 } as const;
 
 // ─── Font CSS Variables ───────────────────────────────────────────────────────
@@ -136,7 +143,7 @@ let theme = createTheme({
           backgroundColor: BRAND.neoBlue,
           color:           BRAND.white,
           '&:hover': {
-            backgroundColor: '#0AAFCC',
+            backgroundColor: BRAND.neoBlueHover,
             transform:       'translateY(-1px)',
             boxShadow:       '0 4px 16px rgba(14,197,230,0.3)',
           },

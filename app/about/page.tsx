@@ -243,7 +243,7 @@ export default function AboutPage() {
                         py:              0.625,
                         borderRadius:    2,
                         border:          `1px solid ${BRAND.gray200}`,
-                        backgroundColor: '#F7F9FB',
+                        backgroundColor: BRAND.offWhite,
                       }}
                     >
                       <Typography
@@ -263,7 +263,7 @@ export default function AboutPage() {
       {/* ── Treatment Philosophy ────────────────────────────────────── */}
       <Box
         component="section"
-        sx={{ py: { xs: 10, md: 14 }, backgroundColor: '#F7F9FB' }}
+        sx={{ py: { xs: 10, md: 14 }, backgroundColor: BRAND.offWhite }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <Box sx={{ mb: { xs: 6, md: 8 }, maxWidth: 560 }}>

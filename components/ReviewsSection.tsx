@@ -42,7 +42,7 @@ function StarRating({ count }: { count: number }) {
   return (
     <Box sx={{ display: 'flex', gap: 0.25 }}>
       {Array.from({ length: count }).map((_, i) => (
-        <StarIcon key={i} sx={{ fontSize: '0.9rem', color: '#F59E0B' }} />
+        <StarIcon key={i} sx={{ fontSize: '0.9rem', color: BRAND.starGold }} />
       ))}
     </Box>
   );
@@ -94,7 +94,7 @@ export default function ReviewsSection() {
               display:         'flex',
               alignItems:      'center',
               gap:             2,
-              backgroundColor: '#F7F9FB',
+              backgroundColor: BRAND.offWhite,
               border:          `1px solid ${BRAND.gray200}`,
               borderRadius:    3,
               px:              3,
@@ -174,7 +174,7 @@ export default function ReviewsSection() {
                 '&:hover': {
                   boxShadow:   `0 8px 32px rgba(0,61,89,0.07)`,
                   transform:   'translateY(-2px)',
-                  borderColor: '#E5E7EB',
+                  borderColor: BRAND.gray200,
                 },
               }}
             >
@@ -259,7 +259,7 @@ export default function ReviewsSection() {
               color:          BRAND.neoBlue,
               textDecoration: 'underline',
               textUnderlineOffset: 3,
-              '&:hover': { color: '#0AAFCC' },
+              '&:hover': { color: BRAND.neoBlueHover },
             }}
           >
             Read all reviews on Google

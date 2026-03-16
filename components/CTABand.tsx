@@ -97,7 +97,7 @@ export default function CTABand({
               borderRadius:    3,
               minWidth:        220,
               '&:hover': {
-                backgroundColor: '#0AAFCC',
+                backgroundColor: BRAND.neoBlueHover,
                 transform:       'translateY(-2px)',
                 boxShadow:       '0 8px 28px rgba(14,197,230,0.35)',
               },

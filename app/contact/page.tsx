@@ -46,7 +46,7 @@ const LOCATIONS_CONTACT = [
     maps:    'https://maps.google.com/?q=1081+Gates+Ave+Brooklyn+NY+11221',
   },
   {
-    name:    'Bryant Park',
+    name:    'Manhattan',
     address: '55 W 39th St, 3rd Floor, Suite 303, New York, NY 10018',
     maps:    'https://maps.google.com/?q=55+W+39th+St+New+York+NY+10018',
   },
@@ -146,7 +146,7 @@ export default function ContactPage() {
                     border:          `1px solid ${BRAND.gray200}`,
                     borderRadius:    4,
                     p:               { xs: 3, md: 4 },
-                    backgroundColor: '#F7F9FB',
+                    backgroundColor: BRAND.offWhite,
                     mb:              3,
                   }}
                 >
@@ -215,7 +215,7 @@ export default function ContactPage() {
                     border:          `1px solid ${BRAND.gray200}`,
                     borderRadius:    4,
                     p:               { xs: 3, md: 4 },
-                    backgroundColor: '#F7F9FB',
+                    backgroundColor: BRAND.offWhite,
                     mb:              3,
                   }}
                 >
@@ -268,7 +268,7 @@ export default function ContactPage() {
                               color:          BRAND.neoBlue,
                               textDecoration: 'underline',
                               textUnderlineOffset: 2,
-                              '&:hover': { color: '#0AAFCC' },
+                              '&:hover': { color: BRAND.neoBlueHover },
                             }}
                           >
                             Get directions →

@@ -125,7 +125,7 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
                   sx={{
                     position:        'relative',
                     height:          { xs: 280, sm: 320, md: 300 },
-                    backgroundColor: '#F3F4F6',
+                    backgroundColor: BRAND.gray100,
                     overflow:        'hidden',
                     flexShrink:      0,
                   }}
@@ -256,7 +256,7 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
                             py:              0.375,
                             borderRadius:    1,
                             border:          `1px solid ${BRAND.gray200}`,
-                            backgroundColor: '#F7F9FB',
+                            backgroundColor: BRAND.offWhite,
                           }}
                         >
                           <Typography

@@ -9,7 +9,7 @@ import { BRAND } from '@/lib/theme';
 import { LOCATION_BROOKLYN_SCHEMA, LOCATION_BRYANT_PARK_SCHEMA } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Physical Therapy Locations — Brooklyn & Bryant Park NYC',
+  title: 'Physical Therapy Locations — Brooklyn & Manhattan NYC',
   description:
     'InSync Physical Therapy has two NYC locations: 1081 Gates Ave in Brooklyn and 55 W 39th St in Bryant Park, Midtown Manhattan. Accepting new patients. Insurance verified before your first visit.',
   alternates: { canonical: 'https://insync-pt.com/locations' },
@@ -82,7 +82,7 @@ export default function LocationsPage() {
                 lineHeight: 1.1,
               }}
             >
-              Physical Therapy in Brooklyn and Bryant Park
+              Physical Therapy in Brooklyn and Manhattan
             </Typography>
             <Typography
               variant="body1"

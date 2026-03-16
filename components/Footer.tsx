@@ -85,7 +85,7 @@ export default function Footer() {
               <Box>
                 <Typography
                   component="span"
-                  style={{ color: '#FFFFFF' }}
+                  style={{ color: BRAND.white }}
                   sx={{
                     display:       'block',
                     fontWeight:    800,
@@ -178,7 +178,7 @@ export default function Footer() {
 
           {/* ── Services Column ────────────────────────────── */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography component="span" style={{ color: '#0EC5E6' }} sx={colHeadingSx}>
+            <Typography component="span" style={{ color: BRAND.neoBlue }} sx={colHeadingSx}>
               Services
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -192,7 +192,7 @@ export default function Footer() {
 
           {/* ── Quick Links + Locations Column ────────────── */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography component="span" style={{ color: '#0EC5E6' }} sx={colHeadingSx}>
+            <Typography component="span" style={{ color: BRAND.neoBlue }} sx={colHeadingSx}>
               Quick Links
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', mb: 4 }}>
@@ -203,7 +203,7 @@ export default function Footer() {
               ))}
             </Box>
 
-            <Typography component="span" style={{ color: '#0EC5E6' }} sx={colHeadingSx}>
+            <Typography component="span" style={{ color: BRAND.neoBlue }} sx={colHeadingSx}>
               Locations
             </Typography>
             <Typography
@@ -222,7 +222,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               sx={{ ...linkSx, fontWeight: 500 }}
             >
-              Bryant Park: 55 W 39th St
+              Manhattan: 55 W 39th St
             </Typography>
           </Grid>
         </Grid>

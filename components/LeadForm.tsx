@@ -14,7 +14,7 @@ import { BRAND } from '@/lib/theme';
 
 const LOCATIONS = [
   { value: 'brooklyn',     label: 'Brooklyn — 1081 Gates Ave'                    },
-  { value: 'bryant-park',  label: 'Bryant Park — 55 W 39th St, Suite 303'        },
+  { value: 'bryant-park',  label: 'Manhattan — 55 W 39th St, Suite 303'        },
   { value: 'either',       label: 'Either location is fine'                      },
 ];
 
@@ -266,12 +266,12 @@ export default function LeadForm() {
             fontSize:        '1.0625rem',
             borderRadius:    2,
             '&:hover': {
-              backgroundColor: '#0AAFCC',
+              backgroundColor: BRAND.neoBlueHover,
               transform:       'translateY(-1px)',
               boxShadow:       '0 6px 24px rgba(14,197,230,0.3)',
             },
             '&:disabled': {
-              backgroundColor: '#B0BEC5',
+              backgroundColor: BRAND.disabledBg,
               color:           BRAND.white,
             },
           }}

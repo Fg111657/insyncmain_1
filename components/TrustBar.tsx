@@ -66,7 +66,7 @@ export default function TrustBar() {
             >
               {icon}
               <Typography
-                style={{ color: '#FFFFFF' }}
+                style={{ color: BRAND.white }}
                 sx={{
                   fontWeight:    800,
                   fontSize:      { xs: '1.5rem', md: '1.75rem' },

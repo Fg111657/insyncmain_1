@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { BRAND } from '@/lib/theme';
 
 interface LogoItem {
   name: string;
@@ -29,7 +30,7 @@ export default function LogoCarousel({
   items,
   tileHeight = 72,
   duration   = 28,
-  tileBg     = '#FFFFFF',
+  tileBg     = BRAND.white,
 }: LogoCarouselProps) {
   // Duplicate for seamless infinite loop
   const doubled = [...items, ...items];
@@ -53,11 +54,11 @@ export default function LogoCarousel({
         },
         '&::before': {
           left:       0,
-          background: `linear-gradient(to right, ${tileBg === '#FFFFFF' ? '#F7F9FB' : tileBg}, transparent)`,
+          background: `linear-gradient(to right, ${tileBg === BRAND.white ? BRAND.offWhite : tileBg}, transparent)`,
         },
         '&::after': {
           right:      0,
-          background: `linear-gradient(to left, ${tileBg === '#FFFFFF' ? '#F7F9FB' : tileBg}, transparent)`,
+          background: `linear-gradient(to left, ${tileBg === BRAND.white ? BRAND.offWhite : tileBg}, transparent)`,
         },
         // Pause on hover
         '&:hover .carousel-track': {

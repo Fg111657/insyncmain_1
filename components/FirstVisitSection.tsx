@@ -133,7 +133,7 @@ export default function FirstVisitSection() {
                 <Box>
                   <Typography
                     component="h3"
-                    style={{ color: '#FFFFFF' }}
+                    style={{ color: BRAND.white }}
                     sx={{
                       fontWeight: 700,
                       fontSize:   { xs: '1rem', md: '1.0625rem' },

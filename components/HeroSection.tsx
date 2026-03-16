@@ -44,8 +44,8 @@ export default function HeroSection() {
           inset:    0,
           zIndex:   0,
           background: {
-            xs: `linear-gradient(160deg, #001d22 0%, #003D59 55%, #002f45 100%)`,
-            md: `linear-gradient(100deg, #001a1f 0%, #00262A 40%, #003D59 70%, transparent 100%)`,
+            xs: `linear-gradient(160deg, ${BRAND.obsidian} 0%, ${BRAND.spaceNavy} 55%, ${BRAND.spaceNavy} 100%)`,
+            md: `linear-gradient(100deg, ${BRAND.obsidian} 0%, ${BRAND.luxBlue} 40%, ${BRAND.spaceNavy} 70%, transparent 100%)`,
           },
         }}
       />
@@ -76,7 +76,7 @@ export default function HeroSection() {
           sx={{
             position:   'absolute',
             inset:      0,
-            background: 'linear-gradient(to right, #00262A 0%, rgba(0,38,42,0.55) 30%, rgba(0,38,42,0.1) 70%, transparent 100%)',
+            background: `linear-gradient(to right, ${BRAND.luxBlue} 0%, rgba(0,38,42,0.55) 30%, rgba(0,38,42,0.1) 70%, transparent 100%)`,
           }}
         />
         {/* Top + bottom fade */}
@@ -84,7 +84,7 @@ export default function HeroSection() {
           sx={{
             position:   'absolute',
             inset:      0,
-            background: 'linear-gradient(to bottom, #00262A 0%, transparent 12%, transparent 88%, #00262A 100%)',
+            background: `linear-gradient(to bottom, ${BRAND.luxBlue} 0%, transparent 12%, transparent 88%, ${BRAND.luxBlue} 100%)`,
           }}
         />
       </Box>
@@ -164,13 +164,13 @@ export default function HeroSection() {
                 flexShrink:      0,
               }}
             />
-            Brooklyn &amp; Bryant Park, NYC
+            Brooklyn &amp; Manhattan, NYC
           </Typography>
 
           {/* H1 */}
           <Typography
             component="h1"
-            style={{ color: '#FFFFFF' }}
+            style={{ color: BRAND.white }}
             sx={{
               fontWeight:    800,
               fontSize:      { xs: '2.25rem', sm: '2.875rem', md: '3.25rem', lg: '3.75rem' },
@@ -209,7 +209,7 @@ export default function HeroSection() {
             Recover from injuries. Fix chronic pain. Get back to training.
             <Box component="span" sx={{ display: 'block', mt: 1 }}>
               Orthopedic rehab, sports injuries, and post-surgical recovery
-              in Brooklyn and Bryant Park. Built for people who want to move again.
+              in Brooklyn and Manhattan. Built for people who want to move again.
             </Box>
           </Typography>
 
@@ -267,7 +267,7 @@ export default function HeroSection() {
               disableElevation
               sx={{
                 backgroundColor: BRAND.neoBlue,
-                color:           '#001820',
+                color:           BRAND.obsidian,
                 fontWeight:      700,
                 px:              { xs: 3, md: 4 },
                 py:              1.875,
@@ -276,7 +276,7 @@ export default function HeroSection() {
                 textTransform:   'none',
                 letterSpacing:   '0.01em',
                 '&:hover': {
-                  backgroundColor: '#0AAFCC',
+                  backgroundColor: BRAND.neoBlueHover,
                   transform:       'translateY(-2px)',
                   boxShadow:       '0 8px 28px rgba(14,197,230,0.4)',
                 },

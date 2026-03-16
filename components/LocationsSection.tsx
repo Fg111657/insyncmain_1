@@ -31,7 +31,7 @@ const LOCATIONS = [
   },
   {
     id:           'bryant-park',
-    name:         'Bryant Park',
+    name:         'Manhattan',
     address:      '55 W 39th St, 3rd Floor, Suite 303',
     city:         'New York, NY 10018',
     photo:        LOCATION_PHOTOS.bryantPark,
@@ -205,7 +205,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                     </Box>
                     <Typography
                       component="h3"
-                      style={{ color: '#FFFFFF' }}
+                      style={{ color: BRAND.white }}
                       sx={{
                         fontWeight: 700,
                         fontSize:   '1.25rem',
@@ -219,7 +219,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                   {/* Address */}
                   <Box sx={{ mb: 3 }}>
                     <Typography
-                      style={{ color: '#FFFFFF' }}
+                      style={{ color: BRAND.white }}
                       sx={{
                         fontWeight:  600,
                         fontSize:    '1rem',
@@ -340,7 +340,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                         fontWeight:      600,
                         px:              2.5,
                         '&:hover': {
-                          backgroundColor: '#0AAFCC',
+                          backgroundColor: BRAND.neoBlueHover,
                           transform:       'translateY(-1px)',
                         },
                       }}

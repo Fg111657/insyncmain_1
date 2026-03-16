@@ -250,7 +250,7 @@ export default function Navigation() {
                 disableElevation
                 sx={{
                   backgroundColor: BRAND.neoBlue,
-                  color:           '#001820',
+                  color:           BRAND.obsidian,
                   fontWeight:      700,
                   px:              2.5,
                   py:              1.125,
@@ -260,7 +260,7 @@ export default function Navigation() {
                   letterSpacing:   '0.01em',
                   transition:      'background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease',
                   '&:hover': {
-                    backgroundColor: '#0AAFCC',
+                    backgroundColor: BRAND.neoBlueHover,
                     transform:       'translateY(-1px)',
                     boxShadow:       '0 4px 16px rgba(14,197,230,0.35)',
                   },
@@ -364,13 +364,13 @@ export default function Navigation() {
             onClick={() => setDrawerOpen(false)}
             sx={{
               backgroundColor: BRAND.neoBlue,
-              color:           '#001820',
+              color:           BRAND.obsidian,
               fontWeight:      700,
               py:              1.75,
               fontSize:        '1rem',
               textTransform:   'none',
               borderRadius:    1,
-              '&:hover': { backgroundColor: '#0AAFCC' },
+              '&:hover': { backgroundColor: BRAND.neoBlueHover },
             }}
           >
             Request Appointment
@@ -417,7 +417,7 @@ export default function Navigation() {
             Brooklyn: 1081 Gates Ave, NY 11221
           </Typography>
           <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, mt: 0.5 }}>
-            Bryant Park: 55 W 39th St, Suite 303, NY 10018
+            Manhattan: 55 W 39th St, Suite 303, NY 10018
           </Typography>
         </Box>
       </Drawer>
