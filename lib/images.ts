@@ -62,6 +62,12 @@ export const OFFICE_PHOTOS = {
     r('/assets/hassan-pt/photos/office/office-treatment-room-window-02.jpg'),
 } as const;
 
+// ─── Location / neighborhood photos ──────────────────────────────────────────
+export const LOCATION_PHOTOS = {
+  brooklyn:   r('/assets/locations/brooklyn-neighborhood.jpg'),
+  bryantPark: r('/assets/locations/bryant-park-midtown.jpg'),
+} as const;
+
 // ─── Convenience re-exports grouped by use case ───────────────────────────────
 export const SECTION_IMAGES = {
   // HeroSection — right panel (desktop only)

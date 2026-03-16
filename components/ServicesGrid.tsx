@@ -220,11 +220,23 @@ export default function ServicesGrid({
                     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover', objectPosition: 'center 25%' }}
                   />
+                  {/* Multi-stop gradient: subtle teal tint at top → deep navy at bottom */}
                   <Box
                     sx={{
                       position:   'absolute',
                       inset:      0,
-                      background: 'linear-gradient(to bottom, transparent 50%, rgba(0,38,42,0.3) 100%)',
+                      background: 'linear-gradient(160deg, rgba(14,197,230,0.08) 0%, transparent 40%, rgba(0,38,42,0.72) 100%)',
+                    }}
+                  />
+                  {/* Bottom scrim so card title reads cleanly */}
+                  <Box
+                    sx={{
+                      position:   'absolute',
+                      bottom:     0,
+                      left:       0,
+                      right:      0,
+                      height:     '55%',
+                      background: 'linear-gradient(to bottom, transparent 0%, rgba(0,30,36,0.85) 100%)',
                     }}
                   />
                 </Box>

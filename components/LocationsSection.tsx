@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -11,6 +12,7 @@ import DirectionsIcon from '@mui/icons-material/Directions';
 import SubwayIcon from '@mui/icons-material/DirectionsSubway';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { BRAND } from '@/lib/theme';
+import { LOCATION_PHOTOS } from '@/lib/images';
 
 const LOCATIONS = [
   {
@@ -18,6 +20,8 @@ const LOCATIONS = [
     name:         'Brooklyn',
     address:      '1081 Gates Ave',
     city:         'Brooklyn, NY 11221',
+    photo:        LOCATION_PHOTOS.brooklyn,
+    photoAlt:     'Brooklyn neighborhood brownstones',
     mapsUrl:      'https://maps.google.com/?q=1081+Gates+Ave+Brooklyn+NY+11221',
     mapEmbed:     'https://maps.google.com/maps?q=1081+Gates+Ave,Brooklyn,NY+11221&t=&z=15&ie=UTF8&iwloc=&output=embed',
     phone:        '929-419-4643',
@@ -30,6 +34,8 @@ const LOCATIONS = [
     name:         'Bryant Park',
     address:      '55 W 39th St, 3rd Floor, Suite 303',
     city:         'New York, NY 10018',
+    photo:        LOCATION_PHOTOS.bryantPark,
+    photoAlt:     'Bryant Park, Midtown Manhattan',
     mapsUrl:      'https://maps.google.com/?q=55+W+39th+St+New+York+NY+10018',
     mapEmbed:     'https://maps.google.com/maps?q=55+W+39th+St,New+York,NY+10018&t=&z=15&ie=UTF8&iwloc=&output=embed',
     phone:        '929-419-4643',
@@ -95,7 +101,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
         )}
 
         <Grid container spacing={{ xs: 3, md: 4 }}>
-          {LOCATIONS.map(({ id, name, address, city, mapsUrl, mapEmbed, phone, transit, neighborhoods, notes }) => (
+          {LOCATIONS.map(({ id, name, address, city, photo, photoAlt, mapsUrl, mapEmbed, phone, transit, neighborhoods, notes }) => (
             <Grid key={id} item xs={12} md={6}>
               <Box
                 sx={{
@@ -113,13 +119,65 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                   },
                 }}
               >
-                {/* Google Maps Embed */}
-                <Box sx={{ position: 'relative', width: '100%', height: 200, flexShrink: 0 }}>
+                {/* Neighborhood hero photo */}
+                <Box sx={{ position: 'relative', width: '100%', height: 220, flexShrink: 0, overflow: 'hidden' }}>
+                  <Image
+                    src={photo}
+                    alt={photoAlt}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 50vw"
+                    style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
+                  />
+                  {/* Teal-to-navy gradient overlay — ties photo to brand palette */}
+                  <Box
+                    sx={{
+                      position:   'absolute',
+                      inset:      0,
+                      background: 'linear-gradient(135deg, rgba(14,197,230,0.15) 0%, rgba(0,38,42,0.55) 60%, rgba(0,29,34,0.82) 100%)',
+                    }}
+                  />
+                  {/* Bottom fade into card body */}
+                  <Box
+                    sx={{
+                      position:   'absolute',
+                      bottom:     0,
+                      left:       0,
+                      right:      0,
+                      height:     '40%',
+                      background: 'linear-gradient(to bottom, transparent, rgba(0,22,28,0.9))',
+                    }}
+                  />
+                  {/* Location badge pinned to photo bottom-left */}
+                  <Box
+                    sx={{
+                      position:    'absolute',
+                      bottom:      14,
+                      left:        16,
+                      display:     'flex',
+                      alignItems:  'center',
+                      gap:         0.75,
+                      px:          1.5,
+                      py:          0.5,
+                      borderRadius: 2,
+                      backgroundColor: 'rgba(14,197,230,0.18)',
+                      backdropFilter:  'blur(6px)',
+                      border:          '1px solid rgba(14,197,230,0.3)',
+                    }}
+                  >
+                    <LocationOnIcon sx={{ color: BRAND.neoBlue, fontSize: '0.9rem' }} />
+                    <Typography sx={{ color: BRAND.white, fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.04em' }}>
+                      {name}
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* Google Maps Embed (collapsed, accessible) */}
+                <Box sx={{ position: 'relative', width: '100%', height: 160, flexShrink: 0 }}>
                   <iframe
                     src={mapEmbed}
                     width="100%"
-                    height="200"
-                    style={{ border: 0, display: 'block', filter: 'grayscale(20%) contrast(1.05)' }}
+                    height="160"
+                    style={{ border: 0, display: 'block', filter: 'grayscale(30%) contrast(1.05) brightness(0.9)' }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
