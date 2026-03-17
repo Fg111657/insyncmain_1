@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
+import { FAQ_SCHEMA } from '@/lib/schema';
 import HeroSection from '@/components/HeroSection';
 import TrustBar from '@/components/TrustBar';
 import PTMillSection from '@/components/PTMillSection';
@@ -25,6 +27,12 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
+
       {/* 1. Hero — Physical Therapy for Active New Yorkers */}
       <HeroSection />
 
