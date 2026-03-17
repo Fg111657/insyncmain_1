@@ -4,6 +4,7 @@ import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 // ─── Brand Palette ───────────────────────────────────────────────────────────
 // Source: InSync brand deck New Logo V2 + business card authority
+// eslint-disable-next-line no-restricted-syntax -- this IS the token definition file; hex values are intentional here
 export const BRAND = {
   // ── Core palette (source of truth — never hardcode these hex values inline)
   spaceNavy:     '#003D59',   // primary dark — headings, nav, dark sections
