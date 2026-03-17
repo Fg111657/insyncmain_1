@@ -8,6 +8,7 @@ import ReviewsSection from '@/components/ReviewsSection';
 import FAQSection from '@/components/FAQSection';
 import CTABand from '@/components/CTABand';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import MotionSection from '@/components/MotionSection';
 import { BRAND } from '@/lib/theme';
 
 export const metadata: Metadata = {
@@ -61,7 +62,7 @@ export default function InsurancePage() {
         component="section"
         sx={{
           backgroundColor: BRAND.spaceNavy,
-          py:              { xs: 10, md: 14 },
+          py:              { xs: 8, md: 12 },
         }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
@@ -112,10 +113,11 @@ export default function InsurancePage() {
       <InsuranceSection compact={false} />
 
       {/* ── What to Know ────────────────────────────────────────── */}
-      <Box sx={{ py: { xs: 10, md: 14 }, backgroundColor: BRAND.spaceNavy }}>
+      <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.spaceNavy }}>
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <Grid container spacing={{ xs: 6, md: 10 }} alignItems="center">
             <Grid item xs={12} md={6}>
+              <MotionSection>
               <Typography
                 component="p"
                 sx={{
@@ -172,12 +174,15 @@ export default function InsurancePage() {
                   </Box>
                 ))}
               </Box>
+              </MotionSection>
             </Grid>
 
             {/* Process Steps */}
             <Grid item xs={12} md={6}>
+              <MotionSection variant="list">
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                 {PROCESS_STEPS.map(({ step, title, body }) => (
+                  <MotionSection key={step} variant="item">
                   <Box
                     key={step}
                     sx={{
@@ -231,8 +236,10 @@ export default function InsurancePage() {
                       </Typography>
                     </Box>
                   </Box>
+                  </MotionSection>
                 ))}
               </Box>
+              </MotionSection>
             </Grid>
           </Grid>
         </Container>

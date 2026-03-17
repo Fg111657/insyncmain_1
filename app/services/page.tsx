@@ -8,6 +8,7 @@ import TechnologySection from '@/components/TechnologySection';
 import FAQSection from '@/components/FAQSection';
 import CTABand from '@/components/CTABand';
 import ConditionsCarousel from '@/components/ConditionsCarousel';
+import MotionSection from '@/components/MotionSection';
 import { BRAND } from '@/lib/theme';
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export default function ServicesPage() {
         sx={{
           position:        'relative',
           backgroundColor: BRAND.spaceNavy,
-          py:              { xs: 10, md: 14 },
+          py:              { xs: 8, md: 12 },
           overflow:        'hidden',
         }}
       >
@@ -103,7 +104,7 @@ export default function ServicesPage() {
       <Box
         component="section"
         aria-label="Conditions treated"
-        sx={{ py: { xs: 10, md: 12 }, backgroundColor: BRAND.white }}
+        sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.white }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <Box
@@ -114,6 +115,7 @@ export default function ServicesPage() {
               alignItems: 'start',
             }}
           >
+            <MotionSection>
             <Box>
               <Typography component="p" className="overline" sx={{ mb: 2 }}>
                 Conditions Treated
@@ -133,10 +135,13 @@ export default function ServicesPage() {
                 if we can help, we will tell you directly.
               </Typography>
             </Box>
+            </MotionSection>
 
+            <MotionSection delay={0.1}>
             <Box>
               <ConditionsCarousel onLight />
             </Box>
+            </MotionSection>
           </Box>
         </Container>
       </Box>

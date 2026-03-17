@@ -8,6 +8,8 @@ import Chip from '@mui/material/Chip';
 import TeamSection from '@/components/TeamSection';
 import CTABand from '@/components/CTABand';
 import { BRAND } from '@/lib/theme';
+import { BLUR_PLACEHOLDER } from '@/lib/images';
+import MotionSection from '@/components/MotionSection';
 import { PHYSICIAN_SCHEMA } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -50,7 +52,7 @@ export default function AboutPage() {
         component="section"
         sx={{
           backgroundColor: BRAND.spaceNavy,
-          py:              { xs: 10, md: 14 },
+          py:              { xs: 8, md: 12 },
           position:        'relative',
           overflow:        'hidden',
         }}
@@ -102,12 +104,13 @@ export default function AboutPage() {
       {/* ── Dr. Hassan Feature ─────────────────────────────────────── */}
       <Box
         component="section"
-        sx={{ py: { xs: 10, md: 16 }, backgroundColor: BRAND.white }}
+        sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.white }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <Grid container spacing={{ xs: 6, md: 10 }} alignItems="center">
             {/* Photo */}
             <Grid item xs={12} md={5}>
+              <MotionSection>
               <Box
                 sx={{
                   borderRadius: 4,
@@ -123,6 +126,8 @@ export default function AboutPage() {
                   fill
                   priority
                   sizes="(max-width: 900px) 100vw, 45vw"
+                  placeholder="blur"
+                  blurDataURL={BLUR_PLACEHOLDER}
                   style={{ objectFit: 'cover', objectPosition: 'center top' }}
                 />
                 {/* Credential badge overlay */}
@@ -167,10 +172,12 @@ export default function AboutPage() {
                   </Box>
                 </Box>
               </Box>
+              </MotionSection>
             </Grid>
 
             {/* Content */}
             <Grid item xs={12} md={7}>
+              <MotionSection delay={0.1}>
               <Typography component="p" className="overline" sx={{ mb: 2 }}>
                 Lead Clinician
               </Typography>
@@ -255,6 +262,7 @@ export default function AboutPage() {
                   ))}
                 </Box>
               </Box>
+              </MotionSection>
             </Grid>
           </Grid>
         </Container>
@@ -263,9 +271,10 @@ export default function AboutPage() {
       {/* ── Treatment Philosophy ────────────────────────────────────── */}
       <Box
         component="section"
-        sx={{ py: { xs: 10, md: 14 }, backgroundColor: BRAND.offWhite }}
+        sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.offWhite }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
+          <MotionSection>
           <Box sx={{ mb: { xs: 6, md: 8 }, maxWidth: 560 }}>
             <Typography component="p" className="overline" sx={{ mb: 2 }}>
               Our Approach
@@ -285,7 +294,9 @@ export default function AboutPage() {
               evaluation through discharge.
             </Typography>
           </Box>
+          </MotionSection>
 
+          <MotionSection variant="list">
           <Box
             sx={{
               display:             'grid',
@@ -294,6 +305,7 @@ export default function AboutPage() {
             }}
           >
             {PHILOSOPHY_PILLARS.map(({ title, body }) => (
+              <MotionSection key={title} variant="item">
               <Box
                 key={title}
                 sx={{
@@ -335,8 +347,10 @@ export default function AboutPage() {
                   {body}
                 </Typography>
               </Box>
+              </MotionSection>
             ))}
           </Box>
+          </MotionSection>
         </Container>
       </Box>
 
@@ -346,9 +360,10 @@ export default function AboutPage() {
       {/* ── Clinic Photos ───────────────────────────────────────────── */}
       <Box
         component="section"
-        sx={{ py: { xs: 8, md: 12 }, backgroundColor: BRAND.white }}
+        sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.white }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
+          <MotionSection>
           <Typography component="p" className="overline" sx={{ mb: 2 }}>
             The Clinic
           </Typography>
@@ -358,6 +373,8 @@ export default function AboutPage() {
           >
             A Clean, Private Environment
           </Typography>
+          </MotionSection>
+          <MotionSection variant="list">
           <Box
             sx={{
               display:             'grid',
@@ -370,6 +387,7 @@ export default function AboutPage() {
               '/assets/hassan-pt/photos/office/office-treatment-room-window-01.jpg',
               '/assets/hassan-pt/photos/office/office-treatment-room-window-02.jpg',
             ].map((src, i) => (
+              <MotionSection key={src} variant="item">
               <Box
                 key={src}
                 sx={{
@@ -385,11 +403,15 @@ export default function AboutPage() {
                   alt={`InSync Physical Therapy clinic — treatment room ${i + 1}`}
                   fill
                   sizes="(max-width: 600px) 100vw, 33vw"
+                  placeholder="blur"
+                  blurDataURL={BLUR_PLACEHOLDER}
                   style={{ objectFit: 'cover' }}
                 />
               </Box>
+              </MotionSection>
             ))}
           </Box>
+          </MotionSection>
         </Container>
       </Box>
 

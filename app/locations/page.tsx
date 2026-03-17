@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import LocationsSection from '@/components/LocationsSection';
 import CTABand from '@/components/CTABand';
 import FAQSection from '@/components/FAQSection';
+import MotionSection from '@/components/MotionSection';
 import { BRAND } from '@/lib/theme';
 import { LOCATION_BROOKLYN_SCHEMA, LOCATION_BRYANT_PARK_SCHEMA } from '@/lib/schema';
 
@@ -54,7 +55,7 @@ export default function LocationsPage() {
         component="section"
         sx={{
           backgroundColor: BRAND.spaceNavy,
-          py:              { xs: 10, md: 14 },
+          py:              { xs: 8, md: 12 },
         }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
@@ -104,8 +105,9 @@ export default function LocationsPage() {
       <LocationsSection compact={false} />
 
       {/* ── Location-specific FAQ ────────────────────────────────── */}
-      <Box sx={{ py: { xs: 10, md: 14 }, backgroundColor: BRAND.white }}>
+      <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.white }}>
         <Container maxWidth="md" sx={{ px: { xs: 3, md: 4 } }}>
+          <MotionSection>
           <Typography
             component="p"
             className="overline"
@@ -119,9 +121,12 @@ export default function LocationsPage() {
           >
             Common Questions About Our Locations
           </Typography>
+          </MotionSection>
 
+          <MotionSection variant="list">
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
             {LOCATION_FAQS.map(({ q, a }) => (
+              <MotionSection key={q} variant="item">
               <Box
                 key={q}
                 sx={{
@@ -150,8 +155,10 @@ export default function LocationsPage() {
                   {a}
                 </Typography>
               </Box>
+              </MotionSection>
             ))}
           </Box>
+          </MotionSection>
         </Container>
       </Box>
 
