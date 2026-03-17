@@ -13,6 +13,7 @@ import SubwayIcon from '@mui/icons-material/DirectionsSubway';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { BRAND } from '@/lib/theme';
 import { LOCATION_PHOTOS, BLUR_PLACEHOLDER } from '@/lib/images';
+import MotionSection from '@/components/MotionSection';
 
 const LOCATIONS = [
   {
@@ -57,11 +58,12 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
       aria-label="Our locations"
       className="section-navy"
       sx={{
-        py: { xs: compact ? 6 : 10, md: compact ? 8 : 14 },
+        py: { xs: compact ? 4 : 6, md: compact ? 6 : 10 },
       }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         {!compact && (
+          <MotionSection>
           <Box sx={{ mb: { xs: 6, md: 8 }, textAlign: 'center' }}>
             <Typography
               component="p"
@@ -98,11 +100,14 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
               Brooklyn and Manhattan. Accessible from across the city.
             </Typography>
           </Box>
+          </MotionSection>
         )}
 
+        <MotionSection variant="list">
         <Grid container spacing={{ xs: 3, md: 4 }}>
           {LOCATIONS.map(({ id, name, address, city, photo, photoAlt, mapsUrl, mapEmbed, phone, transit, neighborhoods, notes }) => (
             <Grid key={id} item xs={12} md={6}>
+              <MotionSection key={id} variant="item">
               <Box
                 sx={{
                   border:          '1px solid rgba(255,255,255,0.12)',
@@ -371,9 +376,11 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                   </Box>
                 </Box>
               </Box>
+              </MotionSection>
             </Grid>
           ))}
         </Grid>
+        </MotionSection>
 
         {compact && (
           <Box sx={{ textAlign: 'center', mt: 4 }}>

@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import LogoCarousel from '@/components/LogoCarousel';
 import { BRAND } from '@/lib/theme';
+import MotionSection from '@/components/MotionSection';
 
 const INSURERS = [
   { name: 'Aetna',                 logo: '/assets/logo-badges/Aetna_standard_logo.png'                },
@@ -27,12 +28,13 @@ export default function InsuranceSection({ compact = false }: InsuranceSectionPr
       id="insurance"
       aria-label="Accepted insurance"
       sx={{
-        py:              { xs: compact ? 6 : 10, md: compact ? 8 : 14 },
+        py:              { xs: compact ? 4 : 6, md: compact ? 6 : 10 },
         backgroundColor: BRAND.white,
       }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         {!compact && (
+          <MotionSection>
           <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
             <Typography component="p" className="overline" sx={{ mb: 2 }}>
               Insurance
@@ -57,6 +59,7 @@ export default function InsuranceSection({ compact = false }: InsuranceSectionPr
               No surprise bills.
             </Typography>
           </Box>
+          </MotionSection>
         )}
 
         {compact && (

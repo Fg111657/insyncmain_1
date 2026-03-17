@@ -55,7 +55,7 @@ export default function ReviewsSection() {
       component="section"
       aria-label="Patient reviews"
       sx={{
-        py:              { xs: 10, md: 14 },
+        py:              { xs: 6, md: 10 },
         backgroundColor: BRAND.offWhite,
       }}
     >

@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import { BRAND } from '@/lib/theme';
 import { BLUR_PLACEHOLDER } from '@/lib/images';
+import MotionSection from '@/components/MotionSection';
 
 const TEAM = [
   {
@@ -74,12 +75,13 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
       id="team"
       aria-label="Our team"
       sx={{
-        py:              { xs: compact ? 6 : 10, md: compact ? 8 : 14 },
+        py:              { xs: compact ? 4 : 6, md: compact ? 6 : 10 },
         backgroundColor: BRAND.white,
       }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         {!compact && (
+          <MotionSection>
           <Box sx={{ mb: { xs: 6, md: 9 }, maxWidth: 600 }}>
             <Typography component="p" className="overline" sx={{ mb: 2 }}>
               Our Team
@@ -98,11 +100,14 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
               active life, from injury through full return to performance.
             </Typography>
           </Box>
+          </MotionSection>
         )}
 
+        <MotionSection variant="list">
         <Grid container spacing={{ xs: 3, md: 4 }}>
           {displayedTeam.map(({ id, photo, photoPos, name, title, credentials, bio, specialties, placeholder }) => (
             <Grid key={id} item xs={12} md={compact ? 6 : 4}>
+              <MotionSection key={id} variant="item">
               <Box
                 component="article"
                 sx={{
@@ -277,9 +282,11 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
                   </Box>
                 </Box>
               </Box>
+              </MotionSection>
             </Grid>
           ))}
         </Grid>
+        </MotionSection>
       </Container>
     </Box>
   );

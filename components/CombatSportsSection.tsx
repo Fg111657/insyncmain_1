@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { BRAND } from '@/lib/theme';
 import { SECTION_IMAGES, BLUR_PLACEHOLDER } from '@/lib/images';
+import MotionSection from '@/components/MotionSection';
 
 const INJURIES = [
   'ACL and meniscus tears',
@@ -24,7 +25,7 @@ export default function CombatSportsSection() {
       component="section"
       aria-label="Combat sports and BJJ physical therapy"
       sx={{
-        py:              { xs: 10, md: 14 },
+        py:              { xs: 6, md: 10 },
         backgroundColor: BRAND.white,
       }}
     >
@@ -38,6 +39,7 @@ export default function CombatSportsSection() {
           }}
         >
           {/* Left: Copy */}
+          <MotionSection>
           <Box>
             <Typography component="p" sx={{
               display:       'inline-flex',
@@ -118,8 +120,10 @@ export default function CombatSportsSection() {
               ))}
             </Box>
           </Box>
+          </MotionSection>
 
           {/* Right: Injury list card + clinic photo */}
+          <MotionSection delay={0.1}>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
 
             {/* Clinic photo */}
@@ -226,6 +230,7 @@ export default function CombatSportsSection() {
           </Box>
 
           </Box> {/* close outer flex column wrapper */}
+          </MotionSection>
         </Box>
       </Container>
     </Box>

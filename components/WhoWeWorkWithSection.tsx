@@ -44,7 +44,7 @@ export default function WhoWeWorkWithSection() {
       component="section"
       aria-label="Who we work with"
       sx={{
-        py:              { xs: 10, md: 14 },
+        py:              { xs: 6, md: 10 },
         backgroundColor: BRAND.offWhite,
       }}
     >

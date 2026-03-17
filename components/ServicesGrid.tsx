@@ -15,6 +15,7 @@ import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import { BRAND } from '@/lib/theme';
 import { SECTION_IMAGES, BLUR_PLACEHOLDER } from '@/lib/images';
+import MotionSection from '@/components/MotionSection';
 
 const SERVICES = [
   {
@@ -142,13 +143,14 @@ export default function ServicesGrid({
       id="services"
       aria-label="Services"
       sx={{
-        py:              { xs: compact ? 6 : 10, md: compact ? 8 : 14 },
+        py:              { xs: compact ? 4 : 6, md: compact ? 6 : 10 },
         backgroundColor: BRAND.white,
       }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         {/* Section Header */}
         {!compact && (
+          <MotionSection>
           <Box sx={{ mb: { xs: 6, md: 9 }, maxWidth: 680 }}>
             <Typography
               component="p"
@@ -171,9 +173,11 @@ export default function ServicesGrid({
               injury, goals, and activity level. Not a generic protocol.
             </Typography>
           </Box>
+          </MotionSection>
         )}
 
         {/* Services Grid */}
+        <MotionSection variant="list">
         <Box
           sx={{
             display:             'grid',
@@ -186,8 +190,8 @@ export default function ServicesGrid({
           }}
         >
           {displayed.map(({ id, photo, icon, title, outcome, bullets, forWho, anchor }) => (
+            <MotionSection key={id} variant="item">
             <Box
-              key={id}
               component="article"
               sx={{
                 border:          `1px solid ${BRAND.gray200}`,
@@ -384,8 +388,10 @@ export default function ServicesGrid({
 
               </Box> {/* close card content Box */}
             </Box>
+            </MotionSection>
           ))}
         </Box>
+        </MotionSection>
 
         {/* View All CTA */}
         {showCTA && maxItems && SERVICES.length > maxItems && (

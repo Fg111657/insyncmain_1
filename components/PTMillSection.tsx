@@ -27,7 +27,7 @@ export default function PTMillSection() {
       component="section"
       aria-label="Why InSync is different from PT mills"
       className="section-navy"
-      sx={{ py: { xs: 10, md: 14 } }}
+      sx={{ py: { xs: 6, md: 10 } }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         {/* Header */}

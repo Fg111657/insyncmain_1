@@ -9,6 +9,7 @@ import TouchAppIcon from '@mui/icons-material/TouchApp';
 import AirIcon from '@mui/icons-material/Air';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import { BRAND } from '@/lib/theme';
+import MotionSection from '@/components/MotionSection';
 
 const TECH_ITEMS = [
   {
@@ -54,15 +55,16 @@ export default function TechnologySection() {
       component="section"
       aria-label="Technology and diagnostics"
       sx={{
-        py:              { xs: 10, md: 14 },
+        py:              { xs: 6, md: 10 },
         backgroundColor: BRAND.offWhite,
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         <Grid container spacing={{ xs: 5, md: 10 }} alignItems="flex-start">
 
           {/* Left: Copy */}
           <Grid item xs={12} md={5}>
+            <MotionSection>
             <Typography
               component="p"
               className="overline"
@@ -144,10 +146,12 @@ export default function TechnologySection() {
                 </Box>
               ))}
             </Box>
+            </MotionSection>
           </Grid>
 
           {/* Right: Tech Cards */}
           <Grid item xs={12} md={7}>
+            <MotionSection variant="list">
             <Box
               sx={{
                 display:             'grid',
@@ -156,8 +160,8 @@ export default function TechnologySection() {
               }}
             >
               {TECH_ITEMS.map(({ icon, name, description, category }) => (
+                <MotionSection key={name} variant="item">
                 <Box
-                  key={name}
                   component="article"
                   sx={{
                     backgroundColor: BRAND.white,
@@ -230,8 +234,10 @@ export default function TechnologySection() {
                     {description}
                   </Typography>
                 </Box>
+                </MotionSection>
               ))}
             </Box>
+            </MotionSection>
           </Grid>
         </Grid>
       </Container>

@@ -38,8 +38,8 @@ export default function FirstVisitSection() {
     <Box
       component="section"
       aria-label="What your first visit looks like"
-      className="section-dark"
-      sx={{ py: { xs: 10, md: 14 } }}
+      className="section-navy"
+      sx={{ py: { xs: 6, md: 10 } }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         <Box
