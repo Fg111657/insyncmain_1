@@ -11,13 +11,13 @@ The InSync mark is a stylized figure in dynamic motion. It consists of four shap
 
 | Shape | SVG element | Description |
 |---|---|---|
-| Head circle | `<circle cx="30" cy="18" r="9">` | Upper dot — the head |
-| Wing | `<polygon points="29,39 35,23 98,1 92,18">` | Diagonal parallelogram — motion energy to upper-right |
-| J-curve | `<path d="M37,37 C20,48 4,62 3,76 C2,90 18,94 36,92 C50,90 54,83 48,77">` | Thick rounded arc — body in motion |
-| Lower circle | `<circle cx="58" cy="77" r="7.5">` | Lower dot — foot/hip anchor |
+| Head circle | `<circle cx="38" cy="17" r="9.5">` | Upper dot — the head |
+| Wing | `<polygon points="30,38 38,24 95,5 87,18">` | Diagonal parallelogram — motion energy to upper-right |
+| J-curve | `<path d="M48,30 C36,44 22,60 20,72 C18,84 28,89 44,87 C56,85 62,77 56,71">` | Rounded arc — body in motion (leftmost x≈20, moderate sweep) |
+| Lower circle | `<circle cx="56" cy="73" r="8">` | Lower dot — foot/hip anchor |
 
 All coordinates in a `viewBox="0 0 100 100"` unit space.
-The J-curve renders as `stroke-width="14"` with `stroke-linecap="round"`.
+The J-curve renders as `stroke-width="11"` with `stroke-linecap="round"`.
 
 ---
 

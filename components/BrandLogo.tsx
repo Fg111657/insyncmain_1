@@ -55,11 +55,25 @@ export default function BrandLogo({
 
   // ── Mark (inline SVG) ──────────────────────────────────────────────────────
   // viewBox "0 0 100 100" — all coordinates in that unit space.
-  // Shape anatomy (traced from logo-mark.png):
-  //   Head circle   cx=30, cy=18, r=9
-  //   Wing          parallelogram (29,39)→(35,23)→(98,1)→(92,18)
-  //   J-curve body  thick rounded arc, stroke-width=14
-  //   Lower circle  cx=58, cy=77, r=7.5
+  //
+  // Shape anatomy (traced from the correct New Logo V2):
+  //
+  //   Head circle  — cx=38, cy=17, r=9.5
+  //                  Top circle representing the head / person
+  //
+  //   Wing         — polygon 30,38 → 38,24 → 95,5 → 87,18
+  //                  Diagonal parallelogram: lower-left (near shoulder)
+  //                  to upper-right (outstretched arm). Bold, prominent.
+  //
+  //   J-curve      — M48,30 gentle arc sweeping left-down then hooking right
+  //                  stroke-width=11, round caps/joins
+  //                  Leftmost extent ≈ x=20 (moderate arc, not extreme J)
+  //
+  //   Lower circle — cx=56, cy=73, r=8
+  //                  Hip/knee anchor at the J-curve hook end
+  //
+  // MAINTENANCE: if the logo mark ever changes, update the 4 shape elements
+  // here AND in all /public/brand/logo*.svg files. See docs/logo-system.md.
   const mark = (
     <svg
       viewBox="0 0 100 100"
@@ -67,17 +81,21 @@ export default function BrandLogo({
       aria-hidden="true"
       focusable="false"
     >
-      <circle cx="30" cy="18" r="9" fill={markColor} />
-      <polygon points="29,39 35,23 98,1 92,18" fill={markColor} />
+      {/* Head circle */}
+      <circle cx="38" cy="17" r="9.5" fill={markColor} />
+      {/* Wing — diagonal parallelogram, shoulder to upper-right */}
+      <polygon points="30,38 38,24 95,5 87,18" fill={markColor} />
+      {/* J-curve body — gentle arc, moderate leftward sweep */}
       <path
-        d="M37,37 C20,48 4,62 3,76 C2,90 18,94 36,92 C50,90 54,83 48,77"
+        d="M48,30 C36,44 22,60 20,72 C18,84 28,89 44,87 C56,85 62,77 56,71"
         fill="none"
         stroke={markColor}
-        strokeWidth={14}
+        strokeWidth={11}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx="58" cy="77" r="7.5" fill={markColor} />
+      {/* Lower circle — hip/knee anchor */}
+      <circle cx="56" cy="73" r="8" fill={markColor} />
     </svg>
   );
 
