@@ -14,11 +14,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
+import Typography from '@mui/material/Typography'; // used in drawer locations block
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import PhoneIcon from '@mui/icons-material/Phone';
 import { BRAND } from '@/lib/theme';
+import BrandLogo from '@/components/BrandLogo';
 
 const NAV_LINKS = [
   { label: 'Services',   href: '/services'  },
@@ -26,78 +27,6 @@ const NAV_LINKS = [
   { label: 'Insurance',  href: '/insurance' },
   { label: 'About',      href: '/about'     },
 ];
-
-// ─── InSync Logo — text wordmark only (no image dependency) ──────────────────
-function InSyncLogo({ onDark = false }: { onDark?: boolean }) {
-  const textColor = onDark ? BRAND.white     : BRAND.spaceNavy;
-  const subColor  = onDark ? 'rgba(255,255,255,0.55)' : BRAND.gray500;
-
-  return (
-    <Box
-      component={Link}
-      href="/"
-      aria-label="InSync Physical Therapy — Home"
-      sx={{
-        display:        'flex',
-        alignItems:     'center',
-        gap:            0,
-        textDecoration: 'none',
-        flexShrink:     0,
-        '&:focus-visible': {
-          outline:       `2px solid ${BRAND.neoBlue}`,
-          outlineOffset: 4,
-          borderRadius:  2,
-        },
-      }}
-    >
-      {/* NeoBlue accent bar */}
-      <Box
-        aria-hidden="true"
-        sx={{
-          width:           3,
-          height:          32,
-          backgroundColor: BRAND.neoBlue,
-          borderRadius:    2,
-          mr:              1.5,
-          flexShrink:      0,
-        }}
-      />
-      {/* Wordmark */}
-      <Box>
-        <Typography
-          component="span"
-          sx={{
-            display:       'block',
-            fontWeight:    800,
-            fontSize:      '1.25rem',
-            lineHeight:    1,
-            color:         textColor,
-            letterSpacing: '-0.025em',
-            transition:    'color 0.3s ease',
-          }}
-        >
-          InSync
-        </Typography>
-        <Typography
-          component="span"
-          sx={{
-            display:       'block',
-            fontWeight:    600,
-            fontSize:      '0.56rem',
-            lineHeight:    1.3,
-            letterSpacing: '0.14em',
-            textTransform: 'uppercase',
-            color:         subColor,
-            mt:            '2px',
-            transition:    'color 0.3s ease',
-          }}
-        >
-          Physical Therapy
-        </Typography>
-      </Box>
-    </Box>
-  );
-}
 
 // ─── Navigation ───────────────────────────────────────────────────────────────
 export default function Navigation() {
@@ -153,7 +82,11 @@ export default function Navigation() {
             }}
           >
             {/* ── Logo ─────────────────────────────────────── */}
-            <InSyncLogo onDark={transparent} />
+            <BrandLogo
+              variant={transparent ? 'white' : 'primary'}
+              height={36}
+              priority
+            />
 
             {/* ── Desktop Nav Links ─────────────────────────── */}
             <Box
@@ -311,7 +244,7 @@ export default function Navigation() {
             borderBottom:   `1px solid rgba(255,255,255,0.08)`,
           }}
         >
-          <InSyncLogo onDark />
+          <BrandLogo variant="white" height={32} />
           <IconButton
             aria-label="Close menu"
             onClick={() => setDrawerOpen(false)}

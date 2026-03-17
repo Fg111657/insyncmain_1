@@ -34,20 +34,19 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://insync-pt.com'
   ),
   title: {
-    default:  'Physical Therapy Brooklyn & Manhattan NYC | Sports Injury Rehab',
+    default:  'Physical Therapy Brooklyn & Manhattan NYC | InSync Physical Therapy',
     template: '%s | InSync Physical Therapy',
   },
   description:
-    'One-on-one physical therapy in Brooklyn and Bryant Park. Sports injury rehab, ACL recovery, BJJ rehab, and post-surgical care for active New Yorkers. Not a PT mill.',
+    'One-on-one physical therapy in Brooklyn and Bryant Park, NYC. Orthopedic rehab, sports injury recovery, ACL rehab, and post-surgical care. Not a PT mill.',
   keywords: [
     'physical therapy NYC',
     'physical therapy Brooklyn',
+    'physical therapy Manhattan',
     'physical therapy Bryant Park',
     'sports injury physical therapy NYC',
     'orthopedic rehab NYC',
     'one on one physical therapy NYC',
-    'BJJ physical therapy NYC',
-    'combat sports rehab NYC',
     'ACL rehab NYC',
     'rotator cuff rehab NYC',
     'meniscus tear recovery NYC',
@@ -60,6 +59,15 @@ export const metadata: Metadata = {
     'shoulder rehab Manhattan',
     'InSync Physical Therapy',
   ],
+  icons: {
+    icon: [
+      { url: '/brand/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/brand/favicon-16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/brand/favicon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+  },
   authors:  [{ name: 'InSync Physical Therapy' }],
   creator:  'InSync Physical Therapy',
   publisher: 'InSync Physical Therapy',
@@ -79,26 +87,24 @@ export const metadata: Metadata = {
     locale:      'en_US',
     url:         'https://insync-pt.com',
     siteName:    'InSync Physical Therapy',
-    title:       'Physical Therapy Brooklyn & Manhattan NYC | Sports Injury Rehab',
+    title:       'Physical Therapy Brooklyn & Manhattan NYC | InSync Physical Therapy',
     description:
-      'One-on-one physical therapy in Brooklyn and Manhattan. Sports injury rehab, ACL recovery, BJJ rehab, and post-surgical care for active New Yorkers.',
+      'One-on-one physical therapy in Brooklyn and Manhattan. Orthopedic rehab, sports injury recovery, ACL rehab, and post-surgical care for active New Yorkers.',
     images: [
       {
-        url:    '/assets/hassan-pt/photos/provider-hassan/dr-hassan-seated-cervical-mobility-assessment-male-patient-03.jpg',
+        url:    '/brand/og-image.jpg',
         width:  1200,
         height: 630,
-        alt:    'InSync Physical Therapy, Dr. Hassan treating a patient',
+        alt:    'InSync Physical Therapy — Brooklyn and Manhattan NYC',
       },
     ],
   },
   twitter: {
     card:        'summary_large_image',
-    title:       'Physical Therapy Brooklyn & Manhattan NYC | Sports Injury Rehab',
+    title:       'Physical Therapy Brooklyn & Manhattan NYC | InSync Physical Therapy',
     description:
-      'One-on-one physical therapy in Brooklyn and Manhattan. Sports injury rehab, ACL recovery, and post-surgical care for active New Yorkers.',
-    images: [
-      '/assets/hassan-pt/photos/provider-hassan/dr-hassan-seated-cervical-mobility-assessment-male-patient-03.jpg',
-    ],
+      'One-on-one physical therapy in Brooklyn and Manhattan. Orthopedic rehab, sports injury, and post-surgical care for active New Yorkers.',
+    images: ['/brand/og-image.jpg'],
   },
   alternates: {
     canonical: 'https://insync-pt.com',

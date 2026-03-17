@@ -9,6 +9,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { BRAND } from '@/lib/theme';
+import BrandLogo from '@/components/BrandLogo';
 
 const SERVICES_LINKS = [
   { label: 'Orthopedic Rehabilitation',          href: '/services#orthopedic'   },
@@ -70,48 +71,9 @@ export default function Footer() {
 
           {/* ── Brand + Contact Column ─────────────────────── */}
           <Grid item xs={12} md={4}>
-            {/* Logo wordmark */}
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0, mb: 3 }}>
-              <Box
-                sx={{
-                  width:           3,
-                  height:          30,
-                  backgroundColor: BRAND.neoBlue,
-                  borderRadius:    2,
-                  mr:              1.5,
-                  flexShrink:      0,
-                }}
-              />
-              <Box>
-                <Typography
-                  component="span"
-                  style={{ color: BRAND.white }}
-                  sx={{
-                    display:       'block',
-                    fontWeight:    800,
-                    fontSize:      '1.375rem',
-                    color:         BRAND.white,
-                    letterSpacing: '-0.02em',
-                    lineHeight:    1,
-                  }}
-                >
-                  InSync
-                </Typography>
-                <Typography
-                  component="span"
-                  sx={{
-                    display:       'block',
-                    fontSize:      '0.56rem',
-                    fontWeight:    600,
-                    letterSpacing: '0.14em',
-                    textTransform: 'uppercase',
-                    color:         'rgba(255,255,255,0.4)',
-                    mt:            '3px',
-                  }}
-                >
-                  Physical Therapy
-                </Typography>
-              </Box>
+            {/* Logo — white variant on dark footer */}
+            <Box sx={{ mb: 3 }}>
+              <BrandLogo variant="white" height={34} href="/" />
             </Box>
 
             <Typography
