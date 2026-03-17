@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import PhoneIcon from '@mui/icons-material/Phone';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import MotionSection from '@/components/MotionSection';
 import { BRAND } from '@/lib/theme';
 
 interface CTABandProps {
@@ -31,6 +32,7 @@ export default function CTABand({
       sx={{ py: { xs: 8, md: 10 } }}
     >
       <Container maxWidth="md" sx={{ px: { xs: 3, md: 4 }, textAlign: 'center' }}>
+        <MotionSection>
         {/* Serif accent */}
         <Typography
           component="p"
@@ -128,6 +130,7 @@ export default function CTABand({
             </Button>
           )}
         </Box>
+        </MotionSection>
       </Container>
     </Box>
   );

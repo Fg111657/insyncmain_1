@@ -2,6 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import MotionSection from '@/components/MotionSection';
 import { BRAND } from '@/lib/theme';
 
 const NEIGHBORHOODS = [
@@ -31,6 +32,7 @@ export default function NeighborhoodSEOBlock() {
           }}
         >
           {/* Left: copy */}
+          <MotionSection>
           <Box>
             <Typography
               component="h2"
@@ -54,8 +56,10 @@ export default function NeighborhoodSEOBlock() {
               from across the city for one-on-one care that actually works.
             </Typography>
           </Box>
+          </MotionSection>
 
           {/* Right: neighborhood tags */}
+          <MotionSection delay={0.1}>
           <Box>
             <Typography
               sx={{
@@ -95,6 +99,7 @@ export default function NeighborhoodSEOBlock() {
               ))}
             </Box>
           </Box>
+          </MotionSection>
         </Box>
       </Container>
     </Box>

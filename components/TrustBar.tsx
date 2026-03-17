@@ -6,6 +6,7 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import BlockIcon from '@mui/icons-material/Block';
 import SportsIcon from '@mui/icons-material/Sports';
 import VerifiedIcon from '@mui/icons-material/Verified';
+import MotionSection from '@/components/MotionSection';
 import { BRAND } from '@/lib/theme';
 
 const TRUST_ITEMS = [
@@ -40,6 +41,7 @@ export default function TrustBar() {
       sx={{ py: { xs: 4, md: 5 } }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
+        <MotionSection variant="list">
         <Box
           sx={{
             display:               'grid',
@@ -51,8 +53,8 @@ export default function TrustBar() {
           }}
         >
           {TRUST_ITEMS.map(({ icon, value, label }) => (
+            <MotionSection key={label} variant="item">
             <Box
-              key={label}
               sx={{
                 display:       'flex',
                 flexDirection: 'column',
@@ -89,8 +91,10 @@ export default function TrustBar() {
                 {label}
               </Typography>
             </Box>
+            </MotionSection>
           ))}
         </Box>
+        </MotionSection>
       </Container>
     </Box>
   );
