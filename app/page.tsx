@@ -18,9 +18,9 @@ import NeighborhoodSEOBlock from '@/components/NeighborhoodSEOBlock';
 import CTABand from '@/components/CTABand';
 
 export const metadata: Metadata = {
-  title: 'Physical Therapy Brooklyn & Manhattan NYC | Sports Injury Rehab',
+  title: 'Physical Therapy Brooklyn & Manhattan NYC | InSync Physical Therapy',
   description:
-    'One-on-one physical therapy in Brooklyn and Bryant Park. Sports injury rehab, ACL recovery, BJJ rehab, and post-surgical care for active New Yorkers. Not a PT mill.',
+    'One-on-one physical therapy in Brooklyn and Manhattan, NYC. Orthopedic rehab, sports injury recovery, ACL rehab, and post-surgical care. Not a PT mill.',
   alternates: { canonical: 'https://insync-pt.com' },
 };
 
@@ -78,7 +78,7 @@ export default function HomePage() {
       {/* 15. Final CTA */}
       <CTABand
         headline="Book Your First Visit."
-        subline="Brooklyn and Bryant Park locations. Insurance verified before your appointment."
+        subline="Brooklyn and Manhattan locations. Insurance verified before your appointment."
         variant="dark"
       />
     </>

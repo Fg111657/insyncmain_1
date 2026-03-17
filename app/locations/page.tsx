@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://insync-pt.com/locations' },
   openGraph: {
     title:       'Physical Therapy NYC Locations | InSync Physical Therapy',
-    description: 'Brooklyn and Bryant Park physical therapy locations — accessible from across New York City.',
+    description: 'Brooklyn and Manhattan physical therapy locations — accessible from across New York City.',
   },
 };
 
@@ -34,7 +34,7 @@ const LOCATION_FAQS = [
   },
   {
     q: 'Are both locations accepting new patients?',
-    a: 'Yes. Both the Brooklyn and Bryant Park locations are currently accepting new patients. Submit a request form and our team will contact you to confirm your appointment.',
+    a: 'Yes. Both the Brooklyn and Manhattan locations are currently accepting new patients. Submit a request form and our team will contact you to confirm your appointment.',
   },
 ];
 

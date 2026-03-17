@@ -13,7 +13,7 @@ import { BRAND } from '@/lib/theme';
 export const metadata: Metadata = {
   title: 'Insurance & Reviews — InSync Physical Therapy NYC',
   description:
-    'InSync Physical Therapy accepts Aetna, Blue Cross Blue Shield, Cigna, United Healthcare, Medicare, Fidelis, HIP, and NYC EPP. We verify your benefits before scheduling. Brooklyn and Bryant Park, NYC.',
+    'InSync Physical Therapy accepts Aetna, Blue Cross Blue Shield, Cigna, United Healthcare, Medicare, Fidelis, HIP, and NYC EPP. We verify your benefits before scheduling. Brooklyn and Manhattan, NYC.',
   alternates: { canonical: 'https://insync-pt.com/insurance' },
   openGraph: {
     title:       'Accepted Insurance | InSync Physical Therapy NYC',

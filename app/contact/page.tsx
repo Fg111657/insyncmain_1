@@ -13,7 +13,7 @@ import { BRAND } from '@/lib/theme';
 export const metadata: Metadata = {
   title: 'Request an Appointment — InSync Physical Therapy NYC',
   description:
-    'Request a physical therapy appointment at InSync in Brooklyn or Bryant Park, NYC. We verify your insurance before scheduling and follow up within one business day.',
+    'Request a physical therapy appointment at InSync in Brooklyn or Manhattan, NYC. We verify your insurance before scheduling and follow up within one business day.',
   alternates: { canonical: 'https://insync-pt.com/contact' },
   robots:     { index: true, follow: true },
 };

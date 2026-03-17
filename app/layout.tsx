@@ -38,12 +38,13 @@ export const metadata: Metadata = {
     template: '%s | InSync Physical Therapy',
   },
   description:
-    'One-on-one physical therapy in Brooklyn and Bryant Park, NYC. Orthopedic rehab, sports injury recovery, ACL rehab, and post-surgical care. Not a PT mill.',
+    'One-on-one physical therapy in Brooklyn and Manhattan, NYC. Orthopedic rehab, sports injury recovery, ACL rehab, and post-surgical care. Not a PT mill.',
   keywords: [
     'physical therapy NYC',
     'physical therapy Brooklyn',
     'physical therapy Manhattan',
     'physical therapy Bryant Park',
+    'physical therapy Manhattan',
     'sports injury physical therapy NYC',
     'orthopedic rehab NYC',
     'one on one physical therapy NYC',

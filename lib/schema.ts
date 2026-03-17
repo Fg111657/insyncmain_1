@@ -10,7 +10,7 @@ export const BUSINESS_SCHEMA = {
   logo:       'https://insync-pt.com/assets/logo/insync-logo.png',
   image:      'https://insync-pt.com/assets/hassan-pt/photos/provider-hassan/dr-hassan-seated-cervical-mobility-assessment-male-patient-03.jpg',
   description:
-    'InSync Physical Therapy provides orthopedic rehabilitation, sports injury recovery, chronic pain treatment, and post-surgical care in Brooklyn and Bryant Park, NYC.',
+    'InSync Physical Therapy provides orthopedic rehabilitation, sports injury recovery, chronic pain treatment, and post-surgical care in Brooklyn and Manhattan, NYC.',
   medicalSpecialty: 'PhysicalTherapy',
   priceRange:       '$$',
   telephone:        '+19294194643',

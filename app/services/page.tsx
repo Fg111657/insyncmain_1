@@ -13,11 +13,11 @@ import { BRAND } from '@/lib/theme';
 export const metadata: Metadata = {
   title: 'Physical Therapy Services NYC — Orthopedic, Sports & Post-Surgical Rehab',
   description:
-    'Orthopedic rehabilitation, sports injury recovery, chronic pain treatment, post-surgical rehab, manual therapy, movement analysis, and strength transition. InSync Physical Therapy — Brooklyn and Bryant Park, NYC.',
+    'Orthopedic rehabilitation, sports injury recovery, chronic pain treatment, post-surgical rehab, manual therapy, movement analysis, and strength transition. InSync Physical Therapy — Brooklyn and Manhattan, NYC.',
   alternates: { canonical: 'https://insync-pt.com/services' },
   openGraph: {
     title:       'Physical Therapy Services NYC | InSync Physical Therapy',
-    description: 'Evidence-based PT services for orthopedic injuries, sports recovery, chronic pain, and post-surgical rehab in Brooklyn and Bryant Park.',
+    description: 'Evidence-based PT services for orthopedic injuries, sports recovery, chronic pain, and post-surgical rehab in Brooklyn and Manhattan, NYC.',
   },
 };
 

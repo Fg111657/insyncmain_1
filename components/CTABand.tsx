@@ -17,7 +17,7 @@ interface CTABandProps {
 
 export default function CTABand({
   headline  = 'Ready to Start Your Recovery?',
-  subline   = 'Brooklyn and Bryant Park locations. Insurance verified before your first visit.',
+  subline   = 'Brooklyn and Manhattan locations. Insurance verified before your first visit.',
   variant   = 'navy',
   showPhone = true,
 }: CTABandProps) {

@@ -13,7 +13,7 @@ import { PHYSICIAN_SCHEMA } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'About InSync Physical Therapy — Dr. Hassan & Team, NYC',
   description:
-    'Meet Dr. Hassan and the InSync Physical Therapy team. Doctor of Physical Therapy with 9+ years of experience providing one-on-one orthopedic and sports rehabilitation in Brooklyn and Bryant Park, NYC.',
+    'Meet Dr. Hassan and the InSync Physical Therapy team. Doctor of Physical Therapy with 9+ years of experience providing one-on-one orthopedic and sports rehabilitation in Brooklyn and Manhattan, NYC.',
   alternates: { canonical: 'https://insync-pt.com/about' },
 };
 

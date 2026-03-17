@@ -95,7 +95,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                 lineHeight: 1.7,
               }}
             >
-              Brooklyn and Bryant Park. Accessible from across the city.
+              Brooklyn and Manhattan. Accessible from across the city.
             </Typography>
           </Box>
         )}
