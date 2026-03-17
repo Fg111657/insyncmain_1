@@ -7,6 +7,7 @@ import ServicesGrid from '@/components/ServicesGrid';
 import TechnologySection from '@/components/TechnologySection';
 import FAQSection from '@/components/FAQSection';
 import CTABand from '@/components/CTABand';
+import ConditionsCarousel from '@/components/ConditionsCarousel';
 import { BRAND } from '@/lib/theme';
 
 export const metadata: Metadata = {
@@ -20,15 +21,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Common conditions treated — SEO-rich content section
-const CONDITIONS = [
-  'Back pain',        'Neck pain',          'Knee pain',
-  'ACL rehab',        'Meniscus tear',      'Rotator cuff injury',
-  'Shoulder pain',    'Labral tear',        'Hip pain',
-  'Plantar fasciitis','Ankle sprain',       'Stress fractures',
-  'Sciatica',         'Disc herniation',    'IT band syndrome',
-  'Post-surgical',    'Chronic pain',       'Overuse injuries',
-];
 
 export default function ServicesPage() {
   return (
@@ -143,48 +135,7 @@ export default function ServicesPage() {
             </Box>
 
             <Box>
-              <Box
-                sx={{
-                  display:             'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
-                  gap:                 1.5,
-                }}
-              >
-                {CONDITIONS.map((c) => (
-                  <Box
-                    key={c}
-                    sx={{
-                      border:          `1px solid ${BRAND.gray200}`,
-                      borderRadius:    2,
-                      px:              2,
-                      py:              1.25,
-                      backgroundColor: BRAND.offWhite,
-                      display:         'flex',
-                      alignItems:      'center',
-                      gap:             1,
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        width:           5,
-                        height:          5,
-                        borderRadius:    '50%',
-                        backgroundColor: BRAND.neoBlue,
-                        flexShrink:      0,
-                      }}
-                    />
-                    <Typography
-                      sx={{
-                        fontSize:   '0.875rem',
-                        fontWeight: 500,
-                        color:      BRAND.gray700,
-                      }}
-                    >
-                      {c}
-                    </Typography>
-                  </Box>
-                ))}
-              </Box>
+              <ConditionsCarousel onLight />
             </Box>
           </Box>
         </Container>
