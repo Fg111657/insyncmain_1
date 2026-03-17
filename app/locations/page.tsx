@@ -4,7 +4,6 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import LocationsSection from '@/components/LocationsSection';
 import CTABand from '@/components/CTABand';
-import FAQSection from '@/components/FAQSection';
 import MotionSection from '@/components/MotionSection';
 import { BRAND } from '@/lib/theme';
 import { LOCATION_BROOKLYN_SCHEMA, LOCATION_BRYANT_PARK_SCHEMA } from '@/lib/schema';
