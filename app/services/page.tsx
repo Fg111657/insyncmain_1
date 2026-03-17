@@ -8,6 +8,7 @@ import TechnologySection from '@/components/TechnologySection';
 import FAQSection from '@/components/FAQSection';
 import CTABand from '@/components/CTABand';
 import ConditionsCarousel from '@/components/ConditionsCarousel';
+import BodyMap from '@/components/BodyMap';
 import MotionSection from '@/components/MotionSection';
 import { BRAND } from '@/lib/theme';
 
@@ -143,6 +144,55 @@ export default function ServicesPage() {
             </Box>
             </MotionSection>
           </Box>
+        </Container>
+      </Box>
+
+      {/* ── Interactive Body Map ────────────────────────────────────── */}
+      <Box
+        component="section"
+        id="body-map"
+        aria-label="Find conditions by body area"
+        sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.offWhite }}
+      >
+        <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
+          <MotionSection>
+            <Box sx={{ textAlign: 'center', mb: { xs: 5, md: 7 } }}>
+              <Typography
+                component="p"
+                sx={{
+                  fontSize:      '0.72rem',
+                  fontWeight:    700,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color:         BRAND.neoBlue,
+                  mb:            1.5,
+                }}
+              >
+                Where Is Your Pain?
+              </Typography>
+              <Typography
+                variant="h2"
+                sx={{ fontSize: { xs: '1.875rem', md: '2.5rem' }, mb: 2 }}
+              >
+                Find the Right Care for Your Injury
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  color:      BRAND.gray500,
+                  maxWidth:   560,
+                  mx:         'auto',
+                  lineHeight: 1.7,
+                }}
+              >
+                Select a body area to see the conditions we treat and how our
+                one-on-one care model addresses the root cause — not just the
+                symptoms.
+              </Typography>
+            </Box>
+          </MotionSection>
+
+          <BodyMap />
         </Container>
       </Box>
 
