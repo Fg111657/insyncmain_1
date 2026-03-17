@@ -184,6 +184,42 @@ a {
   background: #0EC5E6;
 }
 
+/* ─── Skip-to-main link (accessibility) ─────────────────────────────────── */
+.skip-link {
+  position:   absolute;
+  top:        -100%;
+  left:       16px;
+  z-index:    9999;
+  padding:    12px 20px;
+  background: #0EC5E6;
+  color:      #003D59;
+  font-weight: 700;
+  font-size:   0.9375rem;
+  border-radius: 0 0 6px 6px;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ─── Scroll-margin for anchor sections (clears fixed nav) ───────────────── */
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+/* ─── Reduced-motion override ────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:       0.01ms !important;
+    scroll-behavior:           auto   !important;
+  }
+}
+
 /* ─── Print ──────────────────────────────────────────────────────────────── */
 @media print {
   nav,

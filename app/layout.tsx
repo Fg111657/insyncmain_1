@@ -141,6 +141,9 @@ export default function RootLayout({
         <meta name="theme-color" content="#003D59" />
       </head>
       <body>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />

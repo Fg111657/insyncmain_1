@@ -192,6 +192,7 @@ export default function ServicesGrid({
           {displayed.map(({ id, photo, icon, title, outcome, bullets, forWho, anchor }) => (
             <MotionSection key={id} variant="item">
             <Box
+              id={id}
               component="article"
               sx={{
                 border:          `1px solid ${BRAND.gray200}`,
