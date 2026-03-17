@@ -2,90 +2,56 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import GroupsIcon from '@mui/icons-material/Groups';
-import BlockIcon from '@mui/icons-material/Block';
-import SportsIcon from '@mui/icons-material/Sports';
-import VerifiedIcon from '@mui/icons-material/Verified';
 import { BRAND } from '@/lib/theme';
 
 const TRUST_ITEMS = [
   {
-    icon:    <GroupsIcon sx={{ fontSize: '1.5rem', color: BRAND.neoBlue }} />,
-    value:   '1-on-1',
-    label:   'Real one-on-one treatment, every session',
+    value: 'One-on-one',
+    label: 'You work directly with your therapist each visit.',
   },
   {
-    icon:    <BlockIcon sx={{ fontSize: '1.5rem', color: BRAND.neoBlue }} />,
-    value:   'No PT Mills',
-    label:   'No aides. No handoffs. Your therapist runs every visit.',
+    value: 'Insurance clarity',
+    label: 'Coverage is checked before your first appointment.',
   },
   {
-    icon:    <SportsIcon sx={{ fontSize: '1.5rem', color: BRAND.neoBlue }} />,
-    value:   '9+ Years',
-    label:   'Treating ortho injuries and sports athletes in NYC',
+    value: 'Sports and ortho',
+    label: 'Built for injury recovery and return to activity.',
   },
   {
-    icon:    <VerifiedIcon sx={{ fontSize: '1.5rem', color: BRAND.neoBlue }} />,
-    value:   'Verified',
-    label:   'Insurance confirmed before your first visit',
+    value: 'Two NYC offices',
+    label: 'Brooklyn and Bryant Park with one shared standard of care.',
   },
 ];
 
 export default function TrustBar() {
   return (
-    <Box
-      component="section"
-      aria-label="Trust indicators"
-      className="section-navy"
-      sx={{ py: { xs: 4, md: 5 } }}
-    >
+    <Box component="section" aria-label="Key trust indicators" sx={{ py: { xs: 4, md: 5 }, backgroundColor: BRAND.white }}>
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         <Box
           sx={{
-            display:               'grid',
-            gridTemplateColumns:   {
-              xs: 'repeat(2, 1fr)',
-              md: 'repeat(4, 1fr)',
-            },
-            gap:                   { xs: 3, md: 2 },
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' },
+            gap: 2,
           }}
         >
-          {TRUST_ITEMS.map(({ icon, value, label }) => (
+          {TRUST_ITEMS.map(({ value, label }) => (
             <Box
               key={label}
               sx={{
-                display:       'flex',
-                flexDirection: 'column',
-                alignItems:    { xs: 'center', md: 'flex-start' },
-                gap:           0.75,
-                px:            { md: 3 },
-                borderLeft:    { md: `1px solid rgba(255,255,255,0.08)` },
-                '&:first-of-type': { borderLeft: 'none', pl: 0 },
-                textAlign:     { xs: 'center', md: 'left' },
+                border: `1px solid ${BRAND.gray200}`,
+                borderRadius: 4,
+                px: 3,
+                py: 3,
+                backgroundColor: BRAND.offWhite,
               }}
             >
-              {icon}
-              <Typography
-                style={{ color: BRAND.white }}
-                sx={{
-                  fontWeight:    800,
-                  fontSize:      { xs: '1.5rem', md: '1.75rem' },
-                  lineHeight:    1,
-                  color:         BRAND.white,
-                  letterSpacing: '-0.02em',
-                }}
-              >
+              <Typography sx={{ fontSize: '0.78rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: BRAND.gray500 }}>
+                Why InSync
+              </Typography>
+              <Typography sx={{ mt: 1, fontWeight: 700, fontSize: '1.1rem', color: BRAND.spaceNavy }}>
                 {value}
               </Typography>
-              <Typography
-                sx={{
-                  fontSize:      '0.8125rem',
-                  fontWeight:    500,
-                  color:         'rgba(255,255,255,0.55)',
-                  lineHeight:    1.4,
-                  letterSpacing: '0.01em',
-                }}
-              >
+              <Typography sx={{ mt: 1, fontSize: '0.92rem', lineHeight: 1.6, color: BRAND.gray700 }}>
                 {label}
               </Typography>
             </Box>

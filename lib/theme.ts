@@ -9,10 +9,11 @@ export const BRAND = {
   spaceNavy:     '#003D59',   // primary dark — headings, nav, dark sections
   luxBlue:       '#00262A',   // deeper support / footer / overlay backgrounds
   obsidian:      '#001820',   // deepest dark — gradient endpoints, dark overlays
-  neoBlue:       '#0EC5E6',   // accent — CTAs, highlights, active states
-  neoBlueHover:  '#0AAFCC',   // neoBlue hover / pressed state
+  neoBlue:       '#0EC5E6',   // accent — highlights only
+  neoBlueHover:  '#0AAFCC',   // accent hover / pressed state
   white:         '#FFFFFF',   // dominant canvas
   offWhite:      '#F7F9FB',   // subtle section alternator
+  sand:          '#EFF4F6',
   // ── Grays
   gray100:       '#F3F4F6',
   gray200:       '#E5E7EB',
@@ -119,7 +120,7 @@ let theme = createTheme({
   },
 
   shape: {
-    borderRadius: 4,
+    borderRadius: 8,
   },
 
   spacing: 8,
@@ -131,37 +132,35 @@ let theme = createTheme({
       },
       styleOverrides: {
         root: {
-          borderRadius:  4,
-          padding:       '12px 28px',
+          borderRadius:  999,
+          padding:       '12px 24px',
           fontSize:      '0.9375rem',
           fontWeight:    600,
           textTransform: 'none',
           letterSpacing: '0.01em',
-          transition:    'all 0.2s ease',
+          transition:    'background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease',
         },
         containedPrimary: {
-          backgroundColor: BRAND.neoBlue,
-          color:           BRAND.white,
-          '&:hover': {
-            backgroundColor: BRAND.neoBlueHover,
-            transform:       'translateY(-1px)',
-            boxShadow:       '0 4px 16px rgba(14,197,230,0.3)',
-          },
-        },
-        containedSecondary: {
           backgroundColor: BRAND.spaceNavy,
           color:           BRAND.white,
           '&:hover': {
             backgroundColor: BRAND.luxBlue,
-            transform:       'translateY(-1px)',
+          },
+        },
+        containedSecondary: {
+          backgroundColor: BRAND.white,
+          color:           BRAND.spaceNavy,
+          border:          `1px solid ${BRAND.gray200}`,
+          '&:hover': {
+            backgroundColor: BRAND.offWhite,
           },
         },
         outlinedPrimary: {
-          borderColor: BRAND.neoBlue,
-          color:       BRAND.neoBlue,
+          borderColor: BRAND.spaceNavy,
+          color:       BRAND.spaceNavy,
           '&:hover': {
-            backgroundColor: 'rgba(14,197,230,0.08)',
-            borderColor:     BRAND.neoBlue,
+            backgroundColor: 'rgba(0,61,89,0.04)',
+            borderColor:     BRAND.spaceNavy,
           },
         },
         outlinedSecondary: {
@@ -188,13 +187,9 @@ let theme = createTheme({
       },
       styleOverrides: {
         root: {
-          borderRadius: 8,
+          borderRadius: 20,
           border:       `1px solid ${BRAND.gray200}`,
-          transition:   'box-shadow 0.2s ease, transform 0.2s ease',
-          '&:hover': {
-            boxShadow: '0 8px 32px rgba(0,61,89,0.08)',
-            transform: 'translateY(-2px)',
-          },
+          boxShadow:    'none',
         },
       },
     },
@@ -206,7 +201,7 @@ let theme = createTheme({
       styleOverrides: {
         root: {
           '& .MuiOutlinedInput-root': {
-            borderRadius: 4,
+            borderRadius: 18,
             '&:hover .MuiOutlinedInput-notchedOutline': {
               borderColor: BRAND.spaceNavy,
             },

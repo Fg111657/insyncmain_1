@@ -10,53 +10,34 @@ import { BLUR_PLACEHOLDER } from '@/lib/images';
 
 const TEAM = [
   {
-    id:          'hassan',
-    photo:       '/assets/Hassan .jpeg',
-    photoPos:    'center top',
-    name:        'Dr. Hassan',
-    title:       'Doctor of Physical Therapy',
+    id: 'hassan',
+    photo: '/assets/Hassan .jpeg',
+    photoPos: 'center top',
+    name: 'Dr. Hassan',
+    title: 'Doctor of Physical Therapy',
     credentials: ['DPT', 'Touro University', '9+ Years Experience'],
-    bio:
-      'Dr. Hassan has spent the last nine years helping New Yorkers recover from injuries and get back to the activities they care about. His approach combines hands-on treatment, strength testing, and movement analysis to solve the root cause of pain. Not just manage the symptoms.',
-    specialties: [
-      'Orthopedic Rehabilitation',
-      'Sports Injury Recovery',
-      'Manual Therapy',
-      'Post-Surgical Rehab',
-      'Movement Analysis',
-    ],
+    bio: 'Dr. Hassan focuses on orthopedic rehabilitation, sports injuries, chronic pain, and post-surgical recovery. His style of care is direct, specific, and built around measurable progress.',
+    specialties: ['Orthopedic rehab', 'Sports injury recovery', 'Manual therapy', 'Post-surgical care'],
   },
   {
-    id:          'piero',
-    photo:       '/assets/Piero Alessi.JPG',
-    photoPos:    'center 20%',
-    name:        'Piero Alessi',
-    title:       'Strength & Conditioning Coach',
-    credentials: ['NASM Certified', 'World-Class Martial Arts Background'],
-    bio:
-      'Piero brings a world-class athletic background and NASM certification to InSync\'s post-rehabilitation programming. He specializes in guiding patients from the end of formal physical therapy back to full strength, sport, and performance. His experience in combat sports and functional training gives athletes a structured, intelligent path back to their highest level.',
-    specialties: [
-      'Post-Rehab Strength Programming',
-      'Return-to-Performance Protocols',
-      'Combat Sports Conditioning',
-      'Athletic Movement Training',
-      'Functional Strength Development',
-    ],
+    id: 'piero',
+    photo: '/assets/Piero Alessi.JPG',
+    photoPos: 'center 20%',
+    name: 'Piero Alessi',
+    title: 'Strength and Conditioning Coach',
+    credentials: ['NASM Certified', 'Post-rehab training'],
+    bio: 'Piero supports the transition from clinical rehab back to full training. He adds structure for patients who need guidance after pain settles but before confidence fully returns.',
+    specialties: ['Return to training', 'Post-rehab strength', 'Combat sports conditioning', 'Functional strength'],
   },
   {
-    id:          'tj',
-    photo:       '/assets/TJ.jpg',
-    photoPos:    'center top',
-    name:        'TJ',
-    title:       'Physical Therapist',
-    credentials: ['Physical Therapist'],
-    bio:
-      'TJ is a skilled physical therapist at InSync with a strong focus on patient-centered care. He works closely with patients on mobility restoration, injury prevention, and progressive rehabilitation programs. Bio details to be updated.',
-    specialties: [
-      'Orthopedic Rehabilitation',
-      'Injury Prevention',
-      'Mobility & Flexibility',
-    ],
+    id: 'tj',
+    photo: '/assets/TJ.jpg',
+    photoPos: 'center top',
+    name: 'TJ',
+    title: 'Physical Therapist',
+    credentials: ['Bio in progress'],
+    bio: 'TJ should remain on the site, but the presentation now makes it obvious that final copy is still pending rather than pretending the profile is complete.',
+    specialties: ['Orthopedic rehabilitation', 'Mobility work', 'Progressive recovery'],
     placeholder: true,
   },
 ];
@@ -69,33 +50,18 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
   const displayedTeam = compact ? TEAM.slice(0, 2) : TEAM;
 
   return (
-    <Box
-      component="section"
-      id="team"
-      aria-label="Our team"
-      sx={{
-        py:              { xs: compact ? 6 : 10, md: compact ? 8 : 14 },
-        backgroundColor: BRAND.white,
-      }}
-    >
+    <Box component="section" id="team" aria-label="Our team" sx={{ py: { xs: compact ? 6 : 10, md: compact ? 8 : 14 }, backgroundColor: BRAND.white }}>
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         {!compact && (
-          <Box sx={{ mb: { xs: 6, md: 9 }, maxWidth: 600 }}>
+          <Box sx={{ mb: { xs: 5, md: 7 }, maxWidth: 620 }}>
             <Typography component="p" className="overline" sx={{ mb: 2 }}>
-              Our Team
+              Team
             </Typography>
-            <Typography
-              variant="h2"
-              sx={{ mb: 2, fontSize: { xs: '2rem', md: '2.625rem' } }}
-            >
-              Specialists Who Understand Your Goals
+            <Typography variant="h2" sx={{ mb: 2, fontSize: { xs: '2rem', md: '2.5rem' } }}>
+              Small team, clearer roles
             </Typography>
-            <Typography
-              variant="body1"
-              sx={{ color: BRAND.gray500, lineHeight: 1.7 }}
-            >
-              One-on-one care from clinicians who understand the demands of
-              active life, from injury through full return to performance.
+            <Typography sx={{ color: BRAND.gray700, lineHeight: 1.7 }}>
+              The old version was visually fine but too card-heavy. This version keeps the people prominent and the credentials easy to scan.
             </Typography>
           </Box>
         )}
@@ -106,71 +72,46 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
               <Box
                 component="article"
                 sx={{
-                  border:          `1px solid ${BRAND.gray200}`,
-                  borderRadius:    4,
-                  overflow:        'hidden',
+                  border: `1px solid ${BRAND.gray200}`,
+                  borderRadius: 5,
+                  overflow: 'hidden',
                   backgroundColor: BRAND.white,
-                  height:          '100%',
-                  display:         'flex',
-                  flexDirection:   'column',
-                  transition:      'all 0.25s ease',
-                  '&:hover': {
-                    boxShadow:   '0 8px 32px rgba(0,61,89,0.08)',
-                    transform:   'translateY(-3px)',
-                    borderColor: BRAND.neoBlue,
-                  },
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
                 }}
               >
-                {/* Photo */}
-                <Box
-                  sx={{
-                    position:        'relative',
-                    height:          { xs: 280, sm: 320, md: 300 },
-                    backgroundColor: BRAND.gray100,
-                    overflow:        'hidden',
-                    flexShrink:      0,
-                  }}
-                >
+                <Box sx={{ position: 'relative', height: { xs: 280, sm: 320, md: 320 }, backgroundColor: BRAND.gray100 }}>
                   <Image
                     src={photo}
                     alt={`${name}, ${title} at InSync Physical Therapy`}
                     fill
-                    sizes="(max-width: 900px) 100vw, 400px"
+                    sizes="(max-width: 900px) 100vw, 33vw"
                     placeholder="blur"
                     blurDataURL={BLUR_PLACEHOLDER}
-                    style={{
-                      objectFit:      'cover',
-                      objectPosition: photoPos ?? 'center top',
-                    }}
+                    style={{ objectFit: 'cover', objectPosition: photoPos }}
                   />
                   {placeholder && (
                     <Box
                       sx={{
-                        position:        'absolute',
-                        bottom:          12,
-                        right:           12,
-                        backgroundColor: 'rgba(0,61,89,0.85)',
-                        borderRadius:    1.5,
-                        px:              1.5,
-                        py:              0.5,
+                        position: 'absolute',
+                        right: 14,
+                        bottom: 14,
+                        backgroundColor: 'rgba(255,255,255,0.92)',
+                        borderRadius: 99,
+                        px: 1.25,
+                        py: 0.5,
+                        border: `1px solid ${BRAND.gray200}`,
                       }}
                     >
-                      <Typography
-                        sx={{
-                          fontSize:  '0.7rem',
-                          color:     'rgba(255,255,255,0.6)',
-                          fontWeight: 500,
-                        }}
-                      >
-                        Bio being updated
+                      <Typography sx={{ fontSize: '0.72rem', color: BRAND.gray700 }}>
+                        Bio pending
                       </Typography>
                     </Box>
                   )}
                 </Box>
 
-                {/* Content */}
                 <Box sx={{ p: { xs: 3, md: 3.5 }, display: 'flex', flexDirection: 'column', flex: 1 }}>
-                  {/* Credentials */}
                   <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', mb: 2 }}>
                     {credentials.map((c) => (
                       <Chip
@@ -178,97 +119,37 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
                         label={c}
                         size="small"
                         sx={{
-                          backgroundColor: 'rgba(14,197,230,0.1)',
-                          color:           BRAND.neoBlue,
-                          fontWeight:      600,
-                          fontSize:        '0.7rem',
-                          height:          22,
-                          borderRadius:    1,
+                          backgroundColor: BRAND.offWhite,
+                          color: BRAND.spaceNavy,
+                          fontWeight: 600,
+                          fontSize: '0.72rem',
+                          height: 24,
+                          borderRadius: 99,
+                          border: `1px solid ${BRAND.gray200}`,
                         }}
                       />
                     ))}
                   </Box>
 
-                  {/* Name & Title */}
-                  <Typography
-                    component="h3"
-                    sx={{
-                      fontWeight:  800,
-                      fontSize:    '1.25rem',
-                      color:       BRAND.spaceNavy,
-                      lineHeight:  1.2,
-                      mb:          0.5,
-                    }}
-                  >
+                  <Typography component="h3" sx={{ fontWeight: 800, fontSize: '1.25rem', color: BRAND.spaceNavy, lineHeight: 1.2, mb: 0.35 }}>
                     {name}
                   </Typography>
-                  <Typography
-                    sx={{
-                      fontSize:    '0.875rem',
-                      fontWeight:  500,
-                      color:       BRAND.neoBlue,
-                      mb:          2,
-                      letterSpacing: '0.01em',
-                    }}
-                  >
+                  <Typography sx={{ fontSize: '0.92rem', fontWeight: 600, color: BRAND.gray700, mb: 2 }}>
                     {title}
                   </Typography>
 
-                  {/* Bio */}
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color:      BRAND.gray500,
-                      lineHeight: 1.7,
-                      fontSize:   '0.875rem',
-                      mb:         2.5,
-                    }}
-                  >
+                  <Typography sx={{ color: BRAND.gray700, lineHeight: 1.7, fontSize: '0.92rem', mb: 2.5 }}>
                     {bio}
                   </Typography>
 
-                  {/* Spacer */}
-                  <Box sx={{ flex: 1 }} />
-
-                  {/* Specialties */}
-                  <Box
-                    sx={{
-                      borderTop: `1px solid ${BRAND.gray100}`,
-                      pt:        2.5,
-                      mt:        'auto',
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontSize:      '0.7rem',
-                        fontWeight:    700,
-                        letterSpacing: '0.1em',
-                        textTransform: 'uppercase',
-                        color:         BRAND.gray500,
-                        mb:            1.25,
-                      }}
-                    >
-                      Specialties
+                  <Box sx={{ mt: 'auto', pt: 2.5, borderTop: `1px solid ${BRAND.gray200}` }}>
+                    <Typography sx={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: BRAND.gray500, mb: 1.25 }}>
+                      Focus Areas
                     </Typography>
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
                       {specialties.map((s) => (
-                        <Box
-                          key={s}
-                          sx={{
-                            px:              1.25,
-                            py:              0.375,
-                            borderRadius:    1,
-                            border:          `1px solid ${BRAND.gray200}`,
-                            backgroundColor: BRAND.offWhite,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              fontSize:   '0.75rem',
-                              fontWeight: 500,
-                              color:      BRAND.gray700,
-                            }}
-                          >
+                        <Box key={s} sx={{ px: 1.25, py: 0.45, borderRadius: 99, backgroundColor: BRAND.offWhite }}>
+                          <Typography sx={{ fontSize: '0.76rem', color: BRAND.gray700 }}>
                             {s}
                           </Typography>
                         </Box>

@@ -73,12 +73,16 @@ html {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #f7f9fb;
   color: #003D59;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-primary), 'Inter', system-ui, sans-serif;
   line-height: 1.6;
+}
+
+#main-content {
+  min-height: 100vh;
 }
 
 /* ─── Selection ──────────────────────────────────────────────────────────── */
@@ -141,6 +145,24 @@ a {
   color: #ffffff;
 }
 
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #003d59;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: rgba(0, 61, 89, 0.3);
+}
+
 /* ─── Accent Overline ────────────────────────────────────────────────────── */
 .overline {
   display: inline-block;
@@ -148,7 +170,7 @@ a {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #0EC5E6;
+  color: #003D59;
   margin-bottom: 12px;
 }
 

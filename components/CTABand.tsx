@@ -31,19 +31,18 @@ export default function CTABand({
       sx={{ py: { xs: 8, md: 10 } }}
     >
       <Container maxWidth="md" sx={{ px: { xs: 3, md: 4 }, textAlign: 'center' }}>
-        {/* Serif accent */}
         <Typography
           component="p"
           sx={{
-            fontFamily:  'var(--font-secondary), "Playfair Display", serif',
-            fontStyle:   'italic',
-            fontSize:    { xs: '1rem', md: '1.125rem' },
-            color:       'rgba(255,255,255,0.55)',
-            mb:          1.5,
-            letterSpacing: '0.01em',
+            fontSize: '0.72rem',
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: 'rgba(255,255,255,0.55)',
+            mb: 1.5,
           }}
         >
-          InSync Physical Therapy, NYC
+          InSync Physical Therapy
         </Typography>
 
         <Typography
@@ -89,17 +88,16 @@ export default function CTABand({
             endIcon={<ArrowForwardIcon />}
             sx={{
               backgroundColor: BRAND.neoBlue,
-              color:           BRAND.white,
+              color:           BRAND.obsidian,
               fontWeight:      700,
               px:              4,
               py:              1.875,
               fontSize:        '1rem',
-              borderRadius:    3,
+              borderRadius:    999,
               minWidth:        220,
               '&:hover': {
                 backgroundColor: BRAND.neoBlueHover,
-                transform:       'translateY(-2px)',
-                boxShadow:       '0 8px 28px rgba(14,197,230,0.35)',
+                boxShadow:       '0 8px 28px rgba(14,197,230,0.28)',
               },
             }}
           >
