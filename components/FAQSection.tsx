@@ -9,6 +9,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { BRAND } from '@/lib/theme';
+import MotionSection from '@/components/MotionSection';
 
 const FAQS = [
   {
@@ -64,12 +65,13 @@ export default function FAQSection({ compact = false, maxItems }: FAQSectionProp
       id="faq"
       aria-label="Frequently asked questions"
       sx={{
-        py:              { xs: compact ? 6 : 10, md: compact ? 8 : 14 },
+        py:              { xs: compact ? 4 : 6, md: compact ? 6 : 10 },
         backgroundColor: BRAND.offWhite,
       }}
     >
       <Container maxWidth="md" sx={{ px: { xs: 3, md: 4 } }}>
         {!compact && (
+          <MotionSection>
           <Box sx={{ mb: { xs: 6, md: 8 }, textAlign: 'center' }}>
             <Typography component="p" className="overline" sx={{ mb: 2 }}>
               FAQ
@@ -92,6 +94,7 @@ export default function FAQSection({ compact = false, maxItems }: FAQSectionProp
               Everything you need to know before your first appointment.
             </Typography>
           </Box>
+          </MotionSection>
         )}
 
         {compact && (
@@ -103,11 +106,13 @@ export default function FAQSection({ compact = false, maxItems }: FAQSectionProp
           </Typography>
         )}
 
+        <MotionSection variant="list">
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           {displayed.map(({ q, a }, i) => {
             const panel = `panel-${i}`;
             const isOpen = expanded === panel;
             return (
+              <MotionSection key={panel} variant="item">
               <Accordion
                 key={panel}
                 expanded={isOpen}
@@ -165,9 +170,11 @@ export default function FAQSection({ compact = false, maxItems }: FAQSectionProp
                   </Typography>
                 </AccordionDetails>
               </Accordion>
+              </MotionSection>
             );
           })}
         </Box>
+        </MotionSection>
       </Container>
     </Box>
   );

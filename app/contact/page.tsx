@@ -8,6 +8,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import MotionSection from '@/components/MotionSection';
 import { BRAND } from '@/lib/theme';
 
 export const metadata: Metadata = {
@@ -60,7 +61,7 @@ export default function ContactPage() {
         component="section"
         sx={{
           backgroundColor: BRAND.spaceNavy,
-          py:              { xs: 10, md: 14 },
+          py:              { xs: 8, md: 12 },
         }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
@@ -110,13 +111,14 @@ export default function ContactPage() {
       {/* ── Main Contact Layout ─────────────────────────────────────── */}
       <Box
         component="section"
-        sx={{ py: { xs: 8, md: 14 }, backgroundColor: BRAND.white }}
+        sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.white }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <Grid container spacing={{ xs: 6, md: 10 }}>
 
             {/* ── Form Column ─────────────────────────────────────── */}
             <Grid item xs={12} md={7}>
+              <MotionSection>
               <Typography
                 variant="h2"
                 sx={{
@@ -135,10 +137,12 @@ export default function ContactPage() {
               </Typography>
 
               <LeadForm />
+              </MotionSection>
             </Grid>
 
             {/* ── Info Column ─────────────────────────────────────── */}
             <Grid item xs={12} md={5}>
+              <MotionSection delay={0.1}>
               <Box sx={{ position: 'sticky', top: 100 }}>
                 {/* Contact Details */}
                 <Box
@@ -310,6 +314,7 @@ export default function ContactPage() {
                   </Typography>
                 </Box>
               </Box>
+              </MotionSection>
             </Grid>
           </Grid>
         </Container>
