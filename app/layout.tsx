@@ -34,11 +34,11 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://insync-pt.com'
   ),
   title: {
-    default:  'Physical Therapy in Brooklyn and Bryant Park | InSync Physical Therapy',
+    default:  'Physical Therapy Brooklyn & Manhattan NYC | Sports Injury Rehab',
     template: '%s | InSync Physical Therapy',
   },
   description:
-    'One-on-one physical therapy in Brooklyn and Bryant Park for orthopedic rehab, sports injuries, chronic pain, and post-surgical recovery.',
+    'One-on-one physical therapy in Brooklyn and Bryant Park. Sports injury rehab, ACL recovery, BJJ rehab, and post-surgical care for active New Yorkers. Not a PT mill.',
   keywords: [
     'physical therapy NYC',
     'physical therapy Brooklyn',
@@ -46,6 +46,8 @@ export const metadata: Metadata = {
     'sports injury physical therapy NYC',
     'orthopedic rehab NYC',
     'one on one physical therapy NYC',
+    'BJJ physical therapy NYC',
+    'combat sports rehab NYC',
     'ACL rehab NYC',
     'rotator cuff rehab NYC',
     'meniscus tear recovery NYC',
@@ -77,9 +79,9 @@ export const metadata: Metadata = {
     locale:      'en_US',
     url:         'https://insync-pt.com',
     siteName:    'InSync Physical Therapy',
-    title:       'Physical Therapy in Brooklyn and Bryant Park | InSync Physical Therapy',
+    title:       'Physical Therapy Brooklyn & Manhattan NYC | Sports Injury Rehab',
     description:
-      'One-on-one physical therapy in Brooklyn and Manhattan for orthopedic rehab, sports injuries, chronic pain, and post-surgical recovery.',
+      'One-on-one physical therapy in Brooklyn and Manhattan. Sports injury rehab, ACL recovery, BJJ rehab, and post-surgical care for active New Yorkers.',
     images: [
       {
         url:    '/assets/hassan-pt/photos/provider-hassan/dr-hassan-seated-cervical-mobility-assessment-male-patient-03.jpg',
@@ -91,9 +93,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card:        'summary_large_image',
-    title:       'Physical Therapy in Brooklyn and Bryant Park | InSync Physical Therapy',
+    title:       'Physical Therapy Brooklyn & Manhattan NYC | Sports Injury Rehab',
     description:
-      'One-on-one physical therapy in Brooklyn and Manhattan for orthopedic rehab, sports injuries, chronic pain, and post-surgical recovery.',
+      'One-on-one physical therapy in Brooklyn and Manhattan. Sports injury rehab, ACL recovery, and post-surgical care for active New Yorkers.',
     images: [
       '/assets/hassan-pt/photos/provider-hassan/dr-hassan-seated-cervical-mobility-assessment-male-patient-03.jpg',
     ],

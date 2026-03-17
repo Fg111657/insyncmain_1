@@ -161,13 +161,14 @@ export default function ServicesGrid({
               variant="h2"
               sx={{ mb: 2, fontSize: { xs: '2rem', md: '2.75rem' } }}
             >
-              Treatment built around what is actually bothering you
+              Specialized Care for Every Injury
             </Typography>
             <Typography
               variant="body1"
               sx={{ color: BRAND.gray500, maxWidth: 580, lineHeight: 1.7 }}
             >
-              The presentation should feel as clear as the clinic itself: specific problems, clear outcomes, and no filler.
+              Every treatment plan at InSync is built around your specific
+              injury, goals, and activity level. Not a generic protocol.
             </Typography>
           </Box>
         )}
@@ -190,15 +191,16 @@ export default function ServicesGrid({
               component="article"
               sx={{
                 border:          `1px solid ${BRAND.gray200}`,
-                borderRadius:    4,
+                borderRadius:    3,
                 overflow:        'hidden',
                 display:         'flex',
                 flexDirection:   'column',
-                transition:      'border-color 0.2s ease, box-shadow 0.2s ease',
+                transition:      'all 0.25s ease',
                 backgroundColor: BRAND.white,
                 '&:hover': {
-                  boxShadow:   `0 12px 32px rgba(0,61,89,0.06)`,
-                  borderColor: BRAND.gray200,
+                  boxShadow:   `0 8px 32px rgba(0,61,89,0.08)`,
+                  transform:   'translateY(-3px)',
+                  borderColor: BRAND.neoBlue,
                 },
               }}
             >
@@ -220,11 +222,23 @@ export default function ServicesGrid({
                     blurDataURL={BLUR_PLACEHOLDER}
                     style={{ objectFit: 'cover', objectPosition: 'center 25%' }}
                   />
+                  {/* Multi-stop gradient: subtle teal tint at top → deep navy at bottom */}
                   <Box
                     sx={{
                       position:   'absolute',
                       inset:      0,
-                      background: 'linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,38,42,0.18) 100%)',
+                      background: 'linear-gradient(160deg, rgba(14,197,230,0.08) 0%, transparent 40%, rgba(0,38,42,0.72) 100%)',
+                    }}
+                  />
+                  {/* Bottom scrim so card title reads cleanly */}
+                  <Box
+                    sx={{
+                      position:   'absolute',
+                      bottom:     0,
+                      left:       0,
+                      right:      0,
+                      height:     '55%',
+                      background: 'linear-gradient(to bottom, transparent 0%, rgba(0,30,36,0.85) 100%)',
                     }}
                   />
                 </Box>
@@ -239,13 +253,13 @@ export default function ServicesGrid({
                 sx={{
                   width:           48,
                   height:          48,
-                  borderRadius:    14,
-                  backgroundColor: BRAND.offWhite,
+                  borderRadius:    2,
+                  backgroundColor: 'rgba(14,197,230,0.1)',
                   display:         'flex',
                   alignItems:      'center',
                   justifyContent:  'center',
                   mb:              2.5,
-                  color:           BRAND.spaceNavy,
+                  color:           BRAND.neoBlue,
                 }}
               >
                 {icon}
@@ -314,7 +328,7 @@ export default function ServicesGrid({
                           width:           5,
                           height:          5,
                           borderRadius:    '50%',
-                          backgroundColor: BRAND.spaceNavy,
+                          backgroundColor: BRAND.neoBlue,
                           flexShrink:      0,
                           mt:              '6px',
                         }}
@@ -353,14 +367,14 @@ export default function ServicesGrid({
                 variant="text"
                 endIcon={<ArrowForwardIcon sx={{ fontSize: '0.9rem' }} />}
                 sx={{
-                  color:          BRAND.spaceNavy,
+                  color:          BRAND.neoBlue,
                   fontWeight:     600,
                   fontSize:       '0.875rem',
                   p:              0,
                   alignSelf:      'flex-start',
                   '&:hover': {
                     backgroundColor: 'transparent',
-                    color:           BRAND.spaceNavy,
+                    color:           BRAND.neoBlueHover,
                     gap:             0.75,
                   },
                 }}

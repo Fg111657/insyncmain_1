@@ -33,15 +33,23 @@ export const PROVIDER_PHOTOS = {
   standingShoulderAssessment2:
     r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-standing-shoulder-mobility-assessment-male-patient-02.jpg'),
 
+  // Manual therapy / hands-on shots
+  neckManualTherapy:
+    r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-supine-neck-manual-therapy-female-patient-01.jpg'),
+  neckManualTherapyWide:
+    r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-supine-neck-manual-therapy-wide-female-patient-01.jpg'),
+  upperBackTherapy:
+    r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-prone-upper-back-manual-therapy-female-patient-01.jpg'),
+  shoulderTreatment:
+    r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-prone-shoulder-treatment-female-patient-01.jpg'),
+
   // Assessment series
   cervicalMobility1:
     r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-seated-cervical-mobility-assessment-male-patient-01.jpg'),
   cervicalMobility2:
     r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-seated-cervical-mobility-assessment-male-patient-02.jpg'),
-  cervicalMobility3:
-    r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-seated-cervical-mobility-assessment-male-patient-04.jpg'),
-  cervicalMobility4:
-    r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-seated-cervical-mobility-assessment-male-patient-05.jpg'),
+  sideAngleUpperBack:
+    r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-side-angle-upper-back-treatment-female-patient-01.jpg'),
 } as const;
 
 // ─── Office / clinic photos ───────────────────────────────────────────────────
@@ -78,10 +86,10 @@ export const SECTION_IMAGES = {
   services: {
     orthopedic:  PROVIDER_PHOTOS.cervicalMobility1,
     sports:      PROVIDER_PHOTOS.standingShoulderAssessment2,
-    chronicPain: OFFICE_PHOTOS.treatmentRoomWide,
-    postSurgical: PROVIDER_PHOTOS.cervicalMobility3,
-    manual:      PROVIDER_PHOTOS.standingShoulderAssessment,
-    movement:    PROVIDER_PHOTOS.cervicalMobility4,
+    chronicPain: PROVIDER_PHOTOS.upperBackTherapy,
+    postSurgical:PROVIDER_PHOTOS.shoulderTreatment,
+    manual:      PROVIDER_PHOTOS.neckManualTherapy,
+    movement:    PROVIDER_PHOTOS.cervicalMobility2,
   },
 
   // About / Team page
