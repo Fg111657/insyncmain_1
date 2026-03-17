@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import { BRAND } from '@/lib/theme';
+import MotionSection from '@/components/MotionSection';
 
 const MILL_PROBLEMS = [
   '3 or 4 patients per therapist at the same time',
@@ -30,6 +31,7 @@ export default function PTMillSection() {
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         {/* Header */}
+        <MotionSection>
         <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
           <Typography component="p" style={{ color: BRAND.neoBlue }} sx={{
             display:       'inline-flex',
@@ -76,8 +78,10 @@ export default function PTMillSection() {
             time. That is not how we work.
           </Typography>
         </Box>
+        </MotionSection>
 
         {/* Two-column comparison */}
+        <MotionSection delay={0.1}>
         <Box
           sx={{
             display:             'grid',
@@ -193,6 +197,7 @@ export default function PTMillSection() {
             ))}
           </Box>
         </Box>
+        </MotionSection>
       </Container>
     </Box>
   );

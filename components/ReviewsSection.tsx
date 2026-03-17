@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import StarIcon from '@mui/icons-material/Star';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import { BRAND } from '@/lib/theme';
+import MotionSection from '@/components/MotionSection';
 
 // Replace with verified Google reviews once pulled from Google Business Profile.
 const REVIEWS = [
@@ -55,11 +56,12 @@ export default function ReviewsSection() {
       aria-label="Patient reviews"
       sx={{
         py:              { xs: 10, md: 14 },
-        backgroundColor: BRAND.white,
+        backgroundColor: BRAND.offWhite,
       }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         {/* Header */}
+        <MotionSection>
         <Box
           sx={{
             display:        'flex',
@@ -144,8 +146,10 @@ export default function ReviewsSection() {
             </Box>
           </Box>
         </Box>
+        </MotionSection>
 
         {/* Review Cards */}
+        <MotionSection variant="list">
         <Box
           sx={{
             display:             'grid',
@@ -158,8 +162,8 @@ export default function ReviewsSection() {
           }}
         >
           {REVIEWS.map(({ author, rating, context, text }) => (
+            <MotionSection key={author} variant="item">
             <Box
-              key={author}
               component="blockquote"
               sx={{
                 m:               0,
@@ -240,8 +244,10 @@ export default function ReviewsSection() {
                 {author}
               </Typography>
             </Box>
+            </MotionSection>
           ))}
         </Box>
+        </MotionSection>
 
         {/* Google CTA */}
         <Box sx={{ textAlign: 'center', mt: 5 }}>

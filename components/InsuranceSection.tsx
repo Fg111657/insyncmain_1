@@ -28,7 +28,7 @@ export default function InsuranceSection({ compact = false }: InsuranceSectionPr
       aria-label="Accepted insurance"
       sx={{
         py:              { xs: compact ? 6 : 10, md: compact ? 8 : 14 },
-        backgroundColor: compact ? BRAND.white : BRAND.offWhite,
+        backgroundColor: BRAND.white,
       }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>

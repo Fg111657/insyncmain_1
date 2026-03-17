@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import MotionSection from '@/components/MotionSection';
 import SportsKabaddiIcon from '@mui/icons-material/SportsKabaddi';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import HealingIcon from '@mui/icons-material/Healing';
@@ -44,7 +45,7 @@ export default function WhoWeWorkWithSection() {
       aria-label="Who we work with"
       sx={{
         py:              { xs: 10, md: 14 },
-        backgroundColor: BRAND.white,
+        backgroundColor: BRAND.offWhite,
       }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
@@ -58,6 +59,7 @@ export default function WhoWeWorkWithSection() {
           }}
         >
           {/* Left: headline */}
+          <MotionSection>
           <Box>
             <Typography component="p" sx={{
               display:       'inline-flex',
@@ -100,8 +102,10 @@ export default function WhoWeWorkWithSection() {
               you get there.
             </Typography>
           </Box>
+          </MotionSection>
 
           {/* Right: cards */}
+          <MotionSection variant="list">
           <Box
             sx={{
               display:             'grid',
@@ -110,8 +114,8 @@ export default function WhoWeWorkWithSection() {
             }}
           >
             {WHO.map(({ icon, title, desc }) => (
+              <MotionSection key={title} variant="item">
               <Box
-                key={title}
                 component="article"
                 sx={{
                   backgroundColor: BRAND.offWhite,
@@ -162,8 +166,10 @@ export default function WhoWeWorkWithSection() {
                   {desc}
                 </Typography>
               </Box>
+              </MotionSection>
             ))}
           </Box>
+          </MotionSection>
         </Box>
       </Container>
     </Box>

@@ -25,7 +25,7 @@ export default function CombatSportsSection() {
       aria-label="Combat sports and BJJ physical therapy"
       sx={{
         py:              { xs: 10, md: 14 },
-        backgroundColor: BRAND.offWhite,
+        backgroundColor: BRAND.white,
       }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
