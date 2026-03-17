@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { BRAND } from '@/lib/theme';
-import { SECTION_IMAGES } from '@/lib/images';
+import { SECTION_IMAGES, BLUR_PLACEHOLDER } from '@/lib/images';
 
 const INJURIES = [
   'ACL and meniscus tears',
@@ -137,6 +137,8 @@ export default function CombatSportsSection() {
                 alt="Dr. Hassan performing shoulder mobility assessment for sports rehab patient in NYC"
                 fill
                 sizes="(max-width: 900px) 100vw, 50vw"
+                placeholder="blur"
+                blurDataURL={BLUR_PLACEHOLDER}
                 style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
               />
               <Box

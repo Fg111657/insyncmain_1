@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import { BRAND } from '@/lib/theme';
+import { BLUR_PLACEHOLDER } from '@/lib/images';
 
 const TEAM = [
   {
@@ -135,6 +136,8 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
                     alt={`${name}, ${title} at InSync Physical Therapy`}
                     fill
                     sizes="(max-width: 900px) 100vw, 400px"
+                    placeholder="blur"
+                    blurDataURL={BLUR_PLACEHOLDER}
                     style={{
                       objectFit:      'cover',
                       objectPosition: photoPos ?? 'center top',

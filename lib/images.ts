@@ -68,6 +68,12 @@ export const LOCATION_PHOTOS = {
   bryantPark: r('/assets/locations/bryant-park-midtown.jpg'),
 } as const;
 
+// ─── Blur placeholder ─────────────────────────────────────────────────────────
+// 10×10 SVG in SpaceNavy (#003D59) — used as placeholder="blur" blurDataURL
+// on every <Image> so the LCP slot is filled instantly with brand colour.
+export const BLUR_PLACEHOLDER =
+  'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMDAzRDU5Ii8+PC9zdmc+';
+
 // ─── Convenience re-exports grouped by use case ───────────────────────────────
 export const SECTION_IMAGES = {
   // HeroSection — right panel (desktop only)

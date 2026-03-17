@@ -14,7 +14,7 @@ import TouchAppIcon from '@mui/icons-material/TouchApp';
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import { BRAND } from '@/lib/theme';
-import { SECTION_IMAGES } from '@/lib/images';
+import { SECTION_IMAGES, BLUR_PLACEHOLDER } from '@/lib/images';
 
 const SERVICES = [
   {
@@ -218,6 +218,8 @@ export default function ServicesGrid({
                     alt={`${title} at InSync Physical Therapy NYC`}
                     fill
                     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    placeholder="blur"
+                    blurDataURL={BLUR_PLACEHOLDER}
                     style={{ objectFit: 'cover', objectPosition: 'center 25%' }}
                   />
                   {/* Multi-stop gradient: subtle teal tint at top → deep navy at bottom */}

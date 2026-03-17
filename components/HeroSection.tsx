@@ -10,7 +10,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { BRAND } from '@/lib/theme';
-import { SECTION_IMAGES } from '@/lib/images';
+import { SECTION_IMAGES, BLUR_PLACEHOLDER } from '@/lib/images';
 
 const TRUST_ITEMS = [
   'Real One-on-One Treatment Every Visit',
@@ -69,6 +69,8 @@ export default function HeroSection() {
           fill
           priority
           sizes="46vw"
+          placeholder="blur"
+          blurDataURL={BLUR_PLACEHOLDER}
           style={{ objectFit: 'cover', objectPosition: 'center top' }}
         />
         {/* Gradient fade — left edge blends into dark background */}

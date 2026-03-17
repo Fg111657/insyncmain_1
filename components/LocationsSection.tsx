@@ -12,7 +12,7 @@ import DirectionsIcon from '@mui/icons-material/Directions';
 import SubwayIcon from '@mui/icons-material/DirectionsSubway';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { BRAND } from '@/lib/theme';
-import { LOCATION_PHOTOS } from '@/lib/images';
+import { LOCATION_PHOTOS, BLUR_PLACEHOLDER } from '@/lib/images';
 
 const LOCATIONS = [
   {
@@ -126,6 +126,8 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                     alt={photoAlt}
                     fill
                     sizes="(max-width: 900px) 100vw, 50vw"
+                    placeholder="blur"
+                    blurDataURL={BLUR_PLACEHOLDER}
                     style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
                   />
                   {/* Teal-to-navy gradient overlay — ties photo to brand palette */}
