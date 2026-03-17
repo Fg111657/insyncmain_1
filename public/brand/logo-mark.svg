@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="InSync Physical Therapy mark">
+  <title>InSync Physical Therapy — mark</title>
+  <!-- Head circle -->
+  <circle cx="30" cy="18" r="9" fill="#0EC5E6"/>
+  <!-- Wing / diagonal parallelogram -->
+  <polygon points="29,39 35,23 98,1 92,18" fill="#0EC5E6"/>
+  <!-- J-curve body -->
+  <path d="M37,37 C20,48 4,62 3,76 C2,90 18,94 36,92 C50,90 54,83 48,77"
+    fill="none" stroke="#0EC5E6" stroke-width="14"
+    stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower circle -->
+  <circle cx="58" cy="77" r="7.5" fill="#0EC5E6"/>
+</svg>

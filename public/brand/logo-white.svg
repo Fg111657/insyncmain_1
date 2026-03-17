@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 44" role="img" aria-label="InSync Physical Therapy">
+  <title>InSync Physical Therapy</title>
+  <!-- Mark: 100x100 unit space scaled to 44x44 (scale factor 0.44) -->
+  <g transform="scale(0.44)">
+    <circle cx="30" cy="18" r="9" fill="#0EC5E6"/>
+    <polygon points="29,39 35,23 98,1 92,18" fill="#0EC5E6"/>
+    <path d="M37,37 C20,48 4,62 3,76 C2,90 18,94 36,92 C50,90 54,83 48,77"
+      fill="none" stroke="#0EC5E6" stroke-width="14"
+      stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="58" cy="77" r="7.5" fill="#0EC5E6"/>
+  </g>
+  <!-- Wordmark: InSync (white) -->
+  <text x="56" y="27"
+    font-family="'Articulat CF', 'Inter', -apple-system, sans-serif"
+    font-weight="800" font-size="22" fill="#FFFFFF" letter-spacing="-0.3">InSync</text>
+  <!-- Tagline: Physical Therapy (white) -->
+  <text x="57" y="38"
+    font-family="'Articulat CF', 'Inter', -apple-system, sans-serif"
+    font-weight="500" font-size="7.5" fill="#FFFFFF" letter-spacing="1.9">PHYSICAL THERAPY</text>
+</svg>
