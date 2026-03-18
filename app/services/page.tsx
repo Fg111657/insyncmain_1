@@ -68,12 +68,12 @@ export default function ServicesPage() {
       <Box
         component="section"
         aria-label="Services overview"
+        className="section-navy"
         sx={{
-          position:        'relative',
-          backgroundColor: BRAND.spaceNavy,
-          pt:              { xs: 10, md: 14 },
-          pb:              { xs: 8, md: 12 },
-          overflow:        'hidden',
+          position: 'relative',
+          pt:       { xs: 10, md: 14 },
+          pb:       { xs: 8, md: 12 },
+          overflow: 'hidden',
         }}
       >
         {/* Background treatment image */}
@@ -236,13 +236,13 @@ export default function ServicesPage() {
       <Box
         component="nav"
         aria-label="Jump to a service"
+        className="section-light"
         sx={{
-          position:        'sticky',
-          top:             { xs: 56, md: 64 },
-          zIndex:          100,
-          backgroundColor: BRAND.white,
-          borderBottom:    `1px solid ${BRAND.gray200}`,
-          boxShadow:       '0 2px 12px rgba(0,0,0,0.06)',
+          position:    'sticky',
+          top:         { xs: 56, md: 64 },
+          zIndex:      100,
+          borderBottom: `1px solid ${BRAND.gray200}`,
+          boxShadow:   '0 2px 12px rgba(0,0,0,0.06)',
         }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 2, md: 4 } }}>
@@ -299,10 +299,8 @@ export default function ServicesPage() {
       <Box
         component="section"
         aria-label="Outcome statistics"
-        sx={{
-          py:              { xs: 5, md: 6 },
-          backgroundColor: BRAND.spaceNavy,
-        }}
+        className="section-navy"
+        sx={{ py: { xs: 5, md: 6 } }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <Box
@@ -353,11 +351,11 @@ export default function ServicesPage() {
       {/* ── Mid-page CTA strip ─────────────────────────────────────── */}
       <Box
         component="section"
+        className="section-off-white"
         sx={{
-          py:              { xs: 4, md: 5 },
-          backgroundColor: BRAND.offWhite,
-          borderTop:       `1px solid ${BRAND.gray200}`,
-          borderBottom:    `1px solid ${BRAND.gray200}`,
+          py:         { xs: 4, md: 5 },
+          borderTop:  `1px solid ${BRAND.gray200}`,
+          borderBottom: `1px solid ${BRAND.gray200}`,
         }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
@@ -413,7 +411,8 @@ export default function ServicesPage() {
       <Box
         component="section"
         aria-label="Conditions treated"
-        sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.white }}
+        className="section-light"
+        sx={{ py: { xs: 6, md: 10 } }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <Box
@@ -475,7 +474,8 @@ export default function ServicesPage() {
         component="section"
         id="body-map"
         aria-label="Find conditions by body area"
-        sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.offWhite }}
+        className="section-off-white"
+        sx={{ py: { xs: 6, md: 10 } }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <MotionSection>
@@ -527,10 +527,8 @@ export default function ServicesPage() {
 
       {/* ── Meet Your Providers ────────────────────────────────────── */}
       <Box
-        sx={{
-          py:              { xs: 1, md: 2 },
-          backgroundColor: BRAND.white,
-        }}
+        className="section-light"
+        sx={{ py: { xs: 1, md: 2 } }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 }, pt: { xs: 5, md: 8 } }}>
           <MotionSection>

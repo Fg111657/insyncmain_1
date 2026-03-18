@@ -143,12 +143,12 @@ export default function InsurancePage() {
       <Box
         component="section"
         aria-label="Insurance overview"
+        className="section-navy"
         sx={{
-          position:        'relative',
-          backgroundColor: BRAND.spaceNavy,
-          pt:              { xs: 10, md: 14 },
-          pb:              { xs: 8, md: 12 },
-          overflow:        'hidden',
+          position: 'relative',
+          pt:       { xs: 10, md: 14 },
+          pb:       { xs: 8, md: 12 },
+          overflow: 'hidden',
         }}
       >
         {/* Subtle grid texture overlay */}
@@ -355,10 +355,8 @@ export default function InsurancePage() {
       <Box
         component="section"
         aria-label="No referral required"
-        sx={{
-          backgroundColor: BRAND.neoBlue,
-          py:              { xs: 3, md: 3.5 },
-        }}
+        className="section-neo-blue"
+        sx={{ py: { xs: 3, md: 3.5 } }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <Box
@@ -398,7 +396,8 @@ export default function InsurancePage() {
         component="section"
         id="insurance"
         aria-label="Accepted insurance carriers"
-        sx={{ py: { xs: 8, md: 12 }, backgroundColor: BRAND.white }}
+        className="section-light"
+        sx={{ py: { xs: 8, md: 12 } }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <MotionSection>
@@ -573,7 +572,8 @@ export default function InsurancePage() {
       <Box
         component="section"
         aria-label="How insurance works at InSync"
-        sx={{ py: { xs: 8, md: 12 }, backgroundColor: BRAND.spaceNavy }}
+        className="section-navy"
+        sx={{ py: { xs: 8, md: 12 } }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <Grid container spacing={{ xs: 6, md: 10 }} alignItems="flex-start">
@@ -765,7 +765,8 @@ export default function InsurancePage() {
       <Box
         component="section"
         aria-label="What to expect to pay"
-        sx={{ py: { xs: 8, md: 12 }, backgroundColor: BRAND.white }}
+        className="section-light"
+        sx={{ py: { xs: 8, md: 12 } }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <MotionSection>
