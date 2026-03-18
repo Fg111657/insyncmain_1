@@ -15,7 +15,15 @@ export const BUSINESS_SCHEMA = {
   priceRange:       '$$',
   telephone:        '+19294194643',
   email:            'insyncpt.manager@gmail.com',
-  areaServed:       ['Brooklyn, NY', 'Midtown Manhattan, NY', 'New York City, NY'],
+  areaServed: [
+    'Brooklyn, NY',
+    'Midtown Manhattan, NY',
+    'New York City, NY',
+    'Queens, NY',
+    'Bronx, NY',
+    'Hoboken, NJ',
+    'Jersey City, NJ',
+  ],
   address: [
     {
       '@type':          'PostalAddress',
@@ -157,6 +165,27 @@ export const FAQ_SCHEMA = {
       },
     },
   ],
+};
+
+/**
+ * VIDEO_SCHEMA
+ * Uncomment and populate once a clinic video is available.
+ * Include in page <head> via next/script to unlock VideoObject rich results.
+ */
+export const VIDEO_SCHEMA = {
+  '@context':    'https://schema.org',
+  '@type':       'VideoObject',
+  name:          'How InSync Physical Therapy Works — One-on-One Care in NYC',
+  description:   'See how Dr. Hassan and the InSync PT team deliver one-on-one physical therapy for sports injuries, orthopedic rehab, and post-surgical recovery in Brooklyn and Manhattan.',
+  thumbnailUrl:  'https://insync-pt.com/assets/hassan-pt/photos/provider-hassan/dr-hassan-seated-cervical-mobility-assessment-male-patient-03.jpg',
+  uploadDate:    '', // Fill in once video is uploaded
+  contentUrl:    '', // Fill in once video is hosted
+  embedUrl:      '', // Fill in if hosted on YouTube/Vimeo
+  publisher: {
+    '@type': 'Organization',
+    name:    'InSync Physical Therapy',
+    logo:    'https://insync-pt.com/brand/logo.svg',
+  },
 };
 
 export const LOCATION_BROOKLYN_SCHEMA = {

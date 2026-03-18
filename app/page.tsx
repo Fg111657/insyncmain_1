@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { FAQ_SCHEMA } from '@/lib/schema';
-import HeroSection from '@/components/HeroSection';
+import HeroRedesigned from '@/components/HeroRedesigned';
+import MobileFAB from '@/components/MobileFAB';
 import TrustBar from '@/components/TrustBar';
 import PTMillSection from '@/components/PTMillSection';
 import ServicesGrid from '@/components/ServicesGrid';
@@ -33,8 +34,8 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
       />
 
-      {/* 1. Hero — Physical Therapy for Active New Yorkers */}
-      <HeroSection />
+      {/* 1. Hero — Recover Faster with Expert PT in [City] */}
+      <HeroRedesigned />
 
       {/* 2. Trust bar — 1-on-1 / No PT Mill / 9 yrs / Insurance verified */}
       <TrustBar />
@@ -77,10 +78,13 @@ export default function HomePage() {
 
       {/* 15. Final CTA */}
       <CTABand
-        headline="Book Your First Visit."
+        headline="Book Your Evaluation."
         subline="Brooklyn and Manhattan locations. Insurance verified before your appointment."
         variant="dark"
       />
+
+      {/* Mobile floating call button — fixed position, xs/sm only */}
+      <MobileFAB />
     </>
   );
 }
