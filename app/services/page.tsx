@@ -18,6 +18,7 @@ import TeamSection from '@/components/TeamSection';
 import MotionSection from '@/components/MotionSection';
 import { BRAND } from '@/lib/theme';
 import { SERVICES_PAGE_SCHEMA } from '@/lib/schema';
+import { PROVIDER_PHOTOS } from '@/lib/images';
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
@@ -79,7 +80,7 @@ export default function ServicesPage() {
         {/* Background treatment image */}
         <Box sx={{ position: 'absolute', inset: 0, zIndex: 0 }}>
           <Image
-            src="/assets/hassan-pt/photos/provider-hassan/dr-hassan-prone-upper-back-manual-therapy-female-patient-06.jpg"
+            src={PROVIDER_PHOTOS.upperBackTherapy06}
             alt="Physical therapy treatment at InSync"
             fill
             priority

@@ -23,6 +23,10 @@ const r = (path: string) => `${CDN_BASE}${path}`;
 // Namespace: /assets/hassan-pt/photos/provider-hassan/
 
 export const PROVIDER_PHOTOS = {
+  // Dr. Hassan profile headshot (used on About page)
+  hassanHeadshot:
+    r('/assets/dr-hassan-headshot.jpg'),
+
   // Hero panel — clean wide assessment shot
   heroAssessment:
     r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-seated-cervical-mobility-assessment-male-patient-03.jpg'),
@@ -40,6 +44,8 @@ export const PROVIDER_PHOTOS = {
     r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-supine-neck-manual-therapy-wide-female-patient-01.jpg'),
   upperBackTherapy:
     r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-prone-upper-back-manual-therapy-female-patient-01.jpg'),
+  upperBackTherapy06:
+    r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-prone-upper-back-manual-therapy-female-patient-06.jpg'),
   shoulderTreatment:
     r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-prone-shoulder-treatment-female-patient-01.jpg'),
 

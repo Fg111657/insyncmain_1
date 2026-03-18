@@ -8,7 +8,7 @@ import Chip from '@mui/material/Chip';
 import TeamSection from '@/components/TeamSection';
 import CTABand from '@/components/CTABand';
 import { BRAND } from '@/lib/theme';
-import { BLUR_PLACEHOLDER } from '@/lib/images';
+import { BLUR_PLACEHOLDER, PROVIDER_PHOTOS } from '@/lib/images';
 import MotionSection from '@/components/MotionSection';
 import { PHYSICIAN_SCHEMA } from '@/lib/schema';
 
@@ -121,7 +121,7 @@ export default function AboutPage() {
                 }}
               >
                 <Image
-                  src="/assets/Hassan .jpeg"
+                  src={PROVIDER_PHOTOS.hassanHeadshot}
                   alt="Dr. Hassan — Doctor of Physical Therapy at InSync"
                   fill
                   priority
