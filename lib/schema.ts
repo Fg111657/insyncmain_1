@@ -231,3 +231,89 @@ export const LOCATION_BRYANT_PARK_SCHEMA = {
     longitude:  '-73.9836',
   },
 };
+
+// ─── Services Page Schema ─────────────────────────────────────────────────────
+export const SERVICES_PAGE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type':    'MedicalWebPage',
+  name:       'Physical Therapy Services in Brooklyn & Manhattan NYC | InSync Physical Therapy',
+  url:        'https://insync-pt.com/services',
+  description:
+    'Orthopedic rehabilitation, sports injury recovery, chronic pain treatment, post-surgical rehab, manual therapy, movement analysis, and strength & conditioning transition. InSync Physical Therapy — Brooklyn and Manhattan, NYC.',
+  about: [
+    { '@type': 'MedicalTherapy', name: 'Orthopedic Rehabilitation',           relevantSpecialty: 'PhysicalTherapy' },
+    { '@type': 'MedicalTherapy', name: 'Sports Injury Rehabilitation',        relevantSpecialty: 'PhysicalTherapy' },
+    { '@type': 'MedicalTherapy', name: 'Chronic Pain Treatment',              relevantSpecialty: 'PhysicalTherapy' },
+    { '@type': 'MedicalTherapy', name: 'Post-Surgical Rehabilitation',        relevantSpecialty: 'PhysicalTherapy' },
+    { '@type': 'MedicalTherapy', name: 'Manual Therapy',                      relevantSpecialty: 'PhysicalTherapy' },
+    { '@type': 'MedicalTherapy', name: 'Movement Analysis',                   relevantSpecialty: 'PhysicalTherapy' },
+    { '@type': 'MedicalTherapy', name: 'Strength and Conditioning Transition', relevantSpecialty: 'PhysicalTherapy' },
+  ],
+  provider: {
+    '@type': 'MedicalBusiness',
+    name:    'InSync Physical Therapy',
+    url:     'https://insync-pt.com',
+  },
+};
+
+// ─── Insurance Page FAQ Schema ────────────────────────────────────────────────
+export const INSURANCE_FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type':    'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name:    'Does InSync Physical Therapy accept insurance?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'Yes. InSync Physical Therapy is in-network with Aetna, Blue Cross Blue Shield, Cigna, United Healthcare, Medicare, Fidelis Care, HIP, and NYC Employee Benefits (EPP/GHI). Benefits are verified before your first appointment.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name:    'Do I need a referral for physical therapy in New York State?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'No referral is required for the first 30 days of physical therapy in New York State. After 30 days, a physician referral may be required depending on your insurance plan. We help clarify this during intake.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name:    'How does InSync verify my insurance benefits?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'After you submit an appointment request, our team contacts your insurance carrier directly to verify your physical therapy benefits, confirm your coverage, and determine your copay and deductible before scheduling your first visit.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name:    'What will physical therapy cost me out of pocket?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'Your cost depends on your specific plan, copay, and remaining deductible. Most in-network patients pay a copay of $20–$50 per session. We provide a clear cost estimate before your first appointment so there are no surprises.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name:    'Does InSync accept Medicare for physical therapy?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'Yes. InSync Physical Therapy accepts Medicare Part B for medically necessary physical therapy services. We verify your Medicare coverage before scheduling.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name:    'What if my insurance is not listed?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'Contact us. We accept additional plans beyond those listed and can check your out-of-network benefits if you prefer to use a plan we are not directly contracted with.',
+      },
+    },
+  ],
+};
