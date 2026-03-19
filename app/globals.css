@@ -143,6 +143,39 @@ a {
 
 .section-neo-blue {
   background-color: #0EC5E6;
+  color: #003D59;
+}
+
+/* ─── Dark Section: Override MUI Typography SSR color injection ──────────── */
+/* MUI Emotion SSR injects .MuiTypography-root { color: #003D59 } after       */
+/* globals.css at equal specificity (0,1,0). Using a descendant selector      */
+/* raises specificity to (0,2,0) so white text wins on dark backgrounds.      */
+.section-navy .MuiTypography-root,
+.section-dark .MuiTypography-root {
+  color: #ffffff;
+}
+
+/* Restore neoBlue accent for overlines inside dark sections */
+.section-navy .MuiTypography-root.overline,
+.section-dark .MuiTypography-root.overline {
+  color: #0EC5E6;
+}
+
+/* Fix overline on light backgrounds: neoBlue (#0EC5E6) on white = 2.04:1    */
+/* which fails WCAG AA. Switch to spaceNavy (9.8:1) on light sections.        */
+.section-light .overline,
+.section-off-white .overline {
+  color: #003D59;
+}
+
+/* Chips inside dark sections: MUI sx props don't apply pre-hydration in RSC  */
+/* so background + label color must be forced via plain CSS.                  */
+.section-navy .MuiChip-root {
+  background-color: rgba(14, 197, 230, 0.15) !important;
+  border-color: rgba(14, 197, 230, 0.30) !important;
+}
+.section-navy .MuiChip-label {
+  color: #ffffff !important;
 }
 
 /* ─── Accent Overline ────────────────────────────────────────────────────── */
