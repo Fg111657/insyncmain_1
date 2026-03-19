@@ -104,7 +104,7 @@ export default function PTMillSection() {
                 fontSize:      '0.75rem',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color:         'rgba(255,255,255,0.35)',
+                color:         'rgba(255,255,255,0.60)',
                 mb:            2.5,
               }}
             >
@@ -123,7 +123,7 @@ export default function PTMillSection() {
               >
                 <CancelOutlinedIcon
                   sx={{
-                    color:     'rgba(255,255,255,0.25)',
+                    color:     'rgba(255,255,255,0.45)',
                     fontSize:  '1.1rem',
                     mt:        '2px',
                     flexShrink: 0,
@@ -131,7 +131,7 @@ export default function PTMillSection() {
                 />
                 <Typography
                   sx={{
-                    color:      'rgba(255,255,255,0.5)',
+                    color:      'rgba(255,255,255,0.72)',
                     fontSize:   '0.9375rem',
                     lineHeight: 1.6,
                   }}

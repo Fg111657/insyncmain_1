@@ -101,7 +101,7 @@ export default function TermsPage() {
               Terms of Service
             </Typography>
             <Typography
-              sx={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem' }}
+              sx={{ color: 'rgba(255,255,255,0.82)', fontSize: '0.9rem' }}
             >
               Last updated: January 2026
             </Typography>

@@ -338,7 +338,7 @@ export default function ContactPage() {
                             sx={{
                               fontSize:   '0.68rem',
                               fontWeight: 800,
-                              color:      BRAND.neoBlue,
+                              color:      BRAND.spaceNavy,
                               lineHeight: 1,
                             }}
                           >

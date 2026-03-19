@@ -52,10 +52,8 @@ export default function LocationsPage() {
       {/* ── Page Hero ───────────────────────────────────────────── */}
       <Box
         component="section"
-        sx={{
-          backgroundColor: BRAND.spaceNavy,
-          py:              { xs: 8, md: 12 },
-        }}
+        className="section-navy"
+        sx={{ py: { xs: 8, md: 12 } }}
       >
         <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
           <Box sx={{ maxWidth: 600 }}>
@@ -104,7 +102,7 @@ export default function LocationsPage() {
       <LocationsSection compact={false} />
 
       {/* ── Location-specific FAQ ────────────────────────────────── */}
-      <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.white }}>
+      <Box className="section-light" sx={{ py: { xs: 6, md: 10 } }}>
         <Container maxWidth="md" sx={{ px: { xs: 3, md: 4 } }}>
           <MotionSection>
           <Typography

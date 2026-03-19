@@ -40,7 +40,7 @@ export default function CTABand({
             fontFamily:  'var(--font-secondary), "Playfair Display", serif',
             fontStyle:   'italic',
             fontSize:    { xs: '1rem', md: '1.125rem' },
-            color:       'rgba(255,255,255,0.55)',
+            color:       'rgba(255,255,255,0.82)',
             mb:          1.5,
             letterSpacing: '0.01em',
           }}
@@ -64,7 +64,7 @@ export default function CTABand({
         <Typography
           variant="body1"
           sx={{
-            color:     'rgba(255,255,255,0.65)',
+            color:     'rgba(255,255,255,0.82)',
             mb:        4.5,
             maxWidth:  460,
             mx:        'auto',

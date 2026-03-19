@@ -318,7 +318,7 @@ export default function AboutPage() {
                         size="small"
                         sx={{
                           backgroundColor: 'rgba(14,197,230,0.15)',
-                          color:           BRAND.neoBlue,
+                          color:           BRAND.white,
                           fontWeight:      600,
                           fontSize:        '0.68rem',
                           height:          20,
@@ -510,7 +510,7 @@ export default function AboutPage() {
                 >
                   Dr. Hassan
                 </Typography>
-                <Typography sx={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.5)' }}>
+                <Typography sx={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.82)' }}>
                   Founder — InSync Physical Therapy
                 </Typography>
 
@@ -962,8 +962,7 @@ export default function AboutPage() {
                       sx={{
                         fontSize:   { xs: '1.5rem', md: '2rem' },
                         fontWeight: 800,
-                        color:      BRAND.neoBlue,
-                        opacity:    0.6,
+                        color:      BRAND.spaceNavy,
                         lineHeight: 1,
                         flexShrink: 0,
                         width:      { xs: 40, md: 52 },

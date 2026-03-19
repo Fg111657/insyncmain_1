@@ -336,7 +336,7 @@ export default function InsurancePage() {
                 >
                   <Typography
                     sx={{
-                      color:      'rgba(255,255,255,0.55)',
+                      color:      'rgba(255,255,255,0.82)',
                       fontSize:   '0.8125rem',
                       lineHeight: 1.6,
                     }}
@@ -721,7 +721,6 @@ export default function InsurancePage() {
                           fontSize:    '1.625rem',
                           color:       BRAND.neoBlue,
                           lineHeight:  1,
-                          opacity:     0.65,
                           flexShrink:  0,
                           width:       36,
                           pt:          '2px',
@@ -744,7 +743,7 @@ export default function InsurancePage() {
                         </Typography>
                         <Typography
                           sx={{
-                            color:      'rgba(255,255,255,0.58)',
+                            color:      'rgba(255,255,255,0.80)',
                             fontSize:   '0.875rem',
                             lineHeight: 1.65,
                           }}

@@ -38,7 +38,7 @@ const LEGAL_LINKS = [
 ];
 
 const linkSx = {
-  color:          'rgba(255,255,255,0.6)',
+  color:          'rgba(255,255,255,0.78)',
   fontSize:       '0.875rem',
   lineHeight:     1.85,
   textDecoration: 'none',
@@ -79,7 +79,7 @@ export default function Footer() {
             <Typography
               variant="body2"
               sx={{
-                color:     'rgba(255,255,255,0.55)',
+                color:     'rgba(255,255,255,0.80)',
                 lineHeight: 1.75,
                 mb:        3.5,
                 maxWidth:  300,
@@ -232,7 +232,7 @@ export default function Footer() {
         <Typography
           variant="body2"
           sx={{
-            color:     'rgba(255,255,255,0.22)',
+            color:     'rgba(255,255,255,0.60)',
             fontSize:  '0.72rem',
             textAlign: { xs: 'left', sm: 'right' },
           }}

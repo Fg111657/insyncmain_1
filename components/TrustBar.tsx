@@ -147,7 +147,7 @@ export default function TrustBar({ items }: TrustBarProps) {
                       sx={{
                         fontSize:      '0.8125rem',
                         fontWeight:    500,
-                        color:         'rgba(255,255,255,0.55)',
+                        color:         'rgba(255,255,255,0.82)',
                         lineHeight:    1.4,
                         letterSpacing: '0.01em',
                       }}

@@ -91,7 +91,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
             <Typography
               variant="body1"
               sx={{
-                color:     'rgba(255,255,255,0.65)',
+                color:     'rgba(255,255,255,0.82)',
                 maxWidth:  480,
                 mx:        'auto',
                 lineHeight: 1.7,
@@ -270,7 +270,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                     <Typography
                       sx={{
                         fontSize:   '0.875rem',
-                        color:      'rgba(255,255,255,0.55)',
+                        color:      'rgba(255,255,255,0.82)',
                         lineHeight: 1.5,
                       }}
                     >
@@ -286,7 +286,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                         fontWeight:    700,
                         letterSpacing: '0.1em',
                         textTransform: 'uppercase',
-                        color:         'rgba(255,255,255,0.4)',
+                        color:         'rgba(255,255,255,0.65)',
                         mb:            1,
                       }}
                     >
@@ -308,7 +308,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                             sx={{
                               fontSize:   '0.78rem',
                               fontWeight: 500,
-                              color:      'rgba(255,255,255,0.6)',
+                              color:      'rgba(255,255,255,0.82)',
                             }}
                           >
                             {n}
@@ -322,7 +322,7 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                   <Typography
                     sx={{
                       fontSize:    '0.875rem',
-                      color:       'rgba(255,255,255,0.5)',
+                      color:       'rgba(255,255,255,0.75)',
                       fontStyle:   'italic',
                       lineHeight:  1.5,
                       mb:          3.5,

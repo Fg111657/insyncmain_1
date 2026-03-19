@@ -54,10 +54,8 @@ export default function TechnologySection() {
     <Box
       component="section"
       aria-label="Technology and diagnostics"
-      sx={{
-        py:              { xs: 6, md: 10 },
-        backgroundColor: BRAND.offWhite,
-      }}
+      className="section-off-white"
+      sx={{ py: { xs: 6, md: 10 } }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         <Grid container spacing={{ xs: 5, md: 10 }} alignItems="flex-start">
@@ -85,7 +83,7 @@ export default function TechnologySection() {
 
             <Typography
               variant="body1"
-              sx={{ color: BRAND.gray500, lineHeight: 1.75, mb: 2.5 }}
+              sx={{ color: BRAND.gray700, lineHeight: 1.75, mb: 2.5 }}
             >
               Most clinics guess when you are ready to return to activity.
               We measure it.
@@ -93,7 +91,7 @@ export default function TechnologySection() {
 
             <Typography
               variant="body1"
-              sx={{ color: BRAND.gray500, lineHeight: 1.75, mb: 4 }}
+              sx={{ color: BRAND.gray700, lineHeight: 1.75, mb: 4 }}
             >
               Force plates, motion capture, and strength testing show exactly
               where you are in recovery and when you are ready to train again.
@@ -179,13 +177,13 @@ export default function TechnologySection() {
                     },
                   }}
                 >
-                  {/* Icon badge */}
+                  {/* Icon badge — navy bg with neoBlue icon: 5:1 contrast ✓ */}
                   <Box
                     sx={{
                       width:           44,
                       height:          44,
                       borderRadius:    2,
-                      backgroundColor: 'rgba(14,197,230,0.1)',
+                      backgroundColor: BRAND.spaceNavy,
                       display:         'flex',
                       alignItems:      'center',
                       justifyContent:  'center',

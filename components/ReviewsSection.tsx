@@ -54,10 +54,8 @@ export default function ReviewsSection() {
     <Box
       component="section"
       aria-label="Patient reviews"
-      sx={{
-        py:              { xs: 6, md: 10 },
-        backgroundColor: BRAND.offWhite,
-      }}
+      className="section-off-white"
+      sx={{ py: { xs: 6, md: 10 } }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         {/* Header */}
@@ -84,7 +82,7 @@ export default function ReviewsSection() {
             </Typography>
             <Typography
               variant="body1"
-              sx={{ color: BRAND.gray500, mt: 1.5, fontSize: '0.9375rem', lineHeight: 1.6 }}
+              sx={{ color: BRAND.gray700, mt: 1.5, fontSize: '0.9375rem', lineHeight: 1.6 }}
             >
               Trusted by runners, lifters, fighters, and active New Yorkers.
             </Typography>
