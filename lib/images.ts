@@ -23,9 +23,8 @@ const r = (path: string) => `${CDN_BASE}${path}`;
 // Namespace: /assets/hassan-pt/photos/provider-hassan/
 
 export const PROVIDER_PHOTOS = {
-  // Dr. Hassan profile headshot (used on About page)
-  hassanHeadshot:
-    r('/assets/dr-hassan-headshot.jpg'),
+  // Dr. Hassan profile headshot — served locally (CDN has private ACL on this file)
+  hassanHeadshot: '/assets/dr-hassan-headshot.jpg',
 
   // Hero panel — clean wide assessment shot
   heroAssessment:
@@ -59,10 +58,11 @@ export const PROVIDER_PHOTOS = {
 } as const;
 
 // ─── Team headshots ───────────────────────────────────────────────────────────
+// Served from Next.js public folder (not CDN — files use private-bucket ACL)
 export const TEAM_PHOTOS = {
-  hassan: r('/assets/dr-hassan-headshot.jpg'),
-  piero:  r('/assets/piero-alessi-headshot.jpg'),
-  tj:     r('/assets/tj-headshot.jpg'),
+  hassan: '/assets/dr-hassan-headshot.jpg',
+  piero:  '/assets/piero-alessi-headshot.jpg',
+  tj:     '/assets/tj-headshot.jpg',
 } as const;
 
 // ─── Office / clinic photos ───────────────────────────────────────────────────
