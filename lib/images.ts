@@ -58,6 +58,13 @@ export const PROVIDER_PHOTOS = {
     r('/assets/hassan-pt/photos/provider-hassan/dr-hassan-side-angle-upper-back-treatment-female-patient-01.jpg'),
 } as const;
 
+// ─── Team headshots ───────────────────────────────────────────────────────────
+export const TEAM_PHOTOS = {
+  hassan: r('/assets/dr-hassan-headshot.jpg'),
+  piero:  r('/assets/piero-alessi-headshot.jpg'),
+  tj:     r('/assets/tj-headshot.jpg'),
+} as const;
+
 // ─── Office / clinic photos ───────────────────────────────────────────────────
 export const OFFICE_PHOTOS = {
   treatmentRoomWide:

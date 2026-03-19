@@ -6,13 +6,13 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import { BRAND } from '@/lib/theme';
-import { BLUR_PLACEHOLDER } from '@/lib/images';
+import { BLUR_PLACEHOLDER, TEAM_PHOTOS } from '@/lib/images';
 import MotionSection from '@/components/MotionSection';
 
 const TEAM = [
   {
     id:          'hassan',
-    photo:       '/assets/Hassan .jpeg',
+    photo:       TEAM_PHOTOS.hassan,
     photoPos:    'center top',
     name:        'Dr. Hassan',
     title:       'Doctor of Physical Therapy',
@@ -29,7 +29,7 @@ const TEAM = [
   },
   {
     id:          'piero',
-    photo:       '/assets/Piero Alessi.JPG',
+    photo:       TEAM_PHOTOS.piero,
     photoPos:    'center 20%',
     name:        'Piero Alessi',
     title:       'Strength & Conditioning Coach',
@@ -46,7 +46,7 @@ const TEAM = [
   },
   {
     id:          'tj',
-    photo:       '/assets/TJ.jpg',
+    photo:       TEAM_PHOTOS.tj,
     photoPos:    'center top',
     name:        'TJ',
     title:       'Physical Therapist',
@@ -74,10 +74,8 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
       component="section"
       id="team"
       aria-label="Our team"
-      sx={{
-        py:              { xs: compact ? 4 : 6, md: compact ? 6 : 10 },
-        backgroundColor: BRAND.white,
-      }}
+      className="section-light"
+      sx={{ py: { xs: compact ? 4 : 6, md: compact ? 6 : 10 } }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
         {!compact && (
