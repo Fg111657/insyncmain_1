@@ -104,7 +104,7 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
 
         <MotionSection variant="list">
         <Grid container spacing={{ xs: 3, md: 4 }}>
-          {displayedTeam.map(({ id, photo, photoPos, name, title, credentials, bio, specialties, placeholder }) => (
+          {displayedTeam.map(({ id, photo, photoPos, name, title, credentials, bio, specialties }) => (
             <Grid key={id} item xs={12} md={compact ? 6 : 4}>
               <MotionSection key={id} variant="item">
               <Box
@@ -147,29 +147,6 @@ export default function TeamSection({ compact = false }: TeamSectionProps) {
                       objectPosition: photoPos ?? 'center top',
                     }}
                   />
-                  {placeholder && (
-                    <Box
-                      sx={{
-                        position:        'absolute',
-                        bottom:          12,
-                        right:           12,
-                        backgroundColor: 'rgba(0,61,89,0.85)',
-                        borderRadius:    1.5,
-                        px:              1.5,
-                        py:              0.5,
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontSize:  '0.7rem',
-                          color:     'rgba(255,255,255,0.6)',
-                          fontWeight: 500,
-                        }}
-                      >
-                        Bio being updated
-                      </Typography>
-                    </Box>
-                  )}
                 </Box>
 
                 {/* Content */}
