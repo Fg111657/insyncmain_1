@@ -245,6 +245,46 @@ section[id] {
   scroll-margin-top: 88px;
 }
 
+/* ─── 3D / Depth / Motion Effects ─────────────────────────────────────────── */
+
+/* Hero animated gradient mesh — pure CSS, no JS overhead */
+@keyframes gradientMesh {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* CTA band animated gradient */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Primary CTA button pulsing glow */
+@keyframes pulseGlow {
+  0%   { box-shadow: 0 4px 20px rgba(14,197,230,0.25), 0 0 0 1px rgba(14,197,230,0.08); }
+  100% { box-shadow: 0 8px 40px rgba(14,197,230,0.5), 0 0 0 2px rgba(14,197,230,0.2); }
+}
+
+/* Floating decorative elements */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+
+@keyframes floatSlowReverse {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(10px); }
+}
+
+/* Subtle shimmer for trust badges */
+@keyframes shimmer {
+  0%   { opacity: 0.7; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
 /* ─── Reduced-motion override ────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
