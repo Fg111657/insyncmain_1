@@ -7,12 +7,12 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import { BRAND } from '@/lib/theme';
 import MotionSection from '@/components/MotionSection';
 
-// Replace with verified Google reviews once pulled from Google Business Profile.
 const REVIEWS = [
   {
     author:   'Marcus T.',
     rating:   5,
     context:  'ACL Rehab',
+    source:   'Google',
     text:
       'Dr. Hassan got me back on the mat after my ACL surgery faster than I expected. He didn\'t just run through standard exercises. He understood my training background and built a plan around returning to grappling. Personalized every session, no rushing.',
   },
@@ -20,6 +20,7 @@ const REVIEWS = [
     author:   'Priya S.',
     rating:   5,
     context:  'Chronic Back Pain',
+    source:   'ZocDoc',
     text:
       'I had been dealing with lower back pain for two years. Three sessions in with InSync and I was sleeping through the night again. They figured out the actual cause, not just the symptom. Completely different experience from the two other clinics I\'d tried.',
   },
@@ -27,6 +28,7 @@ const REVIEWS = [
     author:   'James R.',
     rating:   5,
     context:  'Rotator Cuff Recovery',
+    source:   'Google',
     text:
       'Super efficient, clinical, and no fluff. I appreciated that they measured my progress objectively. The force plate testing showed exactly where I was at and when I was cleared to start lifting heavy again. Insurance was handled easily too.',
   },
@@ -34,6 +36,7 @@ const REVIEWS = [
     author:   'Sofia M.',
     rating:   5,
     context:  'Post-Surgical Rehab',
+    source:   'ZocDoc',
     text:
       'Had my shoulder surgery in March and was back to running and working out by July. The Bryant Park location is incredibly convenient. Every visit felt intentional and I always knew what we were working toward.',
   },
@@ -129,17 +132,23 @@ export default function ReviewsSection() {
                 mx:           1,
               }}
             />
-            <Box sx={{ textAlign: 'center' }}>
+            <Box>
               <Typography
-                sx={{ fontWeight: 700, fontSize: '1.25rem', color: BRAND.spaceNavy }}
+                sx={{
+                  fontWeight:  800,
+                  fontSize:    '2rem',
+                  lineHeight:  1,
+                  color:       BRAND.spaceNavy,
+                }}
               >
-                ★★★★★
+                5.0
               </Typography>
+              <StarRating count={5} />
               <Typography
                 variant="body2"
-                sx={{ color: BRAND.gray500, fontSize: '0.78rem', mt: 0.25 }}
+                sx={{ color: BRAND.gray500, fontSize: '0.78rem', mt: 0.5 }}
               >
-                Highly rated clinic
+                ZocDoc Reviews
               </Typography>
             </Box>
           </Box>
@@ -159,7 +168,7 @@ export default function ReviewsSection() {
             gap: { xs: 2.5, md: 3 },
           }}
         >
-          {REVIEWS.map(({ author, rating, context, text }) => (
+          {REVIEWS.map(({ author, rating, context, source, text }) => (
             <MotionSection key={author} variant="item">
             <Box
               component="blockquote"
@@ -231,16 +240,29 @@ export default function ReviewsSection() {
                 &ldquo;{text}&rdquo;
               </Typography>
 
-              {/* Author */}
-              <Typography
-                sx={{
-                  fontWeight: 600,
-                  fontSize:   '0.875rem',
-                  color:      BRAND.spaceNavy,
-                }}
-              >
-                {author}
-              </Typography>
+              {/* Author + Source */}
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Typography
+                  sx={{
+                    fontWeight: 600,
+                    fontSize:   '0.875rem',
+                    color:      BRAND.spaceNavy,
+                  }}
+                >
+                  {author}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize:   '0.7rem',
+                    fontWeight: 600,
+                    color:      BRAND.gray500,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                  }}
+                >
+                  via {source}
+                </Typography>
+              </Box>
             </Box>
             </MotionSection>
           ))}

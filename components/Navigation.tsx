@@ -24,7 +24,6 @@ import BrandLogo from '@/components/BrandLogo';
 const NAV_LINKS = [
   { label: 'Services',   href: '/services'  },
   { label: 'Locations',  href: '/locations' },
-  { label: 'Insurance',  href: '/insurance' },
   { label: 'About',      href: '/about'     },
 ];
 
@@ -83,6 +82,7 @@ export default function Navigation() {
           >
             {/* ── Logo ─────────────────────────────────────── */}
             <BrandLogo
+              href="/"
               variant={transparent ? 'white' : 'primary'}
               height={36}
               priority
@@ -244,7 +244,7 @@ export default function Navigation() {
             borderBottom:   `1px solid rgba(255,255,255,0.08)`,
           }}
         >
-          <BrandLogo variant="white" height={32} />
+          <BrandLogo href="/" variant="white" height={32} />
           <IconButton
             aria-label="Close menu"
             onClick={() => setDrawerOpen(false)}

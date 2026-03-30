@@ -48,17 +48,18 @@ const TEAM = [
     id:          'tj',
     photo:       TEAM_PHOTOS.tj,
     photoPos:    'center top',
-    name:        'TJ',
-    title:       'Physical Therapist',
-    credentials: ['Physical Therapist'],
+    name:        'TJ Mirasol',
+    title:       'Licensed Physical Therapist Assistant',
+    credentials: ['PTA', 'Licensed PT (Philippines)', '2+ Years Clinical Experience'],
     bio:
-      'TJ is a skilled physical therapist at InSync with a strong focus on patient-centered care. He works closely with patients on mobility restoration, injury prevention, and progressive rehabilitation programs. Bio details to be updated.',
+      'TJ Mirasol is a licensed Physical Therapist Assistant in New York City and a licensed Physical Therapist in the Philippines. He brings over two years of clinical experience in physical rehabilitation, including one year providing private home physical therapy services in the Philippines. TJ has worked with a diverse patient population, including individuals recovering from neurological conditions and athletes rehabilitating from post-operative injuries. His clinical approach focuses on restoring functional movement, improving strength and mobility, and helping patients safely return to their daily activities and sports.',
     specialties: [
-      'Orthopedic Rehabilitation',
-      'Injury Prevention',
-      'Mobility & Flexibility',
+      'Physical Rehabilitation',
+      'Neurological Recovery',
+      'Post-Operative Rehab',
+      'Functional Movement',
+      'Strength & Mobility',
     ],
-    placeholder: true,
   },
 ];
 

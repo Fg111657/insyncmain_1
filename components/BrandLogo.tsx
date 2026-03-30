@@ -44,8 +44,8 @@ export default function BrandLogo({
   className,
 }: BrandLogoProps) {
   // ── Colour decisions ────────────────────────────────────────────────────────
-  const markColor = BRAND.neoBlue;
   const textColor = variant === 'white' ? BRAND.white : BRAND.spaceNavy;
+  const markColor = textColor;
   const showText  = variant !== 'mark';
 
   // ── Proportional type scale (normalised at height=44) ──────────────────────
@@ -118,7 +118,7 @@ export default function BrandLogo({
           whiteSpace:    'nowrap',
         }}
       >
-        Physical Therapy
+        Physical Therapy & Fitness
       </Box>
     </Box>
   ) : null;

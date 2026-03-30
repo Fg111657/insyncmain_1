@@ -10,6 +10,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import DirectionsIcon from '@mui/icons-material/Directions';
 import SubwayIcon from '@mui/icons-material/DirectionsSubway';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { BRAND } from '@/lib/theme';
 import { LOCATION_PHOTOS, BLUR_PLACEHOLDER } from '@/lib/images';
@@ -276,6 +277,28 @@ export default function LocationsSection({ compact = false }: LocationsSectionPr
                     >
                       {transit}
                     </Typography>
+                  </Box>
+
+                  {/* Business Hours */}
+                  <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, mb: 3 }}>
+                    <AccessTimeIcon sx={{ color: BRAND.neoBlue, fontSize: '0.9rem', mt: '2px' }} />
+                    <Box>
+                      <Typography
+                        sx={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.82)', lineHeight: 1.5 }}
+                      >
+                        Mon–Fri: 11 AM – 9 PM
+                      </Typography>
+                      <Typography
+                        sx={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.82)', lineHeight: 1.5 }}
+                      >
+                        Sat: 11 AM – 8 PM
+                      </Typography>
+                      <Typography
+                        sx={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.5 }}
+                      >
+                        Sun: Closed
+                      </Typography>
+                    </Box>
                   </Box>
 
                   {/* Nearby Neighborhoods */}
