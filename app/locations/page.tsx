@@ -8,13 +8,13 @@ import { BRAND } from '@/lib/theme';
 import { LOCATION_BROOKLYN_SCHEMA, LOCATION_BRYANT_PARK_SCHEMA } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Physical Therapy Locations — Brooklyn & Manhattan NYC',
+  title: 'Physical Therapy Locations — Manhattan & Brooklyn NYC',
   description:
-    'InSync Physical Therapy & Fitness has two NYC locations: 1081 Gates Ave in Brooklyn and 55 W 39th St in Bryant Park, Midtown Manhattan. Accepting new patients.',
+    'InSync Physical Therapy has two NYC locations: 55 W 39th St near Bryant Park in Manhattan and 1081 Gates Ave in Brooklyn. Insurance verified upfront.',
   alternates: { canonical: 'https://insync-pt.com/locations' },
   openGraph: {
-    title:       'Physical Therapy NYC Locations | InSync Physical Therapy & Fitness',
-    description: 'Brooklyn and Manhattan physical therapy locations — accessible from across New York City.',
+    title:       'Locations | InSync Physical Therapy & Fitness',
+    description: 'Manhattan and Brooklyn. Two clinics, one standard of care.',
   },
 };
 
@@ -28,49 +28,47 @@ export default function LocationsPage() {
         }}
       />
 
-      {/* ── Page Header ───────────────────────────────────────── */}
+      {/* Page Header */}
       <Box
         component="section"
-        className="section-navy"
-        sx={{ pt: { xs: 10, md: 14 }, pb: { xs: 6, md: 10 } }}
+        sx={{
+          pt:              { xs: 6, md: 10 },
+          pb:              { xs: 4, md: 6 },
+          backgroundColor: BRAND.white,
+        }}
       >
-        <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
-          <Box sx={{ maxWidth: 600 }}>
+        <Container maxWidth="lg">
+          <Box sx={{ maxWidth: 540 }}>
             <Typography
               variant="h1"
               sx={{
-                color:      BRAND.white,
-                mb:         2.5,
+                color:      BRAND.deepPetrol,
+                mb:         1.5,
                 fontSize:   { xs: '2.25rem', md: '3rem' },
                 fontWeight: 800,
                 lineHeight: 1.1,
               }}
             >
-              Our Locations
+              Find your clinic
             </Typography>
             <Typography
               sx={{
-                color:      'rgba(255,255,255,0.7)',
-                lineHeight: 1.7,
+                color:      BRAND.gray500,
+                lineHeight: 1.6,
                 fontSize:   '1.0625rem',
-                maxWidth:   500,
               }}
             >
-              Two convenient NYC locations with the same standard of care.
-              Insurance verified before your first appointment.
+              Manhattan and Brooklyn. Same therapists, same one-on-one model.
             </Typography>
           </Box>
         </Container>
       </Box>
 
-      {/* ── Locations Detail ──────────────────────────────────── */}
-      <LocationsSection compact={false} />
+      <LocationsSection hideHeader />
 
-      {/* ── CTA ───────────────────────────────────────────────── */}
       <CTABand
-        headline="Book at the Location Nearest You"
-        subline="Both locations are accepting new patients. Insurance verified before your first visit."
-        variant="dark"
+        headline="Book your evaluation."
+        subline="Insurance verified before your appointment. No referral needed."
       />
     </>
   );

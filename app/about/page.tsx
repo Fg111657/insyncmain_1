@@ -5,72 +5,62 @@ import Typography from '@mui/material/Typography';
 import TeamSection from '@/components/TeamSection';
 import CTABand from '@/components/CTABand';
 import { BRAND } from '@/lib/theme';
-import { PHYSICIAN_SCHEMA } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'About InSync Physical Therapy & Fitness — Dr. Hassan & Team',
+  title: 'About Us — InSync Physical Therapy & Fitness NYC',
   description:
-    'InSync Physical Therapy & Fitness is a one-on-one physical therapy practice in Brooklyn and Manhattan founded by Dr. Hassan, DPT. Meet our team.',
+    'Meet the InSync team: Dr. Hassan Elgaty (DPT), Piero Alessi (NASM), and TJ Mirasol (PTA). One-on-one physical therapy in Manhattan and Brooklyn.',
   alternates: { canonical: 'https://insync-pt.com/about' },
   openGraph: {
-    title:       'About InSync Physical Therapy & Fitness | Dr. Hassan, DPT — NYC',
-    description: 'One-on-one PT from a Doctor of Physical Therapy with 9+ years of experience in Brooklyn and Midtown Manhattan.',
+    title:       'About | InSync Physical Therapy & Fitness',
+    description: 'Our team of physical therapy and fitness specialists in NYC.',
   },
 };
 
 export default function AboutPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(PHYSICIAN_SCHEMA) }}
-      />
-
-      {/* ── Page Header ───────────────────────────────────────── */}
+      {/* Page Header */}
       <Box
         component="section"
-        aria-label="About InSync Physical Therapy"
-        className="section-navy"
-        sx={{ pt: { xs: 10, md: 14 }, pb: { xs: 6, md: 10 } }}
+        sx={{
+          pt:              { xs: 6, md: 10 },
+          pb:              { xs: 4, md: 6 },
+          backgroundColor: BRAND.white,
+        }}
       >
-        <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
-          <Box sx={{ maxWidth: 640 }}>
+        <Container maxWidth="lg">
+          <Box sx={{ maxWidth: 560 }}>
             <Typography
               variant="h1"
               sx={{
-                color:      BRAND.white,
-                mb:         2.5,
-                fontSize:   { xs: '2.25rem', md: '3.25rem' },
+                color:      BRAND.deepPetrol,
+                mb:         1.5,
+                fontSize:   { xs: '2.25rem', md: '3rem' },
                 fontWeight: 800,
-                lineHeight: 1.05,
+                lineHeight: 1.1,
               }}
             >
-              Meet the Team
+              Our team
             </Typography>
             <Typography
               sx={{
-                color:      'rgba(255,255,255,0.72)',
-                lineHeight: 1.75,
-                fontSize:   { xs: '1rem', md: '1.0625rem' },
-                maxWidth:   520,
+                color:      BRAND.gray500,
+                lineHeight: 1.6,
+                fontSize:   '1.0625rem',
               }}
             >
-              Every patient works directly with a licensed clinician — from
-              evaluation through discharge and beyond. No aides, no handoffs,
-              no rotating staff.
+              One-on-one care from clinicians who understand the demands of active life.
             </Typography>
           </Box>
         </Container>
       </Box>
 
-      {/* ── Team — Headshots & Bios ───────────────────────────── */}
-      <TeamSection compact={false} />
+      <TeamSection hideHeader />
 
-      {/* ── CTA ───────────────────────────────────────────────── */}
       <CTABand
-        headline="Ready to Get Started?"
-        subline="Request an appointment and our team will be in touch within one business day."
-        variant="dark"
+        headline="Ready to start?"
+        subline="Manhattan and Brooklyn locations. Insurance verified before your first visit."
       />
     </>
   );

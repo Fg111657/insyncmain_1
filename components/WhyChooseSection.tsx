@@ -1,9 +1,9 @@
 'use client';
 
 /**
- * WhyChooseSection
- * Benefit cards with 3D tilt hover, multi-layer shadows, staggered reveals,
- * and dimensional layering.
+ * WhyChooseSection — RALPH spec
+ * 6 equal feature boxes on white background. Clean, minimal.
+ * No 3D tilt, no gradient glows.
  */
 
 import Box from '@mui/material/Box';
@@ -11,201 +11,129 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import { motion } from 'framer-motion';
 import { BRAND } from '@/lib/theme';
-import { ELEVATION, EASE, TIMING } from '@/lib/depth-tokens';
-import { useTiltHover } from '@/hooks/useTiltHover';
 import MotionSection from '@/components/MotionSection';
 
 const BENEFITS = [
   {
-    title: 'Not another PT mill',
+    title: 'Not a PT mill',
     description:
-      'No aids or handoffs. Your therapist runs every visit.',
+      'No aides. No handoffs. Your therapist treats you for the full session, every visit.',
   },
   {
-    title: 'Custom plans built for you',
+    title: 'Plans built for you',
     description:
-      'No generic protocols. Every treatment plan is designed specifically for your body and goals.',
+      'Every treatment plan is designed around your body, your injury, and your goals. No generic protocols.',
   },
   {
-    title: 'Insurance verified before your visit',
+    title: 'Insurance verified upfront',
     description:
-      'We work with most major plans to make high-quality care accessible and stress-free.',
+      'We verify your coverage before your first visit. We work with most major plans.',
   },
   {
-    title: 'No referrals or prescription needed',
+    title: 'No referral needed',
     description:
-      'You can start therapy right away.',
+      'In New York, you can start physical therapy without a prescription or referral.',
   },
   {
-    title: 'Convenient locations',
+    title: 'Two convenient locations',
     description:
-      'Two clinics in Manhattan and Brooklyn — easy to get to from anywhere in the city.',
+      'Manhattan (Bryant Park) and Brooklyn (Bushwick). Easy subway access from every borough.',
   },
   {
     title: 'Highly rated',
     description:
-      'Top-rated on ZocDoc and Google by real patients.',
+      '5.0 stars on ZocDoc and Google. Rated by real patients.',
   },
 ] as const;
-
-/* ── Individual benefit card with 3D tilt ─────────────────────────────── */
-function BenefitCard({
-  title,
-  description,
-  index,
-}: {
-  title: string;
-  description: string;
-  index: number;
-}) {
-  const tilt = useTiltHover(4);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24, scale: 0.96 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{
-        duration: TIMING.smooth,
-        delay: index * 0.08,
-        ease: EASE.out,
-      }}
-      onMouseMove={tilt.onMouseMove}
-      onMouseLeave={tilt.onMouseLeave}
-      animate={tilt.animate}
-      style={tilt.style}
-    >
-      <Box
-        sx={{
-          display:         'flex',
-          gap:             2,
-          alignItems:      'flex-start',
-          backgroundColor: BRAND.white,
-          borderRadius:    3,
-          p:               { xs: 2.5, md: 3 },
-          boxShadow:       ELEVATION[1],
-          transition:      `box-shadow ${TIMING.normal}s ease, transform ${TIMING.normal}s ease`,
-          height:          '100%',
-          '&:hover': {
-            boxShadow: ELEVATION[2],
-            '& .benefit-icon': {
-              filter: 'drop-shadow(0 0 8px rgba(14,197,230,0.4))',
-            },
-          },
-        }}
-      >
-        <CheckCircleOutlineIcon
-          aria-hidden="true"
-          className="benefit-icon"
-          sx={{
-            color:      BRAND.neoBlue,
-            fontSize:   '1.5rem',
-            mt:         0.25,
-            flexShrink: 0,
-            transition: `filter ${TIMING.normal}s ease`,
-          }}
-        />
-        <Box>
-          <Typography
-            component="h3"
-            sx={{
-              fontWeight: 700,
-              fontSize:   '1.0625rem',
-              color:      BRAND.spaceNavy,
-              mb:         0.5,
-            }}
-          >
-            {title}
-          </Typography>
-          <Typography
-            sx={{
-              fontSize:   '0.9375rem',
-              lineHeight: 1.6,
-              color:      BRAND.gray700,
-            }}
-          >
-            {description}
-          </Typography>
-        </Box>
-      </Box>
-    </motion.div>
-  );
-}
 
 export default function WhyChooseSection() {
   return (
     <Box
       component="section"
-      aria-label="Why New Yorkers choose InSync"
+      aria-label="Why choose InSync"
       sx={{
-        position:        'relative',
         py:              { xs: 8, md: 12 },
-        backgroundColor: BRAND.offWhite,
-        overflow:        'hidden',
+        backgroundColor: BRAND.white,
       }}
     >
-      {/* Subtle depth gradient at bottom */}
-      <Box
-        aria-hidden="true"
-        sx={{
-          position:   'absolute',
-          bottom:     0,
-          left:       '50%',
-          transform:  'translateX(-50%)',
-          width:      '80%',
-          height:     '50%',
-          background: 'radial-gradient(ellipse at center bottom, rgba(14,197,230,0.03) 0%, transparent 70%)',
-          pointerEvents: 'none',
-        }}
-      />
-
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-        {/* Section heading */}
+      <Container maxWidth="lg">
         <MotionSection>
           <Typography
             component="h2"
             sx={{
               fontWeight:    800,
-              fontSize:      { xs: '2rem', md: '2.625rem' },
+              fontSize:      { xs: '2rem', md: '2.5rem' },
               lineHeight:    1.1,
-              color:         BRAND.spaceNavy,
-              mb:            2,
+              color:         BRAND.deepPetrol,
+              mb:            { xs: 5, md: 7 },
               textAlign:     'center',
               letterSpacing: '-0.02em',
             }}
           >
-            Why New Yorkers Choose InSync
-          </Typography>
-
-          <Typography
-            sx={{
-              fontSize:   { xs: '1.0625rem', md: '1.125rem' },
-              lineHeight: 1.7,
-              color:      BRAND.gray700,
-              maxWidth:   720,
-              mx:         'auto',
-              mb:         { xs: 5, md: 7 },
-              textAlign:  'center',
-            }}
-          >
-            We believe movement is medicine. Whether you&apos;re a busy professional
-            glued to your desk, a runner chasing your next PR, a new mom navigating
-            postpartum changes, or a senior wanting to stay independent — our
-            personalized one-on-one care helps you heal faster, move better, and
-            feel like yourself again.
+            Why New Yorkers choose InSync
           </Typography>
         </MotionSection>
 
-        {/* Benefits grid with 3D cards */}
-        <Grid container spacing={{ xs: 2.5, md: 3 }}>
-          {BENEFITS.map(({ title, description }, i) => (
-            <Grid item xs={12} sm={6} md={4} key={title}>
-              <BenefitCard title={title} description={description} index={i} />
-            </Grid>
-          ))}
-        </Grid>
+        <MotionSection variant="list">
+          <Grid container spacing={{ xs: 2, md: 3 }}>
+            {BENEFITS.map(({ title, description }) => (
+              <Grid item xs={12} sm={6} md={4} key={title}>
+                <MotionSection variant="item">
+                  <Box
+                    sx={{
+                      display:         'flex',
+                      gap:             2,
+                      alignItems:      'flex-start',
+                      backgroundColor: '#F9FAFB',
+                      borderRadius:    2,
+                      p:               { xs: 2.5, md: 3 },
+                      height:          '100%',
+                      border:          '1px solid',
+                      borderColor:     BRAND.gray200,
+                      transition:      'border-color 0.2s ease',
+                      '&:hover': {
+                        borderColor: BRAND.sinopia,
+                      },
+                    }}
+                  >
+                    <CheckCircleOutlineIcon
+                      aria-hidden="true"
+                      sx={{
+                        color:      BRAND.sinopia,
+                        fontSize:   '1.35rem',
+                        mt:         0.25,
+                        flexShrink: 0,
+                      }}
+                    />
+                    <Box>
+                      <Typography
+                        component="h3"
+                        sx={{
+                          fontWeight: 700,
+                          fontSize:   '1rem',
+                          color:      BRAND.deepPetrol,
+                          mb:         0.5,
+                        }}
+                      >
+                        {title}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontSize:   '0.9375rem',
+                          lineHeight: 1.6,
+                          color:      BRAND.gray700,
+                        }}
+                      >
+                        {description}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </MotionSection>
+              </Grid>
+            ))}
+          </Grid>
+        </MotionSection>
       </Container>
     </Box>
   );

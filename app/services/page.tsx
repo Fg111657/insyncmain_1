@@ -1,99 +1,66 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ServicesGrid from '@/components/ServicesGrid';
 import CTABand from '@/components/CTABand';
 import { BRAND } from '@/lib/theme';
-import { SERVICES_PAGE_SCHEMA } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Physical Therapy Services NYC — Orthopedic, Sports & Post-Surgical Rehab',
+  title: 'Physical Therapy Services — Manhattan & Brooklyn | InSync PT',
   description:
-    'Orthopedic rehabilitation, sports injury recovery, chronic pain treatment, post-surgical rehab, manual therapy, movement analysis, and strength & conditioning. One-on-one PT in Brooklyn and Manhattan, NYC.',
+    'Back & neck pain, sports injury, post-surgery rehab, pelvic health, orthopedic rehabilitation, and strength & performance. One-on-one care in NYC.',
   alternates: { canonical: 'https://insync-pt.com/services' },
   openGraph: {
-    title:       'Physical Therapy Services NYC | InSync Physical Therapy & Fitness',
-    description: 'Evidence-based, one-on-one PT for orthopedic injuries, sports recovery, chronic pain, and post-surgical rehab in Brooklyn and Manhattan.',
+    title:       'Services | InSync Physical Therapy & Fitness',
+    description: 'Expert physical therapy services in Manhattan and Brooklyn.',
   },
 };
 
 export default function ServicesPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICES_PAGE_SCHEMA) }}
-      />
-
-      {/* ── Page Header ─────────────────────────────────────────── */}
+      {/* Page Header */}
       <Box
         component="section"
-        aria-label="Services overview"
-        className="section-navy"
-        sx={{ pt: { xs: 10, md: 14 }, pb: { xs: 6, md: 10 } }}
+        sx={{
+          pt:              { xs: 6, md: 10 },
+          pb:              { xs: 4, md: 6 },
+          backgroundColor: BRAND.white,
+        }}
       >
-        <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
-          <Box sx={{ maxWidth: 600 }}>
+        <Container maxWidth="lg">
+          <Box sx={{ maxWidth: 560 }}>
             <Typography
               variant="h1"
               sx={{
-                color:      BRAND.white,
-                mb:         2.5,
-                fontSize:   { xs: '2.25rem', md: '3.25rem' },
+                color:      BRAND.deepPetrol,
+                mb:         1.5,
+                fontSize:   { xs: '2.25rem', md: '3rem' },
                 fontWeight: 800,
-                lineHeight: 1.05,
+                lineHeight: 1.1,
               }}
             >
-              Our Services
+              What we treat
             </Typography>
             <Typography
               sx={{
-                color:      'rgba(255,255,255,0.72)',
-                maxWidth:   540,
-                lineHeight: 1.75,
-                fontSize:   { xs: '1rem', md: '1.0625rem' },
-                mb:         3.5,
+                color:      BRAND.gray500,
+                lineHeight: 1.6,
+                fontSize:   '1.0625rem',
               }}
             >
-              One-on-one physical therapy for orthopedic rehab, sports injury recovery,
-              chronic pain, and return-to-performance care. Every plan is built around
-              your specific injury, activity level, and goals.
+              Every treatment plan is built around your specific injury, goals, and activity level.
             </Typography>
-            <Button
-              component={Link}
-              href="/contact"
-              variant="contained"
-              size="large"
-              endIcon={<ArrowForwardIcon />}
-              data-analytics="services-hero-cta"
-              sx={{
-                backgroundColor: BRAND.neoBlue,
-                color:           BRAND.spaceNavy,
-                fontWeight:      700,
-                px:              3.5,
-                py:              1.5,
-                fontSize:        '0.9375rem',
-                '&:hover': { backgroundColor: BRAND.neoBlueHover },
-              }}
-            >
-              Book Your Evaluation
-            </Button>
           </Box>
         </Container>
       </Box>
 
-      {/* ── All Services ────────────────────────────────────────── */}
-      <ServicesGrid showCTA={false} />
+      <ServicesGrid hideHeader />
 
-      {/* ── CTA ─────────────────────────────────────────────────── */}
       <CTABand
-        headline="Not Sure Which Service Is Right for You?"
-        subline="Request an appointment and we'll evaluate your condition and build a plan that fits your goals."
-        variant="navy"
+        headline="Book your evaluation."
+        subline="Insurance verified before your appointment. No referral needed."
       />
     </>
   );

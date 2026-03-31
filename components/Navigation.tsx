@@ -14,23 +14,23 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography'; // used in drawer locations block
+import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import PhoneIcon from '@mui/icons-material/Phone';
 import { BRAND } from '@/lib/theme';
 import BrandLogo from '@/components/BrandLogo';
 
+/* RALPH spec: About → Services → Locations */
 const NAV_LINKS = [
-  { label: 'Services',   href: '/services'  },
-  { label: 'Locations',  href: '/locations' },
-  { label: 'About',      href: '/about'     },
+  { label: 'About',     href: '/about'     },
+  { label: 'Services',  href: '/services'  },
+  { label: 'Locations', href: '/locations'  },
 ];
 
-// ─── Navigation ───────────────────────────────────────────────────────────────
 export default function Navigation() {
-  const pathname                  = usePathname();
-  const [scrolled, setScrolled]   = useState(false);
+  const pathname                    = usePathname();
+  const [scrolled, setScrolled]     = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const isHome = pathname === '/';
@@ -42,13 +42,12 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
-  // On home page, be transparent until scrolled. On inner pages, always white.
   const transparent = isHome && !scrolled;
 
-  const navBg     = transparent ? 'transparent'                    : 'rgba(255,255,255,0.82)';
-  const navShadow = transparent ? 'none'                           : '0 1px 0 rgba(0,61,89,0.04), 0 4px 16px rgba(0,61,89,0.06), 0 12px 40px rgba(0,61,89,0.04)';
-  const linkColor = transparent ? 'rgba(255,255,255,0.92)'         : BRAND.spaceNavy;
-  const linkHover = transparent ? BRAND.neoBlue                   : BRAND.neoBlue;
+  const navBg     = transparent ? 'transparent'                     : 'rgba(255,255,255,0.95)';
+  const navShadow = transparent ? 'none'                            : '0 1px 0 rgba(0,38,42,0.04), 0 4px 16px rgba(0,38,42,0.05)';
+  const linkColor = transparent ? 'rgba(255,255,255,0.92)'          : BRAND.deepPetrol;
+  const linkHover = BRAND.sinopia;
 
   return (
     <>
@@ -60,8 +59,8 @@ export default function Navigation() {
           boxShadow:        navShadow,
           backdropFilter:   scrolled ? 'blur(20px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
-          borderBottom:     scrolled ? '1px solid rgba(255,255,255,0.2)' : '1px solid transparent',
-          transition:       'background-color 0.4s cubic-bezier(0.25,0.1,0.25,1), box-shadow 0.4s cubic-bezier(0.25,0.1,0.25,1), backdrop-filter 0.4s cubic-bezier(0.25,0.1,0.25,1), border-color 0.4s cubic-bezier(0.25,0.1,0.25,1)',
+          borderBottom:     scrolled ? '1px solid rgba(0,38,42,0.06)' : '1px solid transparent',
+          transition:       'background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease',
           zIndex:           1200,
         }}
       >
@@ -112,7 +111,7 @@ export default function Navigation() {
                     href={href}
                     disableRipple
                     sx={{
-                      color:         active ? BRAND.neoBlue : linkColor,
+                      color:         active ? BRAND.sinopia : linkColor,
                       fontWeight:    active ? 700 : 500,
                       fontSize:      '0.9375rem',
                       px:            1.75,
@@ -134,7 +133,7 @@ export default function Navigation() {
                         transform:       'translateX(-50%)',
                         width:           active ? '70%' : '0%',
                         height:          2,
-                        backgroundColor: BRAND.neoBlue,
+                        backgroundColor: BRAND.sinopia,
                         borderRadius:    4,
                         transition:      'width 0.25s ease',
                       },
@@ -171,7 +170,7 @@ export default function Navigation() {
                   textTransform: 'none',
                   transition: 'color 0.2s ease',
                   '&:hover': {
-                    color:           BRAND.neoBlue,
+                    color:           BRAND.sinopia,
                     backgroundColor: 'transparent',
                   },
                 }}
@@ -184,8 +183,8 @@ export default function Navigation() {
                 variant="contained"
                 disableElevation
                 sx={{
-                  backgroundColor: BRAND.neoBlue,
-                  color:           BRAND.obsidian,
+                  backgroundColor: BRAND.sinopia,
+                  color:           BRAND.white,
                   fontWeight:      700,
                   px:              2.5,
                   py:              1.125,
@@ -193,11 +192,10 @@ export default function Navigation() {
                   borderRadius:    1,
                   textTransform:   'none',
                   letterSpacing:   '0.01em',
-                  transition:      'background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease',
+                  transition:      'background-color 0.2s ease, transform 0.2s ease',
                   '&:hover': {
-                    backgroundColor: BRAND.neoBlueHover,
+                    backgroundColor: BRAND.sinopiaHover,
                     transform:       'translateY(-1px)',
-                    boxShadow:       '0 4px 16px rgba(14,197,230,0.35)',
                   },
                 }}
               >
@@ -211,7 +209,7 @@ export default function Navigation() {
               onClick={() => setDrawerOpen(true)}
               sx={{
                 display: { xs: 'flex', md: 'none' },
-                color:   transparent ? BRAND.white : BRAND.spaceNavy,
+                color:   transparent ? BRAND.white : BRAND.deepPetrol,
                 ml:      1,
               }}
             >
@@ -230,7 +228,7 @@ export default function Navigation() {
           sx: {
             width:           '100%',
             maxWidth:        360,
-            backgroundColor: BRAND.spaceNavy,
+            backgroundColor: BRAND.deepPetrol,
             color:           BRAND.white,
           },
         }}
@@ -243,7 +241,7 @@ export default function Navigation() {
             justifyContent: 'space-between',
             px:             3,
             py:             2.5,
-            borderBottom:   `1px solid rgba(255,255,255,0.08)`,
+            borderBottom:   '1px solid rgba(255,255,255,0.08)',
           }}
         >
           <BrandLogo href="/" variant="white" height={32} />
@@ -269,7 +267,7 @@ export default function Navigation() {
                   px:           2,
                   py:           1.5,
                   '&:hover': {
-                    backgroundColor: 'rgba(14,197,230,0.12)',
+                    backgroundColor: 'rgba(246,55,0,0.12)',
                   },
                 }}
               >
@@ -298,14 +296,14 @@ export default function Navigation() {
             size="large"
             onClick={() => setDrawerOpen(false)}
             sx={{
-              backgroundColor: BRAND.neoBlue,
-              color:           BRAND.obsidian,
+              backgroundColor: BRAND.sinopia,
+              color:           BRAND.white,
               fontWeight:      700,
               py:              1.75,
               fontSize:        '1rem',
               textTransform:   'none',
               borderRadius:    1,
-              '&:hover': { backgroundColor: BRAND.neoBlueHover },
+              '&:hover': { backgroundColor: BRAND.sinopiaHover },
             }}
           >
             Request Appointment
@@ -325,12 +323,12 @@ export default function Navigation() {
               textTransform: 'none',
               borderRadius: 1,
               '&:hover': {
-                borderColor:     BRAND.neoBlue,
-                backgroundColor: 'rgba(14,197,230,0.08)',
+                borderColor:     BRAND.sinopia,
+                backgroundColor: 'rgba(246,55,0,0.08)',
               },
             }}
           >
-            929-419-4643
+            Call or Text 929-419-4643
           </Button>
         </Box>
 
@@ -346,13 +344,13 @@ export default function Navigation() {
               mb:            1.5,
             }}
           >
-            Our Locations
+            Locations
           </Typography>
           <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>
-            Brooklyn: 1081 Gates Ave, NY 11221
+            Manhattan: 55 W 39th St, Suite 303, NY 10018
           </Typography>
           <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, mt: 0.5 }}>
-            Manhattan: 55 W 39th St, Suite 303, NY 10018
+            Brooklyn: 1081 Gates Ave, NY 11221
           </Typography>
         </Box>
       </Drawer>

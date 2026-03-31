@@ -3,49 +3,47 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 // ─── Brand Palette ───────────────────────────────────────────────────────────
-// Source: InSync brand deck New Logo V2 + business card authority
+// Source: RALPH Execution Plan — 3-color system
+// Deep Petrol + White + Sinopia Orange. No teal. No gradients.
 // eslint-disable-next-line no-restricted-syntax -- this IS the token definition file; hex values are intentional here
 export const BRAND = {
-  // ── Core palette (source of truth — never hardcode these hex values inline)
-  spaceNavy:     '#003D59',   // primary dark — headings, nav, dark sections
-  luxBlue:       '#00262A',   // deeper support / footer / overlay backgrounds
-  obsidian:      '#001820',   // deepest dark — gradient endpoints, dark overlays
-  neoBlue:       '#0EC5E6',   // accent — CTAs, highlights, active states
-  neoBlueHover:  '#0AAFCC',   // neoBlue hover / pressed state
-  white:         '#FFFFFF',   // dominant canvas
-  offWhite:      '#F7F9FB',   // subtle section alternator
-  // ── Grays
+  // ── Core palette (RALPH spec — 3 colours only)
+  deepPetrol:    '#00262A',   // primary dark — headings, body text, nav, footer
+  white:         '#FFFFFF',   // dominant canvas — most section backgrounds
+  sinopia:       '#F63700',   // accent — CTAs, active states, highlights
+  sinopiaHover:  '#D92F00',   // sinopia hover / pressed state
+  // ── Grays (neutral support)
   gray100:       '#F3F4F6',
   gray200:       '#E5E7EB',
+  gray400:       '#9CA3AF',
   gray500:       '#6B7280',
   gray700:       '#374151',
-  // ── Semantic (use sparingly, only where listed)
-  starGold:      '#F59E0B',   // review star color only — do not use elsewhere
+  // ── Semantic
+  starGold:      '#F59E0B',   // review star colour only
   disabledBg:    '#B0BEC5',   // disabled button background only
+  // ── Legacy aliases (ease migration — prefer new names above)
+  spaceNavy:     '#00262A',
+  luxBlue:       '#00262A',
+  obsidian:      '#00262A',
+  neoBlue:       '#F63700',
+  neoBlueHover:  '#D92F00',
+  offWhite:      '#FFFFFF',
 } as const;
 
 // ─── Font CSS Variables ───────────────────────────────────────────────────────
-// Primary:   Articulat CF (commercial — place .woff2 in /public/fonts/articulat/)
-//            → Fallback: Inter (Google Fonts, loaded in layout.tsx)
-// Secondary: Denton (commercial — place .woff2 in /public/fonts/denton/)
-//            → Fallback: Playfair Display (Google Fonts, loaded in layout.tsx)
-//
-// To swap in licensed fonts, update the @font-face in globals.css and change
-// the CSS variables --font-primary / --font-secondary there.
-
 let theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main:        BRAND.spaceNavy,
-      dark:        BRAND.luxBlue,
-      light:       '#1a5a7a',
+      main:         BRAND.deepPetrol,
+      dark:         BRAND.deepPetrol,
+      light:        '#1a4a50',
       contrastText: BRAND.white,
     },
     secondary: {
-      main:        BRAND.neoBlue,
-      dark:        '#0aafcc',
-      light:       '#3dd2ee',
+      main:         BRAND.sinopia,
+      dark:         BRAND.sinopiaHover,
+      light:        '#FF5A33',
       contrastText: BRAND.white,
     },
     background: {
@@ -53,7 +51,7 @@ let theme = createTheme({
       paper:   BRAND.white,
     },
     text: {
-      primary:   BRAND.spaceNavy,
+      primary:   BRAND.deepPetrol,
       secondary: BRAND.gray700,
     },
     divider: BRAND.gray200,
@@ -141,35 +139,34 @@ let theme = createTheme({
           transition:    'all 0.2s ease',
         },
         containedPrimary: {
-          backgroundColor: BRAND.neoBlue,
+          backgroundColor: BRAND.sinopia,
           color:           BRAND.white,
           '&:hover': {
-            backgroundColor: BRAND.neoBlueHover,
+            backgroundColor: BRAND.sinopiaHover,
             transform:       'translateY(-1px)',
-            boxShadow:       '0 4px 16px rgba(14,197,230,0.3)',
           },
         },
         containedSecondary: {
-          backgroundColor: BRAND.spaceNavy,
+          backgroundColor: BRAND.deepPetrol,
           color:           BRAND.white,
           '&:hover': {
-            backgroundColor: BRAND.luxBlue,
+            backgroundColor: '#003338',
             transform:       'translateY(-1px)',
           },
         },
         outlinedPrimary: {
-          borderColor: BRAND.neoBlue,
-          color:       BRAND.neoBlue,
+          borderColor: BRAND.deepPetrol,
+          color:       BRAND.deepPetrol,
           '&:hover': {
-            backgroundColor: 'rgba(14,197,230,0.08)',
-            borderColor:     BRAND.neoBlue,
+            backgroundColor: 'rgba(0,38,42,0.05)',
+            borderColor:     BRAND.deepPetrol,
           },
         },
         outlinedSecondary: {
-          borderColor: BRAND.spaceNavy,
-          color:       BRAND.spaceNavy,
+          borderColor: BRAND.sinopia,
+          color:       BRAND.sinopia,
           '&:hover': {
-            backgroundColor: 'rgba(0,61,89,0.06)',
+            backgroundColor: 'rgba(246,55,0,0.06)',
           },
         },
         sizeLarge: {
@@ -193,7 +190,7 @@ let theme = createTheme({
           border:       `1px solid ${BRAND.gray200}`,
           transition:   'box-shadow 0.2s ease, transform 0.2s ease',
           '&:hover': {
-            boxShadow: '0 8px 32px rgba(0,61,89,0.08)',
+            boxShadow: '0 8px 32px rgba(0,38,42,0.08)',
             transform: 'translateY(-2px)',
           },
         },
@@ -209,14 +206,14 @@ let theme = createTheme({
           '& .MuiOutlinedInput-root': {
             borderRadius: 4,
             '&:hover .MuiOutlinedInput-notchedOutline': {
-              borderColor: BRAND.spaceNavy,
+              borderColor: BRAND.deepPetrol,
             },
             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-              borderColor: BRAND.neoBlue,
+              borderColor: BRAND.sinopia,
             },
           },
           '& .MuiInputLabel-root.Mui-focused': {
-            color: BRAND.neoBlue,
+            color: BRAND.sinopia,
           },
         },
       },
@@ -286,7 +283,7 @@ let theme = createTheme({
       },
       styleOverrides: {
         root: {
-          color: BRAND.neoBlue,
+          color: BRAND.sinopia,
         },
       },
     },

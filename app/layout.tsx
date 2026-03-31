@@ -34,11 +34,11 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://insync-pt.com'
   ),
   title: {
-    default:  'Physical Therapy Brooklyn & Manhattan NYC | InSync Physical Therapy',
+    default:  'Physical Therapy Manhattan & Brooklyn NYC | InSync Physical Therapy',
     template: '%s | InSync Physical Therapy',
   },
   description:
-    'One-on-one physical therapy in Brooklyn and Manhattan, NYC. Orthopedic rehab, sports injury recovery, ACL rehab, and post-surgical care. Not a PT mill.',
+    'One-on-one physical therapy in Manhattan and Brooklyn, NYC. Orthopedic rehab, sports injury recovery, ACL rehab, and post-surgical care. Not a PT mill.',
   keywords: [
     'physical therapy NYC',
     'physical therapy Brooklyn',
@@ -88,9 +88,9 @@ export const metadata: Metadata = {
     locale:      'en_US',
     url:         'https://insync-pt.com',
     siteName:    'InSync Physical Therapy',
-    title:       'Physical Therapy Brooklyn & Manhattan NYC | InSync Physical Therapy',
+    title:       'Physical Therapy Manhattan & Brooklyn NYC | InSync Physical Therapy',
     description:
-      'One-on-one physical therapy in Brooklyn and Manhattan. Orthopedic rehab, sports injury recovery, ACL rehab, and post-surgical care for active New Yorkers.',
+      'One-on-one physical therapy in Manhattan and Brooklyn. Orthopedic rehab, sports injury recovery, ACL rehab, and post-surgical care for active New Yorkers.',
     images: [
       {
         url:    '/brand/og-image.jpg',
@@ -102,9 +102,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card:        'summary_large_image',
-    title:       'Physical Therapy Brooklyn & Manhattan NYC | InSync Physical Therapy',
+    title:       'Physical Therapy Manhattan & Brooklyn NYC | InSync Physical Therapy',
     description:
-      'One-on-one physical therapy in Brooklyn and Manhattan. Orthopedic rehab, sports injury, and post-surgical care for active New Yorkers.',
+      'One-on-one physical therapy in Manhattan and Brooklyn. Orthopedic rehab, sports injury, and post-surgical care for active New Yorkers.',
     images: ['/brand/og-image.jpg'],
   },
   alternates: {
@@ -113,7 +113,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor:   '#003D59',
+  themeColor:   '#00262A',
   width:        'device-width',
   initialScale: 1,
 };
@@ -138,7 +138,7 @@ export default function RootLayout({
         {/* Favicon — replace with exported InSync logo mark */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#003D59" />
+        <meta name="theme-color" content="#00262A" />
       </head>
       <body>
         <a href="#main-content" className="skip-link">

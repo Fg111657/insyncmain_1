@@ -7,7 +7,6 @@ import Chip from '@mui/material/Chip';
 import LeadForm from '@/components/LeadForm';
 import MotionSection from '@/components/MotionSection';
 import PhoneIcon from '@mui/icons-material/Phone';
-import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
@@ -17,11 +16,11 @@ import { BRAND } from '@/lib/theme';
 export const metadata: Metadata = {
   title: 'Request an Appointment — InSync Physical Therapy NYC',
   description:
-    'Request a physical therapy appointment at InSync in Brooklyn or Manhattan. No referral required. We verify your insurance before scheduling and follow up within one business day.',
+    'Request a physical therapy appointment at InSync in Manhattan or Brooklyn. No referral required. Insurance verified before scheduling.',
   alternates: { canonical: 'https://insync-pt.com/contact' },
   openGraph: {
     title:       'Request an Appointment — InSync Physical Therapy NYC',
-    description: 'No referral required. We verify your insurance before scheduling and contact you within one business day.',
+    description: 'No referral required. Insurance verified before scheduling.',
     url:         'https://insync-pt.com/contact',
     siteName:    'InSync Physical Therapy',
     locale:      'en_US',
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
 const TRUST_CHIPS = [
   'No referral required',
   'Insurance verified same day',
-  '1-on-1 with your therapist every session',
+  '1-on-1 every session',
 ];
 
 const CARRIERS = [
@@ -42,38 +41,22 @@ const CARRIERS = [
 ];
 
 const NEXT_STEPS = [
-  {
-    step:  '01',
-    title: 'Submit your request',
-    desc:  'Takes less than two minutes.',
-  },
-  {
-    step:  '02',
-    title: 'We verify your insurance',
-    desc:  'Same business day — no guessing on cost.',
-  },
-  {
-    step:  '03',
-    title: 'Our team calls to confirm',
-    desc:  "You'll hear from us within one business day.",
-  },
-  {
-    step:  '04',
-    title: '60-minute 1-on-1 evaluation',
-    desc:  'Full assessment with Dr. Hassan. No shared sessions.',
-  },
+  { step: '01', title: 'Submit your request',          desc: 'Takes less than two minutes.' },
+  { step: '02', title: 'We verify your insurance',     desc: 'Same business day — no guessing on cost.' },
+  { step: '03', title: 'Our team calls to confirm',    desc: "You'll hear from us within one business day." },
+  { step: '04', title: '60-minute 1-on-1 evaluation',  desc: 'Full assessment with Dr. Hassan.' },
 ];
 
 const LOCATIONS_CONTACT = [
   {
-    name:    'Brooklyn',
-    address: '1081 Gates Ave, Brooklyn, NY 11221',
-    maps:    'https://maps.google.com/?q=1081+Gates+Ave+Brooklyn+NY+11221',
-  },
-  {
     name:    'Manhattan — Bryant Park',
     address: '55 W 39th St, 3rd Floor, Suite 303, New York, NY 10018',
     maps:    'https://maps.google.com/?q=55+W+39th+St+New+York+NY+10018',
+  },
+  {
+    name:    'Brooklyn',
+    address: '1081 Gates Ave, Brooklyn, NY 11221',
+    maps:    'https://maps.google.com/?q=1081+Gates+Ave+Brooklyn+NY+11221',
   },
 ];
 
@@ -83,79 +66,76 @@ export default function ContactPage() {
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <Box
         component="section"
-        className="section-navy"
         aria-label="Request an appointment"
-        sx={{ pt: { xs: 10, md: 14 }, pb: { xs: 8, md: 11 } }}
+        sx={{
+          pt:              { xs: 6, md: 10 },
+          pb:              { xs: 5, md: 8 },
+          backgroundColor: BRAND.deepPetrol,
+        }}
       >
-        <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
+        <Container maxWidth="lg">
           <MotionSection>
-          <Box sx={{ maxWidth: 680 }}>
-            <Typography component="p" className="overline" sx={{ mb: 2 }}>
-              Request Appointment
-            </Typography>
-            <Typography
-              variant="h1"
-              sx={{
-                color:      BRAND.white,
-                mb:         3,
-                fontSize:   { xs: '2.25rem', md: '3rem' },
-                fontWeight: 800,
-                lineHeight: 1.1,
-              }}
-            >
-              No Referral Required. We Verify Your Insurance Before You Walk In.
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color:     'rgba(255,255,255,0.75)',
-                lineHeight: 1.75,
-                fontSize:  '1.0625rem',
-                maxWidth:  520,
-                mb:        5,
-              }}
-            >
-              Fill out the form below. We contact you within one business day,
-              confirm your coverage, and schedule your first visit. No surprises.
-            </Typography>
+            <Box sx={{ maxWidth: 640 }}>
+              <Typography
+                variant="h1"
+                sx={{
+                  color:      BRAND.white,
+                  mb:         2,
+                  fontSize:   { xs: '2.25rem', md: '3rem' },
+                  fontWeight: 800,
+                  lineHeight: 1.1,
+                }}
+              >
+                No referral required. Insurance verified before you walk in.
+              </Typography>
+              <Typography
+                sx={{
+                  color:      'rgba(255,255,255,0.7)',
+                  lineHeight: 1.7,
+                  fontSize:   '1.0625rem',
+                  maxWidth:   520,
+                  mb:         4,
+                }}
+              >
+                Fill out the form below. We verify your coverage and call you within one business day.
+              </Typography>
 
-            {/* Trust chips */}
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.25 }}>
-              {TRUST_CHIPS.map((label) => (
-                <Chip
-                  key={label}
-                  label={label}
-                  size="small"
-                  icon={
-                    <CheckCircleOutlineIcon
-                      sx={{ fontSize: '0.9rem !important', color: `${BRAND.neoBlue} !important` }}
-                    />
-                  }
-                  sx={{
-                    backgroundColor: 'rgba(14,197,230,0.12)',
-                    color:           BRAND.white,
-                    fontWeight:      600,
-                    fontSize:        '0.8125rem',
-                    height:          34,
-                    borderRadius:    2,
-                    border:          '1px solid rgba(14,197,230,0.22)',
-                    '& .MuiChip-icon': { color: BRAND.neoBlue },
-                  }}
-                />
-              ))}
+              {/* Trust chips */}
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                {TRUST_CHIPS.map((label) => (
+                  <Chip
+                    key={label}
+                    label={label}
+                    size="small"
+                    icon={
+                      <CheckCircleOutlineIcon
+                        sx={{ fontSize: '0.85rem !important', color: `${BRAND.sinopia} !important` }}
+                      />
+                    }
+                    sx={{
+                      backgroundColor: 'rgba(246,55,0,0.12)',
+                      color:           BRAND.white,
+                      fontWeight:      600,
+                      fontSize:        '0.8rem',
+                      height:          32,
+                      borderRadius:    1,
+                      border:          '1px solid rgba(246,55,0,0.25)',
+                      '& .MuiChip-icon': { color: BRAND.sinopia },
+                    }}
+                  />
+                ))}
+              </Box>
             </Box>
-          </Box>
           </MotionSection>
         </Container>
       </Box>
 
-      {/* ── Insurance trust strip ──────────────────────────────────────── */}
+      {/* ── Insurance strip ──────────────────────────────────────── */}
       <Box
-        className="section-off-white"
-        sx={{ py: 2.75, borderBottom: `1px solid ${BRAND.gray200}` }}
+        sx={{ py: 2.5, borderBottom: `1px solid ${BRAND.gray200}`, backgroundColor: '#F9FAFB' }}
         aria-label="Accepted insurance carriers"
       >
-        <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
+        <Container maxWidth="lg">
           <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: { xs: 1, md: 1.5 } }}>
             <Typography
               sx={{
@@ -192,14 +172,14 @@ export default function ContactPage() {
               sx={{
                 fontSize:       '0.8rem',
                 fontWeight:     600,
-                color:          BRAND.neoBlue,
+                color:          BRAND.sinopia,
                 textDecoration: 'none',
                 ml:             { xs: 0, md: 'auto' },
                 display:        'flex',
                 alignItems:     'center',
                 gap:            0.375,
                 flexShrink:     0,
-                '&:hover':      { color: BRAND.neoBlueHover },
+                '&:hover':      { color: BRAND.sinopiaHover },
               }}
             >
               Full insurance info
@@ -210,310 +190,229 @@ export default function ContactPage() {
       </Box>
 
       {/* ── Main Layout ───────────────────────────────────────────────── */}
-      <Box component="section" className="section-light" sx={{ py: { xs: 6, md: 10 } }}>
-        <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}>
+      <Box component="section" sx={{ py: { xs: 6, md: 10 }, backgroundColor: BRAND.white }}>
+        <Container maxWidth="lg">
           <Grid container spacing={{ xs: 6, md: 10 }} alignItems="flex-start">
 
-            {/* ── Form column ─────────────────────────────────────────── */}
+            {/* Form column */}
             <Grid item xs={12} md={7}>
               <MotionSection>
-              <Typography
-                variant="h2"
-                sx={{ mb: 0.75, fontSize: { xs: '1.625rem', md: '2rem' } }}
-              >
-                Request an Appointment
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ color: BRAND.gray500, mb: 4, lineHeight: 1.6 }}
-              >
-                This is a request, not instant booking. We review your
-                information, verify your insurance, and call you to schedule.
-              </Typography>
-
-              <LeadForm />
+                <Typography
+                  variant="h2"
+                  sx={{ mb: 0.75, fontSize: { xs: '1.625rem', md: '2rem' }, color: BRAND.deepPetrol }}
+                >
+                  Request an Appointment
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: BRAND.gray500, mb: 4, lineHeight: 1.6 }}
+                >
+                  This is a request, not instant booking. We review your
+                  information, verify your insurance, and call you to schedule.
+                </Typography>
+                <LeadForm />
               </MotionSection>
             </Grid>
 
-            {/* ── Sidebar ─────────────────────────────────────────────── */}
+            {/* Sidebar */}
             <Grid item xs={12} md={5}>
               <MotionSection delay={0.12}>
-              <Box sx={{ position: 'sticky', top: 100 }}>
+                <Box sx={{ position: 'sticky', top: 100 }}>
 
-                {/* Call CTA */}
-                <Box
-                  sx={{
-                    backgroundColor: BRAND.spaceNavy,
-                    borderRadius:    4,
-                    p:               { xs: 3, md: 3.5 },
-                    mb:              3,
-                    display:         'flex',
-                    flexDirection:   'column',
-                    gap:             1.5,
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontWeight: 700,
-                      fontSize:   '1rem',
-                      color:      BRAND.white,
-                    }}
-                  >
-                    Prefer to call?
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.875rem', lineHeight: 1.6 }}
-                  >
-                    Speak directly with our team. We can answer insurance
-                    questions and schedule your visit over the phone.
-                  </Typography>
-                  <Typography
-                    component="a"
-                    href="tel:+19294194643"
-                    data-analytics="sidebar-call-cta"
-                    sx={{
-                      display:         'inline-flex',
-                      alignItems:      'center',
-                      gap:             1,
-                      mt:              0.5,
-                      px:              2.5,
-                      py:              1.375,
-                      borderRadius:    2,
-                      backgroundColor: BRAND.neoBlue,
-                      color:           BRAND.white,
-                      fontWeight:      700,
-                      fontSize:        '1rem',
-                      textDecoration:  'none',
-                      width:           'fit-content',
-                      transition:      'all 0.2s ease',
-                      '&:hover': {
-                        backgroundColor: BRAND.neoBlueHover,
-                        transform:       'translateY(-1px)',
-                      },
-                    }}
-                  >
-                    <PhoneIcon sx={{ fontSize: '1.125rem' }} />
-                    929-419-4643
-                  </Typography>
-                </Box>
-
-                {/* What happens next */}
-                <Box
-                  sx={{
-                    border:          `1px solid ${BRAND.gray200}`,
-                    borderRadius:    4,
-                    p:               { xs: 3, md: 3.5 },
-                    backgroundColor: BRAND.offWhite,
-                    mb:              3,
-                  }}
-                >
-                  <Typography
-                    component="h3"
-                    sx={{
-                      fontWeight: 700,
-                      fontSize:   '1rem',
-                      color:      BRAND.spaceNavy,
-                      mb:         2.5,
-                    }}
-                  >
-                    What happens after you submit
-                  </Typography>
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
-                    {NEXT_STEPS.map(({ step, title, desc }) => (
-                      <Box key={step} sx={{ display: 'flex', gap: 1.75, alignItems: 'flex-start' }}>
-                        <Box
-                          sx={{
-                            width:           28,
-                            height:          28,
-                            borderRadius:    '50%',
-                            backgroundColor: 'rgba(14,197,230,0.12)',
-                            display:         'flex',
-                            alignItems:      'center',
-                            justifyContent:  'center',
-                            flexShrink:      0,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              fontSize:   '0.68rem',
-                              fontWeight: 800,
-                              color:      BRAND.spaceNavy,
-                              lineHeight: 1,
-                            }}
-                          >
-                            {step}
-                          </Typography>
-                        </Box>
-                        <Box>
-                          <Typography
-                            sx={{
-                              fontWeight: 700,
-                              fontSize:   '0.9rem',
-                              color:      BRAND.spaceNavy,
-                              mb:         0.25,
-                              lineHeight: 1.3,
-                            }}
-                          >
-                            {title}
-                          </Typography>
-                          <Typography
-                            sx={{
-                              fontSize:   '0.8125rem',
-                              color:      BRAND.gray500,
-                              lineHeight: 1.55,
-                            }}
-                          >
-                            {desc}
-                          </Typography>
-                        </Box>
-                      </Box>
-                    ))}
-                  </Box>
-                </Box>
-
-                {/* Contact details */}
-                <Box
-                  sx={{
-                    border:          `1px solid ${BRAND.gray200}`,
-                    borderRadius:    4,
-                    p:               { xs: 3, md: 3.5 },
-                    backgroundColor: BRAND.offWhite,
-                    mb:              3,
-                  }}
-                >
-                  <Typography
-                    component="h3"
-                    sx={{
-                      fontWeight: 700,
-                      fontSize:   '1rem',
-                      color:      BRAND.spaceNavy,
-                      mb:         2.5,
-                    }}
-                  >
-                    Our Locations
-                  </Typography>
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.75 }}>
-                    {LOCATIONS_CONTACT.map(({ name, address, maps }) => (
-                      <Box key={name} sx={{ display: 'flex', gap: 1.5, alignItems: 'flex-start' }}>
-                        <LocationOnIcon
-                          sx={{ color: BRAND.neoBlue, fontSize: '1.125rem', mt: '2px', flexShrink: 0 }}
-                        />
-                        <Box>
-                          <Typography
-                            sx={{
-                              fontWeight: 700,
-                              fontSize:   '0.9rem',
-                              color:      BRAND.spaceNavy,
-                              mb:         0.25,
-                            }}
-                          >
-                            {name}
-                          </Typography>
-                          <Typography
-                            sx={{
-                              fontSize:   '0.85rem',
-                              color:      BRAND.gray500,
-                              lineHeight: 1.5,
-                              mb:         0.625,
-                            }}
-                          >
-                            {address}
-                          </Typography>
-                          <Typography
-                            component="a"
-                            href={maps}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            sx={{
-                              fontSize:            '0.8rem',
-                              fontWeight:          600,
-                              color:               BRAND.neoBlue,
-                              textDecoration:      'underline',
-                              textUnderlineOffset: 2,
-                              '&:hover': { color: BRAND.neoBlueHover },
-                            }}
-                          >
-                            Get directions →
-                          </Typography>
-                        </Box>
-                      </Box>
-                    ))}
-                  </Box>
-
+                  {/* Call CTA */}
                   <Box
                     sx={{
-                      mt:         2.5,
-                      pt:         2.5,
-                      borderTop:  `1px solid ${BRAND.gray200}`,
-                      display:    'flex',
-                      alignItems: 'center',
-                      gap:        1,
+                      backgroundColor: BRAND.deepPetrol,
+                      borderRadius:    2,
+                      p:               { xs: 3, md: 3.5 },
+                      mb:              3,
+                      display:         'flex',
+                      flexDirection:   'column',
+                      gap:             1.5,
                     }}
                   >
-                    <AccessTimeIcon sx={{ fontSize: '1rem', color: BRAND.neoBlue, flexShrink: 0 }} />
-                    <Typography sx={{ fontSize: '0.8125rem', color: BRAND.gray500, lineHeight: 1.5 }}>
-                      We respond within one business day.
+                    <Typography sx={{ fontWeight: 700, fontSize: '1rem', color: BRAND.white }}>
+                      Prefer to call or text?
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.875rem', lineHeight: 1.6 }}
+                    >
+                      Speak directly with our team. We answer insurance questions and schedule your visit.
+                    </Typography>
+                    <Typography
+                      component="a"
+                      href="tel:+19294194643"
+                      sx={{
+                        display:         'inline-flex',
+                        alignItems:      'center',
+                        gap:             1,
+                        mt:              0.5,
+                        px:              2.5,
+                        py:              1.375,
+                        borderRadius:    1,
+                        backgroundColor: BRAND.sinopia,
+                        color:           BRAND.white,
+                        fontWeight:      700,
+                        fontSize:        '1rem',
+                        textDecoration:  'none',
+                        width:           'fit-content',
+                        transition:      'background-color 0.2s ease',
+                        '&:hover': { backgroundColor: BRAND.sinopiaHover },
+                      }}
+                    >
+                      <PhoneIcon sx={{ fontSize: '1.125rem' }} />
+                      929-419-4643
                     </Typography>
                   </Box>
-                </Box>
 
-                {/* Insurance cross-link */}
-                <Box
-                  sx={{
-                    border:          `1px solid rgba(14,197,230,0.25)`,
-                    borderRadius:    4,
-                    p:               { xs: 2.75, md: 3 },
-                    backgroundColor: 'rgba(14,197,230,0.04)',
-                  }}
-                >
-                  <Typography
+                  {/* What happens next */}
+                  <Box
                     sx={{
-                      fontWeight: 700,
-                      fontSize:   '0.9375rem',
-                      color:      BRAND.spaceNavy,
-                      mb:         0.875,
+                      border:          `1px solid ${BRAND.gray200}`,
+                      borderRadius:    2,
+                      p:               { xs: 3, md: 3.5 },
+                      backgroundColor: '#F9FAFB',
+                      mb:              3,
                     }}
                   >
-                    Questions about coverage?
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ color: BRAND.gray500, lineHeight: 1.65, fontSize: '0.8375rem', mb: 1.5 }}
-                  >
-                    We accept Aetna, Blue Cross Blue Shield, Cigna, United Healthcare,
-                    Medicare, Fidelis, HIP, NYC EPP, and GHI. We verify your benefits
-                    before scheduling — no surprise bills.
-                  </Typography>
-                  <Typography
-                    component="a"
-                    href="/insurance"
+                    <Typography
+                      component="h3"
+                      sx={{ fontWeight: 700, fontSize: '1rem', color: BRAND.deepPetrol, mb: 2.5 }}
+                    >
+                      What happens after you submit
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
+                      {NEXT_STEPS.map(({ step, title, desc }) => (
+                        <Box key={step} sx={{ display: 'flex', gap: 1.75, alignItems: 'flex-start' }}>
+                          <Box
+                            sx={{
+                              width:           28,
+                              height:          28,
+                              borderRadius:    '50%',
+                              backgroundColor: 'rgba(246,55,0,0.08)',
+                              display:         'flex',
+                              alignItems:      'center',
+                              justifyContent:  'center',
+                              flexShrink:      0,
+                            }}
+                          >
+                            <Typography sx={{ fontSize: '0.68rem', fontWeight: 800, color: BRAND.deepPetrol, lineHeight: 1 }}>
+                              {step}
+                            </Typography>
+                          </Box>
+                          <Box>
+                            <Typography sx={{ fontWeight: 700, fontSize: '0.9rem', color: BRAND.deepPetrol, mb: 0.25, lineHeight: 1.3 }}>
+                              {title}
+                            </Typography>
+                            <Typography sx={{ fontSize: '0.8125rem', color: BRAND.gray500, lineHeight: 1.55 }}>
+                              {desc}
+                            </Typography>
+                          </Box>
+                        </Box>
+                      ))}
+                    </Box>
+                  </Box>
+
+                  {/* Locations */}
+                  <Box
                     sx={{
-                      fontSize:       '0.8125rem',
-                      fontWeight:     600,
-                      color:          BRAND.neoBlue,
-                      textDecoration: 'none',
-                      display:        'flex',
-                      alignItems:     'center',
-                      gap:            0.375,
-                      width:          'fit-content',
-                      '&:hover':      { color: BRAND.neoBlueHover },
+                      border:          `1px solid ${BRAND.gray200}`,
+                      borderRadius:    2,
+                      p:               { xs: 3, md: 3.5 },
+                      backgroundColor: '#F9FAFB',
+                      mb:              3,
                     }}
                   >
-                    View full insurance information
-                    <ArrowForwardIcon sx={{ fontSize: '0.85rem' }} />
-                  </Typography>
-                </Box>
+                    <Typography
+                      component="h3"
+                      sx={{ fontWeight: 700, fontSize: '1rem', color: BRAND.deepPetrol, mb: 2.5 }}
+                    >
+                      Our Locations
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.75 }}>
+                      {LOCATIONS_CONTACT.map(({ name, address, maps }) => (
+                        <Box key={name} sx={{ display: 'flex', gap: 1.5, alignItems: 'flex-start' }}>
+                          <LocationOnIcon sx={{ color: BRAND.sinopia, fontSize: '1.125rem', mt: '2px', flexShrink: 0 }} />
+                          <Box>
+                            <Typography sx={{ fontWeight: 700, fontSize: '0.9rem', color: BRAND.deepPetrol, mb: 0.25 }}>
+                              {name}
+                            </Typography>
+                            <Typography sx={{ fontSize: '0.85rem', color: BRAND.gray500, lineHeight: 1.5, mb: 0.625 }}>
+                              {address}
+                            </Typography>
+                            <Typography
+                              component="a"
+                              href={maps}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              sx={{
+                                fontSize:            '0.8rem',
+                                fontWeight:          600,
+                                color:               BRAND.sinopia,
+                                textDecoration:      'underline',
+                                textUnderlineOffset: 2,
+                                '&:hover': { color: BRAND.sinopiaHover },
+                              }}
+                            >
+                              Get directions →
+                            </Typography>
+                          </Box>
+                        </Box>
+                      ))}
+                    </Box>
 
-              </Box>
+                    <Box sx={{ mt: 2.5, pt: 2.5, borderTop: `1px solid ${BRAND.gray200}`, display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <AccessTimeIcon sx={{ fontSize: '1rem', color: BRAND.sinopia, flexShrink: 0 }} />
+                      <Typography sx={{ fontSize: '0.8125rem', color: BRAND.gray500, lineHeight: 1.5 }}>
+                        We respond within one business day.
+                      </Typography>
+                    </Box>
+                  </Box>
+
+                  {/* Insurance */}
+                  <Box
+                    sx={{
+                      border:          `1px solid rgba(246,55,0,0.2)`,
+                      borderRadius:    2,
+                      p:               { xs: 2.75, md: 3 },
+                      backgroundColor: 'rgba(246,55,0,0.03)',
+                    }}
+                  >
+                    <Typography sx={{ fontWeight: 700, fontSize: '0.9375rem', color: BRAND.deepPetrol, mb: 0.875 }}>
+                      Questions about coverage?
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: BRAND.gray500, lineHeight: 1.65, fontSize: '0.8375rem', mb: 1.5 }}>
+                      We accept Aetna, BCBS, Cigna, United Healthcare, Medicare, Fidelis, HIP, NYC EPP, and GHI. We verify benefits before scheduling.
+                    </Typography>
+                    <Typography
+                      component="a"
+                      href="/insurance"
+                      sx={{
+                        fontSize:       '0.8125rem',
+                        fontWeight:     600,
+                        color:          BRAND.sinopia,
+                        textDecoration: 'none',
+                        display:        'flex',
+                        alignItems:     'center',
+                        gap:            0.375,
+                        width:          'fit-content',
+                        '&:hover':      { color: BRAND.sinopiaHover },
+                      }}
+                    >
+                      View full insurance information
+                      <ArrowForwardIcon sx={{ fontSize: '0.85rem' }} />
+                    </Typography>
+                  </Box>
+
+                </Box>
               </MotionSection>
             </Grid>
-
           </Grid>
         </Container>
       </Box>
 
-      {/* ── Mobile sticky call bar ──────────────────────────────────────── */}
+      {/* ── Mobile sticky call bar ──────────────────────────────────── */}
       <Box
         sx={{
           display:         { xs: 'flex', md: 'none' },
@@ -522,8 +421,8 @@ export default function ContactPage() {
           left:            0,
           right:           0,
           zIndex:          1200,
-          backgroundColor: BRAND.spaceNavy,
-          borderTop:       `1px solid rgba(255,255,255,0.1)`,
+          backgroundColor: BRAND.deepPetrol,
+          borderTop:       '1px solid rgba(255,255,255,0.1)',
           px:              3,
           py:              1.75,
           alignItems:      'center',
@@ -532,27 +431,20 @@ export default function ContactPage() {
         }}
         aria-label="Quick call bar"
       >
-        <Typography
-          sx={{
-            fontSize:   '0.875rem',
-            fontWeight: 500,
-            color:      'rgba(255,255,255,0.75)',
-          }}
-        >
-          Questions? Call us directly.
+        <Typography sx={{ fontSize: '0.875rem', fontWeight: 500, color: 'rgba(255,255,255,0.7)' }}>
+          Call or text us directly.
         </Typography>
         <Typography
           component="a"
           href="tel:+19294194643"
-          data-analytics="mobile-sticky-call"
           sx={{
             display:         'inline-flex',
             alignItems:      'center',
             gap:             0.75,
             px:              2.25,
             py:              1.125,
-            borderRadius:    2,
-            backgroundColor: BRAND.neoBlue,
+            borderRadius:    1,
+            backgroundColor: BRAND.sinopia,
             color:           BRAND.white,
             fontWeight:      700,
             fontSize:        '0.9375rem',

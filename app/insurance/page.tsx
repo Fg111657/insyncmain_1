@@ -886,9 +886,8 @@ export default function InsurancePage() {
 
       {/* ── CTA ─────────────────────────────────────────────────────── */}
       <CTABand
-        headline="Have Insurance Questions? We'll Answer Them."
-        subline="Contact us before your first visit. We verify your benefits and tell you exactly what to expect."
-        variant="dark"
+        headline="Have insurance questions?"
+        subline="Contact us before your first visit. We verify your benefits and explain what to expect."
       />
     </>
   );

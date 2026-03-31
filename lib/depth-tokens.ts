@@ -1,89 +1,66 @@
 /**
- * Depth & Motion Design Tokens
+ * Depth Tokens — RALPH palette
  *
- * Centralized constants for the Soft UI Evolution + Dimensional Layering
- * design system. Based on UI UX Pro Max recommendations for healthcare.
- *
- * All shadows use SpaceNavy-tinted RGBA for brand cohesion.
+ * Minimal shadow system. No gradients, no glow, no teal.
+ * Deep Petrol #00262A + White #FFFFFF + Sinopia Orange #F63700.
  */
 
-/* ── Multi-layer shadow scale ─────────────────────────────────────────────── */
-
+/* ── Multi-layer box shadows (4 levels) ──────────────────────────────── */
 export const ELEVATION = {
-  /** Resting cards, subtle lift */
-  1: '0 1px 3px rgba(0,61,89,0.05), 0 4px 12px rgba(0,61,89,0.04)',
-  /** Hovered cards, interactive elements */
-  2: '0 2px 4px rgba(0,61,89,0.05), 0 8px 24px rgba(0,61,89,0.08), 0 20px 48px rgba(0,61,89,0.04)',
-  /** Popped elements, modals, floating badges */
-  3: '0 4px 8px rgba(0,61,89,0.06), 0 12px 32px rgba(0,61,89,0.10), 0 32px 64px rgba(0,61,89,0.06)',
-  /** Maximum emphasis */
-  4: '0 8px 16px rgba(0,61,89,0.08), 0 20px 40px rgba(0,61,89,0.12), 0 40px 80px rgba(0,61,89,0.06)',
+  0: 'none',
+  1: '0 1px 3px rgba(0,38,42,0.06), 0 1px 2px rgba(0,38,42,0.04)',
+  2: '0 4px 16px rgba(0,38,42,0.08), 0 1px 3px rgba(0,38,42,0.04)',
+  3: '0 10px 40px rgba(0,38,42,0.10), 0 2px 6px rgba(0,38,42,0.04)',
+  4: '0 20px 60px rgba(0,38,42,0.12), 0 4px 12px rgba(0,38,42,0.04)',
 } as const;
 
-/* ── Glassmorphism presets ────────────────────────────────────────────────── */
-
+/* ── Glass / frosted effects ─────────────────────────────────────────── */
 export const GLASS = {
   nav: {
-    background:     'rgba(255,255,255,0.78)',
+    backgroundColor: 'rgba(255,255,255,0.90)',
     backdropFilter:  'blur(20px)',
     WebkitBackdropFilter: 'blur(20px)',
-    borderBottom:    '1px solid rgba(255,255,255,0.25)',
   },
   card: {
-    background:      'rgba(255,255,255,0.65)',
-    backdropFilter:  'blur(16px)',
-    WebkitBackdropFilter: 'blur(16px)',
-    border:          '1px solid rgba(255,255,255,0.3)',
-  },
-  dark: {
-    background:      'rgba(0,61,89,0.55)',
-    backdropFilter:  'blur(24px)',
-    WebkitBackdropFilter: 'blur(24px)',
-    border:          '1px solid rgba(14,197,230,0.12)',
-  },
-  badge: {
-    background:      'rgba(255,255,255,0.7)',
+    backgroundColor: 'rgba(255,255,255,0.80)',
     backdropFilter:  'blur(12px)',
     WebkitBackdropFilter: 'blur(12px)',
-    border:          '1px solid rgba(255,255,255,0.35)',
+  },
+  dark: {
+    backgroundColor: 'rgba(0,38,42,0.60)',
+    backdropFilter:  'blur(10px)',
+    WebkitBackdropFilter: 'blur(10px)',
+  },
+  badge: {
+    backgroundColor: 'rgba(255,255,255,0.95)',
+    backdropFilter:  'blur(8px)',
+    WebkitBackdropFilter: 'blur(8px)',
+    border:          '1px solid rgba(0,38,42,0.08)',
   },
 } as const;
 
-/* ── Timing & easing ─────────────────────────────────────────────────────── */
-
+/* ── Timing ──────────────────────────────────────────────────────────── */
 export const TIMING = {
-  fast:   0.2,
-  normal: 0.3,
-  smooth: 0.4,
-  slow:   0.6,
+  fast:   0.15,
+  normal: 0.25,
+  smooth: 0.5,
 } as const;
 
+/* ── Easing ──────────────────────────────────────────────────────────── */
 export const EASE = {
-  /** Smooth entrance / exit */
-  smooth: [0.25, 0.1, 0.25, 1] as const,
-  /** Spring-like bounce for hover */
-  spring: [0.34, 1.56, 0.64, 1] as const,
-  /** Decelerate (ease-out) */
-  out:    [0, 0, 0.2, 1] as const,
+  out:      [0, 0, 0.2, 1] as [number, number, number, number],
+  inOut:    [0.42, 0, 0.58, 1]   as [number, number, number, number],
+  bounce:   [0.34, 1.56, 0.64, 1] as [number, number, number, number],
 } as const;
 
-/* ── 3D transform presets ─────────────────────────────────────────────────── */
-
+/* ── 3D tilt defaults ───────────────────────────────────────────────── */
 export const TILT = {
-  perspective: 1000,
-  /** Max degrees for card tilt — kept subtle for healthcare trust */
-  maxDeg:      4,
-  /** Transition for tilt reset */
-  resetSpring: { type: 'spring' as const, stiffness: 300, damping: 20 },
+  maxDeg:     4,
+  perspective: 800,
 } as const;
 
-/* ── NeoBlue glow presets (for CTAs) ──────────────────────────────────────── */
-
+/* ── Glow (Sinopia-based) ───────────────────────────────────────────── */
 export const GLOW = {
-  /** Resting CTA glow */
-  subtle: '0 4px 20px rgba(14,197,230,0.25), 0 0 0 1px rgba(14,197,230,0.08)',
-  /** Hovered CTA glow */
-  strong: '0 8px 32px rgba(14,197,230,0.45), 0 0 0 2px rgba(14,197,230,0.15)',
-  /** Pulsing glow peak (CSS animation) */
-  pulse:  '0 8px 40px rgba(14,197,230,0.5), 0 0 0 2px rgba(14,197,230,0.2)',
+  subtle: '0 4px 20px rgba(246,55,0,0.15)',
+  strong: '0 8px 40px rgba(246,55,0,0.25)',
 } as const;

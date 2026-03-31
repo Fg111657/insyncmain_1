@@ -33,7 +33,7 @@ export function useTiltHover(maxDeg: number = TILT.maxDeg) {
   const animate: TargetAndTransition = {
     rotateX: tilt.rotateX,
     rotateY: tilt.rotateY,
-    transition: TILT.resetSpring,
+    transition: { type: 'spring' as const, stiffness: 300, damping: 20 },
   };
 
   return {
