@@ -52,6 +52,22 @@ const TEAM = [
     ],
   },
   {
+    id:          'moustafa',
+    photo:       TEAM_PHOTOS.moustafa,
+    photoPos:    'center 20%',
+    name:        'Dr. Moustafa Hassanin',
+    title:       'Doctor of Physical Therapy',
+    credentials: ['DPT', 'OCS Board Certified'],
+    bio:
+      'Dr. Hassanin is a board-certified Orthopedic Clinical Specialist. He combines hands-on manual therapy with targeted exercise to help patients recover from surgery, overcome chronic pain, and return to peak performance.',
+    specialties: [
+      'Orthopedic Specialist',
+      'Sports Injury Rehab',
+      'Manual Therapy',
+      'Chronic Pain Treatment',
+    ],
+  },
+  {
     id:          'piero',
     photo:       TEAM_PHOTOS.piero,
     photoPos:    'center 20%',
