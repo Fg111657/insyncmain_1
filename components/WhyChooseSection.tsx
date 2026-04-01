@@ -1,18 +1,17 @@
 'use client';
 
 /**
- * WhyChooseSection — RALPH spec
- * 6 equal feature boxes on white background. Clean, minimal.
- * No 3D tilt, no gradient glows.
+ * WhyChooseSection — Horizontal pinwheel carousel of benefit cards.
+ * White background. Clean, minimal.
  */
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { BRAND } from '@/lib/theme';
 import MotionSection from '@/components/MotionSection';
+import HorizontalCarousel from '@/components/HorizontalCarousel';
 
 const BENEFITS = [
   {
@@ -67,73 +66,76 @@ export default function WhyChooseSection() {
               lineHeight:    1.1,
               color:         BRAND.deepPetrol,
               mb:            { xs: 3, md: 4 },
-              textAlign:     'center',
+              textAlign:     { xs: 'left', md: 'center' },
               letterSpacing: '-0.02em',
             }}
           >
             Why New Yorkers choose InSync
           </Typography>
         </MotionSection>
+      </Container>
 
-        <MotionSection variant="list">
-          <Grid container spacing={{ xs: 1.5, md: 2 }}>
+      <Container maxWidth="lg" disableGutters sx={{ px: { md: 3 } }}>
+        <MotionSection>
+          <HorizontalCarousel
+            cardWidth={{ xs: 280, sm: 300, md: 320 }}
+            gap={14}
+          >
             {BENEFITS.map(({ title, description }) => (
-              <Grid item xs={12} sm={6} md={4} key={title}>
-                <MotionSection variant="item">
-                  <Box
+              <Box
+                key={title}
+                sx={{
+                  display:         'flex',
+                  gap:             1.5,
+                  alignItems:      'flex-start',
+                  backgroundColor: '#F9FAFB',
+                  borderRadius:    1.5,
+                  p:               { xs: 2, md: 2.5 },
+                  border:          '1px solid',
+                  borderColor:     BRAND.gray200,
+                  transition:      'border-color 0.2s ease, box-shadow 0.2s ease',
+                  height:          '100%',
+                  minHeight:       140,
+                  '&:hover': {
+                    borderColor: BRAND.sinopia,
+                    boxShadow:   '0 2px 12px rgba(0,38,42,0.06)',
+                  },
+                }}
+              >
+                <CheckCircleOutlineIcon
+                  aria-hidden="true"
+                  sx={{
+                    color:      BRAND.sinopia,
+                    fontSize:   '1.15rem',
+                    mt:         '2px',
+                    flexShrink: 0,
+                  }}
+                />
+                <Box>
+                  <Typography
+                    component="h3"
                     sx={{
-                      display:         'flex',
-                      gap:             1.5,
-                      alignItems:      'flex-start',
-                      backgroundColor: '#F9FAFB',
-                      borderRadius:    1.5,
-                      p:               { xs: 2, md: 2.5 },
-                      height:          '100%',
-                      border:          '1px solid',
-                      borderColor:     BRAND.gray200,
-                      transition:      'border-color 0.2s ease, box-shadow 0.2s ease',
-                      '&:hover': {
-                        borderColor: BRAND.sinopia,
-                        boxShadow:   '0 2px 12px rgba(0,38,42,0.06)',
-                      },
+                      fontWeight: 700,
+                      fontSize:   '0.9375rem',
+                      color:      BRAND.deepPetrol,
+                      mb:         0.25,
                     }}
                   >
-                    <CheckCircleOutlineIcon
-                      aria-hidden="true"
-                      sx={{
-                        color:      BRAND.sinopia,
-                        fontSize:   '1.15rem',
-                        mt:         '2px',
-                        flexShrink: 0,
-                      }}
-                    />
-                    <Box>
-                      <Typography
-                        component="h3"
-                        sx={{
-                          fontWeight: 700,
-                          fontSize:   '0.9375rem',
-                          color:      BRAND.deepPetrol,
-                          mb:         0.25,
-                        }}
-                      >
-                        {title}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontSize:   '0.875rem',
-                          lineHeight: 1.55,
-                          color:      BRAND.gray700,
-                        }}
-                      >
-                        {description}
-                      </Typography>
-                    </Box>
-                  </Box>
-                </MotionSection>
-              </Grid>
+                    {title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize:   '0.875rem',
+                      lineHeight: 1.55,
+                      color:      BRAND.gray700,
+                    }}
+                  >
+                    {description}
+                  </Typography>
+                </Box>
+              </Box>
             ))}
-          </Grid>
+          </HorizontalCarousel>
         </MotionSection>
       </Container>
     </Box>

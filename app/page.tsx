@@ -4,6 +4,8 @@ import { FAQ_SCHEMA } from '@/lib/schema';
 import HeroRedesigned from '@/components/HeroRedesigned';
 import MobileFAB from '@/components/MobileFAB';
 import WhyChooseSection from '@/components/WhyChooseSection';
+import ServicesGrid from '@/components/ServicesGrid';
+import TeamSection from '@/components/TeamSection';
 import ReviewsSection from '@/components/ReviewsSection';
 import CTABand from '@/components/CTABand';
 
@@ -26,6 +28,10 @@ export default function HomePage() {
       <HeroRedesigned />
 
       <WhyChooseSection />
+
+      <ServicesGrid carousel />
+
+      <TeamSection carousel />
 
       <ReviewsSection />
 

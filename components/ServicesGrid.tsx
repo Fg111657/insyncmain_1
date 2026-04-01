@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,12 +11,12 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { BRAND } from '@/lib/theme';
 import { SECTION_IMAGES, BLUR_PLACEHOLDER } from '@/lib/images';
 import MotionSection from '@/components/MotionSection';
+import HorizontalCarousel from '@/components/HorizontalCarousel';
 
 /**
  * ServicesGrid — RALPH spec
- * 6 service cards per brief: Back & Neck, Sports Injury, Post-Surgery,
- * Pelvic Health, Orthopedic, Strength & Performance.
- * Clean white cards, no gradients, no "Learn more" links.
+ * 6 service cards. Renders as horizontal carousel when `carousel` is true,
+ * otherwise as a grid.
  */
 
 const SERVICES = [
@@ -62,11 +64,79 @@ const SERVICES = [
   },
 ];
 
+function ServiceCard({ id, photo, title, desc, compact }: {
+  id: string; photo?: string; title: string; desc: string; compact: boolean;
+}) {
+  return (
+    <Box
+      id={id}
+      component="article"
+      sx={{
+        border:          `1px solid ${BRAND.gray200}`,
+        borderRadius:    1.5,
+        overflow:        'hidden',
+        display:         'flex',
+        flexDirection:   'column',
+        backgroundColor: BRAND.white,
+        height:          '100%',
+        transition:      'border-color 0.2s ease, box-shadow 0.2s ease',
+        '&:hover': {
+          borderColor: BRAND.sinopia,
+          boxShadow:   '0 2px 12px rgba(0,38,42,0.06)',
+        },
+      }}
+    >
+      {/* Photo */}
+      {photo && !compact && (
+        <Box sx={{ position: 'relative', height: 160, flexShrink: 0 }}>
+          <Image
+            src={photo}
+            alt={`${title} at InSync Physical Therapy NYC`}
+            fill
+            sizes="(max-width: 600px) 90vw, (max-width: 1200px) 50vw, 360px"
+            placeholder="blur"
+            blurDataURL={BLUR_PLACEHOLDER}
+            style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+          />
+        </Box>
+      )}
+
+      {/* Content */}
+      <Box sx={{ p: { xs: 2, md: 2.5 }, display: 'flex', flexDirection: 'column', flex: 1 }}>
+        <Typography
+          component="h3"
+          sx={{
+            fontWeight: 700,
+            fontSize:   '1.0625rem',
+            color:      BRAND.deepPetrol,
+            lineHeight: 1.25,
+            mb:         0.75,
+          }}
+        >
+          {title}
+        </Typography>
+        <Typography
+          variant="body2"
+          sx={{
+            color:      BRAND.gray500,
+            lineHeight: 1.6,
+            fontSize:   '0.875rem',
+          }}
+        >
+          {desc}
+        </Typography>
+      </Box>
+    </Box>
+  );
+}
+
 interface ServicesGridProps {
   maxItems?:   number;
   showCTA?:    boolean;
   compact?:    boolean;
   hideHeader?: boolean;
+  /** Render as horizontal carousel instead of grid */
+  carousel?:   boolean;
 }
 
 export default function ServicesGrid({
@@ -74,6 +144,7 @@ export default function ServicesGrid({
   showCTA = true,
   compact = false,
   hideHeader = false,
+  carousel = false,
 }: ServicesGridProps) {
   const displayed = maxItems ? SERVICES.slice(0, maxItems) : SERVICES;
 
@@ -87,14 +158,14 @@ export default function ServicesGrid({
         backgroundColor: BRAND.white,
       }}
     >
+      {/* Section Header */}
       <Container maxWidth="lg">
-        {/* Section Header */}
         {!compact && !hideHeader && (
           <MotionSection>
             <Box sx={{ mb: { xs: 3, md: 4 }, maxWidth: 600 }}>
               <Typography
                 variant="h2"
-                sx={{ mb: 1.5, fontSize: { xs: '2rem', md: '2.5rem' }, color: BRAND.deepPetrol }}
+                sx={{ mb: 1.5, fontSize: { xs: '1.75rem', md: '2.125rem' }, color: BRAND.deepPetrol, fontWeight: 800 }}
               >
                 What we treat
               </Typography>
@@ -107,89 +178,49 @@ export default function ServicesGrid({
             </Box>
           </MotionSection>
         )}
+      </Container>
 
-        {/* Services Grid */}
-        <MotionSection variant="list">
-          <Box
-            sx={{
-              display:             'grid',
-              gridTemplateColumns: {
-                xs: '1fr',
-                sm: 'repeat(2, 1fr)',
-                lg: 'repeat(3, 1fr)',
-              },
-              gap: { xs: 1.5, md: 2 },
-            }}
-          >
-            {displayed.map(({ id, photo, title, desc }) => (
-              <MotionSection key={id} variant="item">
-                <Box
-                  id={id}
-                  component="article"
-                  sx={{
-                    border:          `1px solid ${BRAND.gray200}`,
-                    borderRadius:    1.5,
-                    overflow:        'hidden',
-                    display:         'flex',
-                    flexDirection:   'column',
-                    backgroundColor: BRAND.white,
-                    height:          '100%',
-                    transition:      'border-color 0.2s ease, box-shadow 0.2s ease',
-                    '&:hover': {
-                      borderColor: BRAND.sinopia,
-                      boxShadow:   '0 2px 12px rgba(0,38,42,0.06)',
-                    },
-                  }}
-                >
-                  {/* Photo */}
-                  {photo && !compact && (
-                    <Box sx={{ position: 'relative', height: 180, flexShrink: 0 }}>
-                      <Image
-                        src={photo}
-                        alt={`${title} at InSync Physical Therapy NYC`}
-                        fill
-                        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        placeholder="blur"
-                        blurDataURL={BLUR_PLACEHOLDER}
-                        style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
-                      />
-                    </Box>
-                  )}
+      {/* Cards — Carousel or Grid */}
+      {carousel ? (
+        <Container maxWidth="lg" disableGutters sx={{ px: { md: 3 } }}>
+          <MotionSection>
+            <HorizontalCarousel
+              cardWidth={{ xs: 280, sm: 320, md: 340 }}
+              gap={14}
+            >
+              {displayed.map(({ id, photo, title, desc }) => (
+                <ServiceCard key={id} id={id} photo={photo} title={title} desc={desc} compact={compact} />
+              ))}
+            </HorizontalCarousel>
+          </MotionSection>
+        </Container>
+      ) : (
+        <Container maxWidth="lg">
+          <MotionSection variant="list">
+            <Box
+              sx={{
+                display:             'grid',
+                gridTemplateColumns: {
+                  xs: '1fr',
+                  sm: 'repeat(2, 1fr)',
+                  lg: 'repeat(3, 1fr)',
+                },
+                gap: { xs: 1.5, md: 2 },
+              }}
+            >
+              {displayed.map(({ id, photo, title, desc }) => (
+                <MotionSection key={id} variant="item">
+                  <ServiceCard id={id} photo={photo} title={title} desc={desc} compact={compact} />
+                </MotionSection>
+              ))}
+            </Box>
+          </MotionSection>
+        </Container>
+      )}
 
-                  {/* Content */}
-                  <Box sx={{ p: { xs: 2, md: 2.5 }, display: 'flex', flexDirection: 'column', flex: 1 }}>
-                    <Typography
-                      component="h3"
-                      sx={{
-                        fontWeight: 700,
-                        fontSize:   '1.0625rem',
-                        color:      BRAND.deepPetrol,
-                        lineHeight: 1.25,
-                        mb:         1,
-                      }}
-                    >
-                      {title}
-                    </Typography>
-
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color:      BRAND.gray500,
-                        lineHeight: 1.6,
-                        fontSize:   '0.9rem',
-                      }}
-                    >
-                      {desc}
-                    </Typography>
-                  </Box>
-                </Box>
-              </MotionSection>
-            ))}
-          </Box>
-        </MotionSection>
-
-        {/* View All CTA */}
-        {showCTA && maxItems && SERVICES.length > maxItems && (
+      {/* View All CTA */}
+      {showCTA && maxItems && SERVICES.length > maxItems && (
+        <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', mt: 5 }}>
             <Button
               component={Link}
@@ -212,8 +243,8 @@ export default function ServicesGrid({
               View All Services
             </Button>
           </Box>
-        )}
-      </Container>
+        </Container>
+      )}
     </Box>
   );
 }

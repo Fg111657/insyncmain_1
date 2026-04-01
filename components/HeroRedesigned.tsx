@@ -1,13 +1,12 @@
 'use client';
 
 /**
- * HeroRedesigned — RALPH spec
- * Clean, minimal. Deep Petrol background, white text.
- * Hero image on right, copy on left.
- * Animations use whileInView for reliable triggering.
+ * HeroRedesigned — Video background hero
+ * Looping video at half speed with dark overlay.
+ * Text content inside a frosted-glass card.
  */
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -18,21 +17,30 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import MapIcon from '@mui/icons-material/Map';
 import { motion, useInView } from 'framer-motion';
 import { BRAND } from '@/lib/theme';
-import { SECTION_IMAGES } from '@/lib/images';
-import HeroMedia from '@/components/HeroMedia';
 
 export default function HeroRedesigned() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
+
+  /* Slow the video to half speed once loaded */
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+    const handleLoaded = () => { vid.playbackRate = 0.5; };
+    vid.addEventListener('loadeddata', handleLoaded);
+    if (vid.readyState >= 2) handleLoaded();
+    return () => vid.removeEventListener('loadeddata', handleLoaded);
+  }, []);
 
   return (
     <Box
       component="section"
-      ref={ref}
+      ref={sectionRef}
       aria-label="InSync Physical Therapy — expert physical therapy in NYC"
       sx={{
         position:        'relative',
-        minHeight:       { xs: 'auto', md: '72vh' },
+        minHeight:       { xs: 'auto', md: '80vh' },
         display:         'flex',
         alignItems:      'center',
         overflow:        'hidden',
@@ -42,55 +50,54 @@ export default function HeroRedesigned() {
       }}
     >
 
-      {/* ── Right-panel hero image (desktop only) ─────────────────────── */}
+      {/* ── Video background ─────────────────────────────────────────── */}
+      <Box
+        component="video"
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        sx={{
+          position:  'absolute',
+          inset:     0,
+          width:     '100%',
+          height:    '100%',
+          objectFit: 'cover',
+          zIndex:    0,
+        }}
+      >
+        <source src="/video/hero-bg.mp4" type="video/mp4" />
+      </Box>
+
+      {/* ── Dark overlay for contrast + transparency ─────────────────── */}
       <Box
         aria-hidden="true"
         sx={{
-          display:  { xs: 'none', md: 'block' },
-          position: 'absolute',
-          right:    0,
-          top:      0,
-          width:    '50%',
-          height:   '100%',
-          zIndex:   0,
+          position:        'absolute',
+          inset:           0,
+          zIndex:          1,
+          backgroundColor: 'rgba(0,38,42,0.55)',
         }}
-      >
-        <HeroMedia
-          mediaType="image"
-          src={SECTION_IMAGES.hero}
-          alt="Dr. Hassan providing one-on-one physical therapy in NYC"
-          priority
-        />
-        {/* Left fade into Deep Petrol */}
-        <Box
-          sx={{
-            position:   'absolute',
-            inset:      0,
-            background: `linear-gradient(to right,
-              ${BRAND.deepPetrol} 0%,
-              rgba(0,38,42,0.7) 25%,
-              rgba(0,38,42,0.3) 50%,
-              transparent 80%
-            )`,
-          }}
-        />
-        {/* Top/bottom fade */}
-        <Box
-          sx={{
-            position:   'absolute',
-            inset:      0,
-            background: `linear-gradient(to bottom, ${BRAND.deepPetrol} 0%, transparent 15%, transparent 85%, ${BRAND.deepPetrol} 100%)`,
-          }}
-        />
-      </Box>
+      />
 
       {/* ── Main content ──────────────────────────────────────────────── */}
       <Container
         maxWidth="lg"
-        sx={{ position: 'relative', zIndex: 1, py: { xs: 6, md: 8 } }}
+        sx={{ position: 'relative', zIndex: 2, py: { xs: 6, md: 8 } }}
       >
-        <Box sx={{ maxWidth: { xs: '100%', md: '54%' } }}>
-
+        {/* ── Frosted glass card ──────────────────────────────────────── */}
+        <Box
+          sx={{
+            maxWidth:        { xs: '100%', md: 560 },
+            backgroundColor: 'rgba(0,38,42,0.45)',
+            backdropFilter:  'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)',
+            borderRadius:    3,
+            border:          '1px solid rgba(255,255,255,0.1)',
+            p:               { xs: 3, md: 4.5 },
+          }}
+        >
           {/* Thin accent line */}
           <Box
             component={motion.div}
@@ -119,7 +126,7 @@ export default function HeroRedesigned() {
               sx={{
                 color:         BRAND.white,
                 fontWeight:    800,
-                fontSize:      { xs: '2.25rem', sm: '2.75rem', md: '3rem', lg: '3.25rem' },
+                fontSize:      { xs: '2rem', sm: '2.5rem', md: '2.75rem' },
                 lineHeight:    1.08,
                 letterSpacing: '-0.025em',
                 mb:            1.5,
@@ -138,10 +145,9 @@ export default function HeroRedesigned() {
           >
             <Typography
               sx={{
-                color:      'rgba(255,255,255,0.75)',
-                fontSize:   { xs: '1rem', md: '1.0625rem' },
+                color:      'rgba(255,255,255,0.8)',
+                fontSize:   { xs: '0.9375rem', md: '1rem' },
                 lineHeight: 1.6,
-                maxWidth:   440,
                 mb:         { xs: 2.5, md: 3 },
               }}
             >
@@ -200,7 +206,7 @@ export default function HeroRedesigned() {
                 startIcon={<MapIcon />}
                 aria-label="Find an InSync Physical Therapy location"
                 sx={{
-                  borderColor:   'rgba(255,255,255,0.3)',
+                  borderColor:   'rgba(255,255,255,0.35)',
                   borderWidth:   1.5,
                   color:         BRAND.white,
                   fontWeight:    600,
@@ -225,7 +231,6 @@ export default function HeroRedesigned() {
               </Button>
             </Stack>
           </Box>
-
         </Box>
       </Container>
     </Box>
