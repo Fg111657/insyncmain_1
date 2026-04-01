@@ -2,11 +2,12 @@
 
 /**
  * HeroRedesigned — RALPH spec
- * Clean, minimal. White-dominant with Deep Petrol text.
- * No gradients, no animated mesh, no floating circles.
+ * Clean, minimal. Deep Petrol background, white text.
  * Hero image on right, copy on left.
+ * Animations use whileInView for reliable triggering.
  */
 
+import { useRef } from 'react';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -15,19 +16,23 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import MapIcon from '@mui/icons-material/Map';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { BRAND } from '@/lib/theme';
 import { SECTION_IMAGES } from '@/lib/images';
 import HeroMedia from '@/components/HeroMedia';
 
 export default function HeroRedesigned() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
   return (
     <Box
       component="section"
+      ref={ref}
       aria-label="InSync Physical Therapy — expert physical therapy in NYC"
       sx={{
         position:        'relative',
-        minHeight:       { xs: 'auto', md: '75vh' },
+        minHeight:       { xs: 'auto', md: '72vh' },
         display:         'flex',
         alignItems:      'center',
         overflow:        'hidden',
@@ -87,18 +92,27 @@ export default function HeroRedesigned() {
         <Box sx={{ maxWidth: { xs: '100%', md: '54%' } }}>
 
           {/* Thin accent line */}
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.4, delay: 0.05 }}
-            style={{ transformOrigin: 'left', width: 48, height: 2, backgroundColor: BRAND.sinopia, marginBottom: 20, borderRadius: 1 }}
+          <Box
+            component={motion.div}
+            initial={false}
+            animate={isInView ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
+            transition={{ duration: 0.35, delay: 0.05 }}
+            sx={{
+              transformOrigin: 'left',
+              width:           48,
+              height:          2,
+              backgroundColor: BRAND.sinopia,
+              mb:              2.5,
+              borderRadius:    0.5,
+            }}
           />
 
           {/* H1 */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: 0.08 }}
+          <Box
+            component={motion.div}
+            initial={false}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+            transition={{ duration: 0.4, delay: 0.08 }}
           >
             <Typography
               component="h1"
@@ -113,13 +127,14 @@ export default function HeroRedesigned() {
             >
               Expert physical therapy in New York
             </Typography>
-          </motion.div>
+          </Box>
 
           {/* Subline */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
+          <Box
+            component={motion.div}
+            initial={false}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+            transition={{ duration: 0.35, delay: 0.18 }}
           >
             <Typography
               sx={{
@@ -132,13 +147,14 @@ export default function HeroRedesigned() {
             >
               One-on-one care. Two locations. Insurance verified before your first visit.
             </Typography>
-          </motion.div>
+          </Box>
 
           {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
+          <Box
+            component={motion.div}
+            initial={false}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ duration: 0.35, delay: 0.28 }}
           >
             <Stack
               direction={{ xs: 'column', sm: 'row' }}
@@ -208,7 +224,7 @@ export default function HeroRedesigned() {
                 Find a Location
               </Button>
             </Stack>
-          </motion.div>
+          </Box>
 
         </Box>
       </Container>
