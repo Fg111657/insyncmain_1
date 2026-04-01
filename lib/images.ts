@@ -60,9 +60,10 @@ export const PROVIDER_PHOTOS = {
 // ─── Team headshots ───────────────────────────────────────────────────────────
 // Served from Next.js public folder (not CDN — files use private-bucket ACL)
 export const TEAM_PHOTOS = {
-  hassan: '/assets/dr-hassan-headshot.jpg',
-  piero:  '/assets/piero-alessi-headshot.jpg',
-  tj:     '/assets/tj-headshot.jpg',
+  hassan:  '/assets/dr-hassan-headshot.jpg',
+  mahmoud: '/assets/mahmoud-ibrahim-headshot.jpg',
+  piero:   '/assets/piero-alessi-headshot.jpg',
+  tj:      '/assets/tj-headshot.jpg',
 } as const;
 
 // ─── Office / clinic photos ───────────────────────────────────────────────────

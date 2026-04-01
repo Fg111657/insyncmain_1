@@ -36,6 +36,22 @@ const TEAM = [
     ],
   },
   {
+    id:          'mahmoud',
+    photo:       TEAM_PHOTOS.mahmoud,
+    photoPos:    'center top',
+    name:        'Dr. Mahmoud Samy Ibrahim',
+    title:       'Doctor of Physical Therapy',
+    credentials: ['DPT', 'Cairo University', '8+ Years Experience'],
+    bio:
+      'Dr. Mahmoud brings eight years of hands-on experience in musculoskeletal rehab. He has worked across orthopedic clinics, hospitals, and sports rehab centers, treating everyone from post-surgery patients to elite athletes in basketball, soccer, and swimming.',
+    specialties: [
+      'Musculoskeletal Rehab',
+      'Sports Medicine',
+      'Post-Surgical Recovery',
+      'Athletic Performance',
+    ],
+  },
+  {
     id:          'piero',
     photo:       TEAM_PHOTOS.piero,
     photoPos:    'center 20%',
