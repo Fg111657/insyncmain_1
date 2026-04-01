@@ -33,7 +33,7 @@ export default function CTABand({
       component="section"
       aria-label="Request appointment"
       sx={{
-        py:              { xs: 5, md: 6 },
+        py:              { xs: 3.5, md: 5 },
         backgroundColor: BRAND.deepPetrol,
       }}
     >

@@ -57,14 +57,14 @@ export default function ReviewsSection() {
       component="section"
       aria-label="Patient reviews"
       sx={{
-        py:              { xs: 5, md: 7 },
+        py:              { xs: 3.5, md: 6 },
         backgroundColor: '#F9FAFB',
       }}
     >
       <Container maxWidth="lg">
         {/* Header */}
         <MotionSection>
-          <Box sx={{ mb: { xs: 3, md: 4 }, textAlign: 'center' }}>
+          <Box sx={{ mb: { xs: 2, md: 3.5 }, textAlign: 'center' }}>
             <Typography
               variant="h2"
               sx={{

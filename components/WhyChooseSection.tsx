@@ -52,7 +52,7 @@ export default function WhyChooseSection() {
       component="section"
       aria-label="Why choose InSync"
       sx={{
-        py:              { xs: 5, md: 7 },
+        py:              { xs: 3.5, md: 6 },
         backgroundColor: BRAND.white,
       }}
     >
@@ -65,7 +65,7 @@ export default function WhyChooseSection() {
               fontSize:      { xs: '1.75rem', md: '2.125rem' },
               lineHeight:    1.1,
               color:         BRAND.deepPetrol,
-              mb:            { xs: 3, md: 4 },
+              mb:            { xs: 2, md: 3.5 },
               textAlign:     { xs: 'left', md: 'center' },
               letterSpacing: '-0.02em',
             }}

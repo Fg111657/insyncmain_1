@@ -81,7 +81,7 @@ export default function HeroRedesigned() {
       {/* ── Main content ──────────────────────────────────────────────── */}
       <Container
         maxWidth="lg"
-        sx={{ position: 'relative', zIndex: 2, py: { xs: 6, md: 8 } }}
+        sx={{ position: 'relative', zIndex: 2, py: { xs: 4, md: 8 } }}
       >
         {/* ── Frosted glass card ──────────────────────────────────────── */}
         <Box

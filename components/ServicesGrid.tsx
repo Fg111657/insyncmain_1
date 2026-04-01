@@ -258,7 +258,7 @@ export default function ServicesGrid({
       id="services"
       aria-label="Services"
       sx={{
-        py:              { xs: compact ? 3 : 5, md: compact ? 4 : 7 },
+        py:              { xs: compact ? 2 : 3.5, md: compact ? 4 : 6 },
         backgroundColor: BRAND.white,
       }}
     >
@@ -266,7 +266,7 @@ export default function ServicesGrid({
       <Container maxWidth="lg">
         {!compact && !hideHeader && (
           <MotionSection>
-            <Box sx={{ mb: { xs: 3, md: 4 }, maxWidth: 600 }}>
+            <Box sx={{ mb: { xs: 2, md: 3.5 }, maxWidth: 600 }}>
               <Typography
                 variant="h2"
                 sx={{ mb: 1.5, fontSize: { xs: '1.75rem', md: '2.125rem' }, color: BRAND.deepPetrol, fontWeight: 800 }}

@@ -22,14 +22,14 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        backgroundColor: BRAND.deepPetrol,
-        color:           BRAND.white,
+        backgroundColor: '#F5F5F5',
+        borderTop:       `1px solid ${BRAND.gray200}`,
       }}
     >
       <Container
         maxWidth="lg"
         sx={{
-          py:             { xs: 3, md: 4 },
+          py:             { xs: 2.5, md: 3 },
           display:        'flex',
           flexDirection:  { xs: 'column', sm: 'row' },
           alignItems:     { sm: 'center' },
@@ -39,7 +39,7 @@ export default function Footer() {
       >
         {/* Copyright */}
         <Typography
-          sx={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem' }}
+          sx={{ color: BRAND.gray400, fontSize: '0.75rem' }}
         >
           © {new Date().getFullYear()} InSync Physical Therapy & Fitness
         </Typography>
@@ -58,11 +58,11 @@ export default function Footer() {
               component={Link}
               href={href}
               sx={{
-                color:          'rgba(255,255,255,0.4)',
-                fontSize:       '0.8rem',
+                color:          BRAND.gray400,
+                fontSize:       '0.75rem',
                 textDecoration: 'none',
                 transition:     'color 0.15s ease',
-                '&:hover': { color: 'rgba(255,255,255,0.7)' },
+                '&:hover': { color: BRAND.deepPetrol },
               }}
             >
               {label}
