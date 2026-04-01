@@ -71,7 +71,7 @@ const LIST_VARIANTS: Variants = {
   hidden:  {},
   visible: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.08,
     },
   },
 };
@@ -96,8 +96,8 @@ export default function MotionSection({
   children,
   variant  = 'section',
   delay    = 0,
-  distance = 20,
-  duration = 0.35,
+  distance = 12,
+  duration = 0.3,
   className,
 }: MotionSectionProps) {
   // Detect prefers-reduced-motion on the client; default to false (animate)

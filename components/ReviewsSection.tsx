@@ -57,18 +57,18 @@ export default function ReviewsSection() {
       component="section"
       aria-label="Patient reviews"
       sx={{
-        py:              { xs: 8, md: 12 },
+        py:              { xs: 5, md: 7 },
         backgroundColor: '#F9FAFB',
       }}
     >
       <Container maxWidth="lg">
         {/* Header */}
         <MotionSection>
-          <Box sx={{ mb: { xs: 5, md: 7 }, textAlign: 'center' }}>
+          <Box sx={{ mb: { xs: 3, md: 4 }, textAlign: 'center' }}>
             <Typography
               variant="h2"
               sx={{
-                fontSize: { xs: '2rem', md: '2.5rem' },
+                fontSize: { xs: '1.75rem', md: '2.125rem' },
                 color:    BRAND.deepPetrol,
                 mb:       1,
               }}
@@ -116,7 +116,7 @@ export default function ReviewsSection() {
                 sm: 'repeat(2, 1fr)',
                 lg: 'repeat(4, 1fr)',
               },
-              gap: { xs: 2, md: 2.5 },
+              gap: { xs: 1.5, md: 2 },
             }}
           >
             {REVIEWS.map(({ author, rating, source, text }) => (
@@ -125,17 +125,18 @@ export default function ReviewsSection() {
                   component="blockquote"
                   sx={{
                     m:               0,
-                    borderRadius:    2,
-                    p:               3,
+                    p:               { xs: 2, md: 2.5 },
                     display:         'flex',
                     flexDirection:   'column',
-                    gap:             1.5,
+                    gap:             1,
                     backgroundColor: BRAND.white,
                     border:          `1px solid ${BRAND.gray200}`,
+                    borderRadius:    1.5,
                     height:          '100%',
-                    transition:      'border-color 0.2s ease',
+                    transition:      'border-color 0.2s ease, box-shadow 0.2s ease',
                     '&:hover': {
                       borderColor: BRAND.sinopia,
+                      boxShadow:   '0 2px 12px rgba(0,38,42,0.06)',
                     },
                   }}
                 >

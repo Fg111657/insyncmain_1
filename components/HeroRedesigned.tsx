@@ -27,7 +27,7 @@ export default function HeroRedesigned() {
       aria-label="InSync Physical Therapy — expert physical therapy in NYC"
       sx={{
         position:        'relative',
-        minHeight:       { xs: 'auto', md: '85vh' },
+        minHeight:       { xs: 'auto', md: '75vh' },
         display:         'flex',
         alignItems:      'center',
         overflow:        'hidden',
@@ -82,25 +82,33 @@ export default function HeroRedesigned() {
       {/* ── Main content ──────────────────────────────────────────────── */}
       <Container
         maxWidth="lg"
-        sx={{ position: 'relative', zIndex: 1, py: { xs: 8, md: 12 } }}
+        sx={{ position: 'relative', zIndex: 1, py: { xs: 6, md: 8 } }}
       >
         <Box sx={{ maxWidth: { xs: '100%', md: '54%' } }}>
 
+          {/* Thin accent line */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
+            style={{ transformOrigin: 'left', width: 48, height: 2, backgroundColor: BRAND.sinopia, marginBottom: 20, borderRadius: 1 }}
+          />
+
           {/* H1 */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.45, delay: 0.08 }}
           >
             <Typography
               component="h1"
               sx={{
                 color:         BRAND.white,
                 fontWeight:    800,
-                fontSize:      { xs: '2.25rem', sm: '2.75rem', md: '3.125rem', lg: '3.5rem' },
-                lineHeight:    1.1,
-                letterSpacing: '-0.02em',
-                mb:            2,
+                fontSize:      { xs: '2.25rem', sm: '2.75rem', md: '3rem', lg: '3.25rem' },
+                lineHeight:    1.08,
+                letterSpacing: '-0.025em',
+                mb:            1.5,
               }}
             >
               Expert physical therapy in New York
@@ -109,17 +117,17 @@ export default function HeroRedesigned() {
 
           {/* Subline */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
           >
             <Typography
               sx={{
                 color:      'rgba(255,255,255,0.75)',
-                fontSize:   { xs: '1.0625rem', md: '1.125rem' },
+                fontSize:   { xs: '1rem', md: '1.0625rem' },
                 lineHeight: 1.6,
-                maxWidth:   480,
-                mb:         { xs: 3, md: 4 },
+                maxWidth:   440,
+                mb:         { xs: 2.5, md: 3 },
               }}
             >
               One-on-one care. Two locations. Insurance verified before your first visit.
@@ -128,9 +136,9 @@ export default function HeroRedesigned() {
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
           >
             <Stack
               direction={{ xs: 'column', sm: 'row' }}
@@ -149,9 +157,9 @@ export default function HeroRedesigned() {
                   backgroundColor: BRAND.sinopia,
                   color:           BRAND.white,
                   fontWeight:      700,
-                  px:              { xs: 3, md: 4 },
-                  py:              1.75,
-                  fontSize:        '1rem',
+                  px:              { xs: 3, md: 3.5 },
+                  py:              1.5,
+                  fontSize:        '0.9375rem',
                   borderRadius:    1,
                   textTransform:   'none',
                   transition:      'background-color 0.2s, transform 0.2s',
@@ -180,9 +188,9 @@ export default function HeroRedesigned() {
                   borderWidth:   1.5,
                   color:         BRAND.white,
                   fontWeight:    600,
-                  px:            { xs: 3, md: 3.5 },
-                  py:            1.625,
-                  fontSize:      '0.9375rem',
+                  px:            { xs: 2.5, md: 3 },
+                  py:            1.375,
+                  fontSize:      '0.875rem',
                   borderRadius:  1,
                   textTransform: 'none',
                   transition:    'border-color 0.2s, color 0.2s, background-color 0.2s',

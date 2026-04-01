@@ -53,7 +53,7 @@ export default function WhyChooseSection() {
       component="section"
       aria-label="Why choose InSync"
       sx={{
-        py:              { xs: 8, md: 12 },
+        py:              { xs: 5, md: 7 },
         backgroundColor: BRAND.white,
       }}
     >
@@ -63,10 +63,10 @@ export default function WhyChooseSection() {
             component="h2"
             sx={{
               fontWeight:    800,
-              fontSize:      { xs: '2rem', md: '2.5rem' },
+              fontSize:      { xs: '1.75rem', md: '2.125rem' },
               lineHeight:    1.1,
               color:         BRAND.deepPetrol,
-              mb:            { xs: 5, md: 7 },
+              mb:            { xs: 3, md: 4 },
               textAlign:     'center',
               letterSpacing: '-0.02em',
             }}
@@ -76,24 +76,25 @@ export default function WhyChooseSection() {
         </MotionSection>
 
         <MotionSection variant="list">
-          <Grid container spacing={{ xs: 2, md: 3 }}>
+          <Grid container spacing={{ xs: 1.5, md: 2 }}>
             {BENEFITS.map(({ title, description }) => (
               <Grid item xs={12} sm={6} md={4} key={title}>
                 <MotionSection variant="item">
                   <Box
                     sx={{
                       display:         'flex',
-                      gap:             2,
+                      gap:             1.5,
                       alignItems:      'flex-start',
                       backgroundColor: '#F9FAFB',
-                      borderRadius:    2,
-                      p:               { xs: 2.5, md: 3 },
+                      borderRadius:    1.5,
+                      p:               { xs: 2, md: 2.5 },
                       height:          '100%',
                       border:          '1px solid',
                       borderColor:     BRAND.gray200,
-                      transition:      'border-color 0.2s ease',
+                      transition:      'border-color 0.2s ease, box-shadow 0.2s ease',
                       '&:hover': {
                         borderColor: BRAND.sinopia,
+                        boxShadow:   '0 2px 12px rgba(0,38,42,0.06)',
                       },
                     }}
                   >
@@ -101,8 +102,8 @@ export default function WhyChooseSection() {
                       aria-hidden="true"
                       sx={{
                         color:      BRAND.sinopia,
-                        fontSize:   '1.35rem',
-                        mt:         0.25,
+                        fontSize:   '1.15rem',
+                        mt:         '2px',
                         flexShrink: 0,
                       }}
                     />
@@ -111,17 +112,17 @@ export default function WhyChooseSection() {
                         component="h3"
                         sx={{
                           fontWeight: 700,
-                          fontSize:   '1rem',
+                          fontSize:   '0.9375rem',
                           color:      BRAND.deepPetrol,
-                          mb:         0.5,
+                          mb:         0.25,
                         }}
                       >
                         {title}
                       </Typography>
                       <Typography
                         sx={{
-                          fontSize:   '0.9375rem',
-                          lineHeight: 1.6,
+                          fontSize:   '0.875rem',
+                          lineHeight: 1.55,
                           color:      BRAND.gray700,
                         }}
                       >

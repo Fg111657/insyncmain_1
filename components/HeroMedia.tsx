@@ -87,7 +87,7 @@ export default function HeroMedia({
       placeholder="blur"
       blurDataURL={BLUR_PLACEHOLDER}
       sizes="(max-width: 960px) 100vw, 46vw"
-      style={{ objectFit: 'cover', objectPosition: 'center top' }}
+      style={{ objectFit: 'cover', objectPosition: 'center 55%' }}
     />
   );
 }

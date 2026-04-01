@@ -59,16 +59,17 @@ function LocationCard({ loc }: { loc: typeof LOCATIONS[number] }) {
   return (
     <Box
       sx={{
-        borderRadius:    2,
+        borderRadius:    1.5,
         border:          `1px solid ${BRAND.gray200}`,
         overflow:        'hidden',
         backgroundColor: BRAND.white,
         height:          '100%',
         display:         'flex',
         flexDirection:   'column',
-        transition:      'border-color 0.2s ease',
+        transition:      'border-color 0.2s ease, box-shadow 0.2s ease',
         '&:hover': {
           borderColor: BRAND.sinopia,
+          boxShadow:   '0 2px 12px rgba(0,38,42,0.06)',
         },
       }}
     >
@@ -87,7 +88,7 @@ function LocationCard({ loc }: { loc: typeof LOCATIONS[number] }) {
       </Box>
 
       {/* Details */}
-      <Box sx={{ p: { xs: 2.5, md: 3 }, display: 'flex', flexDirection: 'column', flex: 1, gap: 1.5 }}>
+      <Box sx={{ p: { xs: 2, md: 2.5 }, display: 'flex', flexDirection: 'column', flex: 1, gap: 1 }}>
 
         {/* Location name */}
         <Typography
@@ -223,14 +224,14 @@ export default function LocationsSection({ compact = false, hideHeader = false }
       id="locations"
       aria-label="Clinic locations"
       sx={{
-        py:              { xs: compact ? 4 : 6, md: compact ? 6 : 10 },
+        py:              { xs: compact ? 3 : 5, md: compact ? 4 : 7 },
         backgroundColor: BRAND.white,
       }}
     >
       <Container maxWidth="lg">
         {!compact && !hideHeader && (
           <MotionSection>
-            <Box sx={{ mb: { xs: 4, md: 5 }, textAlign: 'center' }}>
+            <Box sx={{ mb: { xs: 3, md: 4 }, textAlign: 'center' }}>
               <Typography
                 variant="h2"
                 sx={{ color: BRAND.deepPetrol, mb: 1, fontSize: { xs: '1.75rem', md: '2.25rem' } }}

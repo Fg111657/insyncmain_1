@@ -33,7 +33,7 @@ export default function CTABand({
       component="section"
       aria-label="Request appointment"
       sx={{
-        py:              { xs: 8, md: 10 },
+        py:              { xs: 5, md: 6 },
         backgroundColor: BRAND.deepPetrol,
       }}
     >
@@ -45,7 +45,7 @@ export default function CTABand({
               color:      BRAND.white,
               mb:         1.5,
               fontWeight: 800,
-              fontSize:   { xs: '1.875rem', md: '2.5rem' },
+              fontSize:   { xs: '1.75rem', md: '2.125rem' },
               lineHeight: 1.1,
             }}
           >
@@ -56,7 +56,7 @@ export default function CTABand({
             variant="body1"
             sx={{
               color:      'rgba(255,255,255,0.7)',
-              mb:         4,
+              mb:         3,
               maxWidth:   460,
               mx:         'auto',
               lineHeight: 1.6,
@@ -84,9 +84,9 @@ export default function CTABand({
                 backgroundColor: BRAND.sinopia,
                 color:           BRAND.white,
                 fontWeight:      700,
-                px:              4,
-                py:              1.75,
-                fontSize:        '1rem',
+                px:              3.5,
+                py:              1.5,
+                fontSize:        '0.9375rem',
                 borderRadius:    1,
                 minWidth:        220,
                 transition:      'background-color 0.2s ease, transform 0.2s ease',

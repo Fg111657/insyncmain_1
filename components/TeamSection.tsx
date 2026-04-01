@@ -81,14 +81,14 @@ export default function TeamSection({ compact = false, hideHeader = false }: Tea
       id="team"
       aria-label="Our team"
       sx={{
-        py:              { xs: compact ? 4 : 6, md: compact ? 6 : 10 },
+        py:              { xs: compact ? 3 : 5, md: compact ? 4 : 7 },
         backgroundColor: BRAND.white,
       }}
     >
       <Container maxWidth="lg">
         {!compact && !hideHeader && (
           <MotionSection>
-            <Box sx={{ mb: { xs: 5, md: 7 }, maxWidth: 600 }}>
+            <Box sx={{ mb: { xs: 3, md: 4 }, maxWidth: 600 }}>
               <Typography
                 variant="h2"
                 sx={{ mb: 1.5, fontSize: { xs: '2rem', md: '2.5rem' }, color: BRAND.deepPetrol }}
@@ -114,15 +114,16 @@ export default function TeamSection({ compact = false, hideHeader = false }: Tea
                     component="article"
                     sx={{
                       border:          `1px solid ${BRAND.gray200}`,
-                      borderRadius:    2,
+                      borderRadius:    1.5,
                       overflow:        'hidden',
                       backgroundColor: BRAND.white,
                       height:          '100%',
                       display:         'flex',
                       flexDirection:   'column',
-                      transition:      'border-color 0.2s ease',
+                      transition:      'border-color 0.2s ease, box-shadow 0.2s ease',
                       '&:hover': {
                         borderColor: BRAND.sinopia,
+                        boxShadow:   '0 2px 12px rgba(0,38,42,0.06)',
                       },
                     }}
                   >

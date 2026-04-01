@@ -24,8 +24,8 @@ export default function ServicesPage() {
       <Box
         component="section"
         sx={{
-          pt:              { xs: 6, md: 10 },
-          pb:              { xs: 4, md: 6 },
+          pt:              { xs: 5, md: 7 },
+          pb:              { xs: 3, md: 4 },
           backgroundColor: BRAND.white,
         }}
       >
@@ -36,7 +36,7 @@ export default function ServicesPage() {
               sx={{
                 color:      BRAND.deepPetrol,
                 mb:         1.5,
-                fontSize:   { xs: '2.25rem', md: '3rem' },
+                fontSize:   { xs: '2rem', md: '2.5rem' },
                 fontWeight: 800,
                 lineHeight: 1.1,
               }}

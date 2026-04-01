@@ -83,7 +83,7 @@ export default function ServicesGrid({
       id="services"
       aria-label="Services"
       sx={{
-        py:              { xs: compact ? 4 : 6, md: compact ? 6 : 10 },
+        py:              { xs: compact ? 3 : 5, md: compact ? 4 : 7 },
         backgroundColor: BRAND.white,
       }}
     >
@@ -91,7 +91,7 @@ export default function ServicesGrid({
         {/* Section Header */}
         {!compact && !hideHeader && (
           <MotionSection>
-            <Box sx={{ mb: { xs: 5, md: 7 }, maxWidth: 600 }}>
+            <Box sx={{ mb: { xs: 3, md: 4 }, maxWidth: 600 }}>
               <Typography
                 variant="h2"
                 sx={{ mb: 1.5, fontSize: { xs: '2rem', md: '2.5rem' }, color: BRAND.deepPetrol }}
@@ -118,7 +118,7 @@ export default function ServicesGrid({
                 sm: 'repeat(2, 1fr)',
                 lg: 'repeat(3, 1fr)',
               },
-              gap: { xs: 2, md: 2.5 },
+              gap: { xs: 1.5, md: 2 },
             }}
           >
             {displayed.map(({ id, photo, title, desc }) => (
@@ -128,15 +128,16 @@ export default function ServicesGrid({
                   component="article"
                   sx={{
                     border:          `1px solid ${BRAND.gray200}`,
-                    borderRadius:    2,
+                    borderRadius:    1.5,
                     overflow:        'hidden',
                     display:         'flex',
                     flexDirection:   'column',
                     backgroundColor: BRAND.white,
                     height:          '100%',
-                    transition:      'border-color 0.2s ease',
+                    transition:      'border-color 0.2s ease, box-shadow 0.2s ease',
                     '&:hover': {
                       borderColor: BRAND.sinopia,
+                      boxShadow:   '0 2px 12px rgba(0,38,42,0.06)',
                     },
                   }}
                 >
@@ -156,7 +157,7 @@ export default function ServicesGrid({
                   )}
 
                   {/* Content */}
-                  <Box sx={{ p: { xs: 2.5, md: 3 }, display: 'flex', flexDirection: 'column', flex: 1 }}>
+                  <Box sx={{ p: { xs: 2, md: 2.5 }, display: 'flex', flexDirection: 'column', flex: 1 }}>
                     <Typography
                       component="h3"
                       sx={{
