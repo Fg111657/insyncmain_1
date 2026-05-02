@@ -35,7 +35,10 @@ const nextConfig: NextConfig = {
       {
         source:  '/(.*)',
         headers: [
-          { key: 'X-Frame-Options',           value: 'DENY'                        },
+          // X-Frame-Options removed so the site can be embedded in Felix's
+          // portfolio (and any other surface). frame-ancestors below is the
+          // modern replacement; '*' allows any origin to iframe this site.
+          { key: 'Content-Security-Policy',    value: 'frame-ancestors *'          },
           { key: 'X-Content-Type-Options',     value: 'nosniff'                    },
           { key: 'Referrer-Policy',            value: 'strict-origin-when-cross-origin' },
         ],
